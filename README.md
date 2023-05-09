@@ -8,6 +8,8 @@
 
 If you get an error upon launching install [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48<>)
 
+Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-botw)
+
 ## Features:
 
 - Rupees
