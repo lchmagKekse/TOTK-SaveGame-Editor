@@ -31,8 +31,8 @@ namespace TOTK_SaveGame_Editor
             CreateBackup();
 
             RUPEE_ADDRESS =         FindBytePatternOffset(new byte[] { 0xD7, 0x21, 0x79, 0xA7 }) + 0x04;
-            HEART_ADDRESS =         FindBytePatternOffset(new byte[] { 0xA1, 0x1D, 0xE0, 0xFB }) + 0x04;
-            MAX_HEART_ADDRESS =     FindBytePatternOffset(new byte[] { 0x80, 0x55, 0xAB, 0x31 }) + 0x04;
+            MAX_HEART_ADDRESS =     FindBytePatternOffset(new byte[] { 0xA1, 0x1D, 0xE0, 0xFB }) + 0x04;
+            HEART_ADDRESS =         FindBytePatternOffset(new byte[] { 0x80, 0x55, 0xAB, 0x31 }) + 0x04;
             STAMINA_ADDRESS =       FindBytePatternOffset(new byte[] { 0x74, 0x2C, 0x21, 0xF9 }) + 0x04;
 
             BOW_ADDRESS =           FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x42, 0x6F, 0x77, 0x5F }) - 0x01;                //eapon_Bow
@@ -43,7 +43,11 @@ namespace TOTK_SaveGame_Editor
             var sword2 =            FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x53, 0x77, 0x6F, 0x72, 0x64 }) - 0x01;          //eapon_Sword
             var sword3 =            FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x53, 0x70, 0x65, 0x61, 0x72 }) - 0x01;          //eapon_Spear
 
-            SWORD_ADDRESS =         Math.Min(Math.Min(sword1, sword2), sword3);
+            SWORD_ADDRESS = _Data.Length;
+
+            if (sword1 > 0 && sword1 < SWORD_ADDRESS) SWORD_ADDRESS = sword1;
+            if (sword2 > 0 && sword2 < SWORD_ADDRESS) SWORD_ADDRESS = sword2;
+            if (sword3 > 0 && sword3 < SWORD_ADDRESS) SWORD_ADDRESS = sword3;
         }
 
         public void PatchSaveFile()
