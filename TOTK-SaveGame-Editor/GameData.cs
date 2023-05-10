@@ -175,10 +175,10 @@ namespace TOTK_SaveGame_Editor
             new Item("Weapon_Shield_040", "Pot Lid"),
             new Item("Weapon_Shield_041", "Shield of the Mind's Eye"),
             new Item("Weapon_Shield_042", "Kite Shield"),
-            new Item("Weapon_Shield_101"),
-            new Item("Weapon_Shield_102"),
-            new Item("Weapon_Shield_103"),
-            new Item("Weapon_Shield_107")
+            new Item("Weapon_Shield_101", "Zonaite Shield"),
+            new Item("Weapon_Shield_102", "Strong Zonaite Shield"),
+            new Item("Weapon_Shield_103", "Mighty Zonaite Shield"),
+            new Item("Weapon_Shield_107", "Old Wooden Shield")
         };
 
         public static List<Item> Armor = new List<Item>()
