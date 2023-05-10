@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using TOTK_SaveGame_Editor.Offsets;
 
 namespace TOTK_SaveGame_Editor
 {
@@ -11,14 +12,19 @@ namespace TOTK_SaveGame_Editor
         private string _Path = "progress.sav";
         private byte[] _Data;
         
-        private int RUPEE_ADDRESS;          // 0x04 | int32 | Pattern: D7 21 79 A7       
-        private int HEART_ADDRESS;          // 0x04 | int32 | Pattern: A1 1D E0 FB      
-        private int MAX_HEART_ADDRESS;      // 0x04 | int32 | Pattern: 80 55 AB 31     
-        private int STAMINA_ADDRESS;        // 0x04 | float | Pattern: 74 2C 21 F9     
-        private int ARMOR_ADDRESS;          // 0x40 | char[0x40]      
-        private int SHIELD_ADDRESS;         // 0x40 | char[0x40]       
-        private int BOW_ADDRESS;            // 0x40 | char[0x40]       
-        private int SWORD_ADDRESS;          // 0x40 | char[0x40]
+        private int RUPEE_ADDRESS;              // 0x04 | int32 | Pattern: D7 21 79 A7       
+        private int HEART_ADDRESS;              // 0x04 | int32 | Pattern: A1 1D E0 FB      
+        private int MAX_HEART_ADDRESS;          // 0x04 | int32 | Pattern: 80 55 AB 31     
+        private int STAMINA_ADDRESS;            // 0x04 | float | Pattern: 74 2C 21 F9
+
+        private int SWORD_ADDRESS;
+        private int BOW_ADDRESS;
+        private int SHIELD_ADDRESS;
+        private int ARMOR_ADDRESS;
+
+        private static int SWORD_POUCH_SIZE;
+        private static int BOW_POUCH_SIZE;
+        private static int SHIELD_POUCH_SIZE;
 
         public SaveFile(string path)
         {
@@ -30,24 +36,38 @@ namespace TOTK_SaveGame_Editor
 
             CreateBackup();
 
-            RUPEE_ADDRESS =         FindBytePatternOffset(new byte[] { 0xD7, 0x21, 0x79, 0xA7 }) + 0x04;
-            MAX_HEART_ADDRESS =     FindBytePatternOffset(new byte[] { 0xA1, 0x1D, 0xE0, 0xFB }) + 0x04;
-            HEART_ADDRESS =         FindBytePatternOffset(new byte[] { 0x80, 0x55, 0xAB, 0x31 }) + 0x04;
-            STAMINA_ADDRESS =       FindBytePatternOffset(new byte[] { 0x74, 0x2C, 0x21, 0xF9 }) + 0x04;
+            RUPEE_ADDRESS       = FindBytePatternOffset(new byte[] { 0xD7, 0x21, 0x79, 0xA7 }) + 0x04;
+            MAX_HEART_ADDRESS   = FindBytePatternOffset(new byte[] { 0xA1, 0x1D, 0xE0, 0xFB }) + 0x04;
+            HEART_ADDRESS       = FindBytePatternOffset(new byte[] { 0x80, 0x55, 0xAB, 0x31 }) + 0x04;
+            STAMINA_ADDRESS     = FindBytePatternOffset(new byte[] { 0x74, 0x2C, 0x21, 0xF9 }) + 0x04;
+            
+            if (_Data.Length == Offsets_1_0_0.FILESIZE)
+            {
+                SWORD_ADDRESS       = Offsets_1_0_0.SWORD_ADDRESS;
+                BOW_ADDRESS         = Offsets_1_0_0.BOW_ADDRESS;
+                SHIELD_ADDRESS      = Offsets_1_0_0.SHIELD_ADDRESS;
+                ARMOR_ADDRESS       = Offsets_1_0_0.ARMOR_ADDRESS;
 
-            BOW_ADDRESS =           FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x42, 0x6F, 0x77, 0x5F }) - 0x01;                //eapon_Bow
-            ARMOR_ADDRESS =         FindBytePatternOffset(new byte[] { 0x72, 0x6D, 0x6F, 0x72, 0x5F, }) - 0x01;                                             //rmor_
-            SHIELD_ADDRESS =        FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x53, 0x68, 0x69, 0x65, 0x6C, 0x64 }) - 0x01;    //eapon_Shield
+                SWORD_POUCH_SIZE    = Offsets_1_0_0.SWORD_POUCH_SIZE;
+                BOW_POUCH_SIZE      = Offsets_1_0_0.BOW_POUCH_SIZE;
+                SHIELD_POUCH_SIZE   = Offsets_1_0_0.SHIELD_POUCH_SIZE;
 
-            var sword1 =            FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x4C, 0x73, 0x77, 0x6F, 0x72, 0x64 }) - 0x01;    //eapon_Lsword
-            var sword2 =            FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x53, 0x77, 0x6F, 0x72, 0x64 }) - 0x01;          //eapon_Sword
-            var sword3 =            FindBytePatternOffset(new byte[] { 0x65, 0x61, 0x70, 0x6F, 0x6E, 0x5F, 0x53, 0x70, 0x65, 0x61, 0x72 }) - 0x01;          //eapon_Spear
+                return;
+            }
 
-            SWORD_ADDRESS = _Data.Length;
+            if(_Data.Length == Offsets_1_1_0.FILESIZE)
+            {
+                SWORD_ADDRESS       = Offsets_1_1_0.SWORD_ADDRESS;
+                BOW_ADDRESS         = Offsets_1_1_0.BOW_ADDRESS;
+                SHIELD_ADDRESS      = Offsets_1_1_0.SHIELD_ADDRESS;
+                ARMOR_ADDRESS       = Offsets_1_1_0.ARMOR_ADDRESS;
 
-            if (sword1 > 0 && sword1 < SWORD_ADDRESS) SWORD_ADDRESS = sword1;
-            if (sword2 > 0 && sword2 < SWORD_ADDRESS) SWORD_ADDRESS = sword2;
-            if (sword3 > 0 && sword3 < SWORD_ADDRESS) SWORD_ADDRESS = sword3;
+                SWORD_POUCH_SIZE    = Offsets_1_1_0.SWORD_POUCH_SIZE;
+                BOW_POUCH_SIZE      = Offsets_1_1_0.BOW_POUCH_SIZE;
+                SHIELD_POUCH_SIZE   = Offsets_1_1_0.SHIELD_POUCH_SIZE;
+
+                return;
+            }
         }
 
         public void PatchSaveFile()
@@ -160,6 +180,21 @@ namespace TOTK_SaveGame_Editor
             return ReadString(ARMOR_ADDRESS + (slot * 0x40));
         }
 
+        public int ReadSwordPouch()
+        {
+            return ReadInt(SWORD_POUCH_SIZE);
+        }
+
+        public int ReadBowPouch()
+        {
+            return ReadInt(BOW_POUCH_SIZE);
+        }
+
+        public int ReadShieldPouch()
+        {
+            return ReadInt(SHIELD_POUCH_SIZE);
+        }
+
         // WriteData
         public void WriteRupees(int value)
         {
@@ -195,6 +230,21 @@ namespace TOTK_SaveGame_Editor
         public void WriteArmor(int slot, Item item)
         {
             WriteString(ARMOR_ADDRESS + (slot * 0x40), item.Id);
+        }
+
+        public void WriteSwordPouch(int value)
+        {
+            WriteInt(SWORD_POUCH_SIZE, value);
+        }
+
+        public void WriteBowPouch(int value)
+        {
+            WriteInt(BOW_POUCH_SIZE, value);
+        }
+
+        public void WriteShieldPouch(int value)
+        {
+            WriteInt(SHIELD_POUCH_SIZE, value);
         }
     }
 }

@@ -86,6 +86,12 @@
             this.LblPath = new System.Windows.Forms.Label();
             this.PanelPath = new System.Windows.Forms.Panel();
             this.BtnReset = new System.Windows.Forms.Button();
+            this.LblSwordPouch = new System.Windows.Forms.Label();
+            this.InputSwordPouch = new System.Windows.Forms.NumericUpDown();
+            this.InputBowPouch = new System.Windows.Forms.NumericUpDown();
+            this.LblBowPouch = new System.Windows.Forms.Label();
+            this.InputShieldPouch = new System.Windows.Forms.NumericUpDown();
+            this.LblShieldPouch = new System.Windows.Forms.Label();
             this.TabControlValues.SuspendLayout();
             this.TabGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputStamina)).BeginInit();
@@ -96,6 +102,9 @@
             this.TabShields.SuspendLayout();
             this.TabArmor.SuspendLayout();
             this.PanelPath.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnOpenSaveFile
@@ -120,7 +129,7 @@
             this.TabControlValues.Location = new System.Drawing.Point(8, 46);
             this.TabControlValues.Name = "TabControlValues";
             this.TabControlValues.SelectedIndex = 0;
-            this.TabControlValues.Size = new System.Drawing.Size(320, 181);
+            this.TabControlValues.Size = new System.Drawing.Size(320, 209);
             this.TabControlValues.TabIndex = 2;
             // 
             // TabGeneral
@@ -134,7 +143,7 @@
             this.TabGeneral.Location = new System.Drawing.Point(4, 22);
             this.TabGeneral.Name = "TabGeneral";
             this.TabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGeneral.Size = new System.Drawing.Size(312, 155);
+            this.TabGeneral.Size = new System.Drawing.Size(312, 183);
             this.TabGeneral.TabIndex = 0;
             this.TabGeneral.Text = "General";
             this.TabGeneral.UseVisualStyleBackColor = true;
@@ -224,6 +233,8 @@
             // 
             // TabSwords
             // 
+            this.TabSwords.Controls.Add(this.InputSwordPouch);
+            this.TabSwords.Controls.Add(this.LblSwordPouch);
             this.TabSwords.Controls.Add(this.LblSwordSlot4);
             this.TabSwords.Controls.Add(this.LblSwordSlot3);
             this.TabSwords.Controls.Add(this.ComboSwordSlot4);
@@ -237,7 +248,7 @@
             this.TabSwords.Location = new System.Drawing.Point(4, 22);
             this.TabSwords.Name = "TabSwords";
             this.TabSwords.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSwords.Size = new System.Drawing.Size(312, 155);
+            this.TabSwords.Size = new System.Drawing.Size(312, 183);
             this.TabSwords.TabIndex = 1;
             this.TabSwords.Text = "Swords";
             this.TabSwords.UseVisualStyleBackColor = true;
@@ -329,6 +340,8 @@
             // 
             // TabBows
             // 
+            this.TabBows.Controls.Add(this.InputBowPouch);
+            this.TabBows.Controls.Add(this.LblBowPouch);
             this.TabBows.Controls.Add(this.LblBowSlot4);
             this.TabBows.Controls.Add(this.LblBowSlot3);
             this.TabBows.Controls.Add(this.ComboBowSlot4);
@@ -341,7 +354,7 @@
             this.TabBows.Controls.Add(this.LblBowSlot0);
             this.TabBows.Location = new System.Drawing.Point(4, 22);
             this.TabBows.Name = "TabBows";
-            this.TabBows.Size = new System.Drawing.Size(312, 155);
+            this.TabBows.Size = new System.Drawing.Size(312, 183);
             this.TabBows.TabIndex = 2;
             this.TabBows.Text = "Bows";
             this.TabBows.UseVisualStyleBackColor = true;
@@ -433,6 +446,8 @@
             // 
             // TabShields
             // 
+            this.TabShields.Controls.Add(this.InputShieldPouch);
+            this.TabShields.Controls.Add(this.LblShieldPouch);
             this.TabShields.Controls.Add(this.LblShieldSlot4);
             this.TabShields.Controls.Add(this.LblShieldSlot3);
             this.TabShields.Controls.Add(this.ComboShieldSlot4);
@@ -445,7 +460,7 @@
             this.TabShields.Controls.Add(this.LblShieldSlot0);
             this.TabShields.Location = new System.Drawing.Point(4, 22);
             this.TabShields.Name = "TabShields";
-            this.TabShields.Size = new System.Drawing.Size(312, 155);
+            this.TabShields.Size = new System.Drawing.Size(312, 183);
             this.TabShields.TabIndex = 3;
             this.TabShields.Text = "Shields";
             this.TabShields.UseVisualStyleBackColor = true;
@@ -549,7 +564,7 @@
             this.TabArmor.Controls.Add(this.LblArmorSlot0);
             this.TabArmor.Location = new System.Drawing.Point(4, 22);
             this.TabArmor.Name = "TabArmor";
-            this.TabArmor.Size = new System.Drawing.Size(312, 155);
+            this.TabArmor.Size = new System.Drawing.Size(312, 183);
             this.TabArmor.TabIndex = 4;
             this.TabArmor.Text = "Armor";
             this.TabArmor.UseVisualStyleBackColor = true;
@@ -643,7 +658,7 @@
             // 
             this.BtnPatchSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPatchSaveFile.Enabled = false;
-            this.BtnPatchSaveFile.Location = new System.Drawing.Point(104, 233);
+            this.BtnPatchSaveFile.Location = new System.Drawing.Point(104, 261);
             this.BtnPatchSaveFile.Name = "BtnPatchSaveFile";
             this.BtnPatchSaveFile.Size = new System.Drawing.Size(90, 30);
             this.BtnPatchSaveFile.TabIndex = 3;
@@ -676,7 +691,7 @@
             // 
             this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReset.Enabled = false;
-            this.BtnReset.Location = new System.Drawing.Point(8, 233);
+            this.BtnReset.Location = new System.Drawing.Point(8, 261);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(90, 30);
             this.BtnReset.TabIndex = 7;
@@ -684,12 +699,60 @@
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
+            // LblSwordPouch
+            // 
+            this.LblSwordPouch.AutoSize = true;
+            this.LblSwordPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblSwordPouch.Name = "LblSwordPouch";
+            this.LblSwordPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblSwordPouch.TabIndex = 11;
+            this.LblSwordPouch.Text = "Pouch Size:";
+            // 
+            // InputSwordPouch
+            // 
+            this.InputSwordPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputSwordPouch.Name = "InputSwordPouch";
+            this.InputSwordPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputSwordPouch.TabIndex = 12;
+            // 
+            // InputBowPouch
+            // 
+            this.InputBowPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputBowPouch.Name = "InputBowPouch";
+            this.InputBowPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputBowPouch.TabIndex = 22;
+            // 
+            // LblBowPouch
+            // 
+            this.LblBowPouch.AutoSize = true;
+            this.LblBowPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblBowPouch.Name = "LblBowPouch";
+            this.LblBowPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblBowPouch.TabIndex = 21;
+            this.LblBowPouch.Text = "Pouch Size:";
+            // 
+            // InputShieldPouch
+            // 
+            this.InputShieldPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputShieldPouch.Name = "InputShieldPouch";
+            this.InputShieldPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputShieldPouch.TabIndex = 32;
+            // 
+            // LblShieldPouch
+            // 
+            this.LblShieldPouch.AutoSize = true;
+            this.LblShieldPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblShieldPouch.Name = "LblShieldPouch";
+            this.LblShieldPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblShieldPouch.TabIndex = 31;
+            this.LblShieldPouch.Text = "Pouch Size:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(336, 271);
+            this.ClientSize = new System.Drawing.Size(333, 301);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.PanelPath);
             this.Controls.Add(this.BtnPatchSaveFile);
@@ -714,6 +777,9 @@
             this.TabArmor.PerformLayout();
             this.PanelPath.ResumeLayout(false);
             this.PanelPath.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -777,6 +843,12 @@
         private System.Windows.Forms.Label LblPath;
         private System.Windows.Forms.Panel PanelPath;
         private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.NumericUpDown InputSwordPouch;
+        private System.Windows.Forms.Label LblSwordPouch;
+        private System.Windows.Forms.NumericUpDown InputBowPouch;
+        private System.Windows.Forms.Label LblBowPouch;
+        private System.Windows.Forms.NumericUpDown InputShieldPouch;
+        private System.Windows.Forms.Label LblShieldPouch;
     }
 }
 

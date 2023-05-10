@@ -95,6 +95,10 @@ namespace TOTK_SaveGame_Editor
             InputHearts.Value = _SaveFile.ReadHearts();
             InputStamina.Value = _SaveFile.ReadStamina();
 
+            InputSwordPouch.Value = _SaveFile.ReadSwordPouch();
+            InputBowPouch.Value = _SaveFile.ReadBowPouch();
+            InputShieldPouch.Value= _SaveFile.ReadShieldPouch();
+
             SetComboIndex(GameData.Swords, _SaveFile.ReadSword(0), ComboSwordSlot0);
             SetComboIndex(GameData.Swords, _SaveFile.ReadSword(1), ComboSwordSlot1);
             SetComboIndex(GameData.Swords, _SaveFile.ReadSword(2), ComboSwordSlot2);
@@ -131,6 +135,10 @@ namespace TOTK_SaveGame_Editor
             _SaveFile.WriteRupees((int)InputRupees.Value);
             _SaveFile.WriteHearts((int)InputHearts.Value);
             _SaveFile.WriteStamina((int)InputStamina.Value);
+
+            _SaveFile.WriteSwordPouch((int)InputSwordPouch.Value);
+            _SaveFile.WriteBowPouch((int)InputBowPouch.Value);
+            _SaveFile.WriteShieldPouch((int)InputShieldPouch.Value);
 
             _SaveFile.WriteSword(0, GameData.Swords[ComboSwordSlot0.SelectedIndex]);
             _SaveFile.WriteSword(1, GameData.Swords[ComboSwordSlot1.SelectedIndex]);
