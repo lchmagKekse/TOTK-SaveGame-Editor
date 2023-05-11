@@ -143,6 +143,7 @@ namespace TOTK_SaveGame_Editor
             new Item("Weapon_Bow_105",		"Strong Construct Bow"),
             new Item("Weapon_Bow_106",		"Mighty Construct Bow"),
             new Item("Weapon_Bow_107",		"Old Wooden Bow")
+            new Item("Weapon_Bow_166",		"Demon King's Bow")
         };
 
         // dump\0100F2C0115B6000\romfs\GameParameter\SharpInfo\Default.game__weapon__SharpInfoTable.bgyml
