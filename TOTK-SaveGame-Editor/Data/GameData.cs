@@ -25,6 +25,7 @@ namespace TOTK_SaveGame_Editor
             new Item("Weapon_Sword_044",		"Tree Branch"),
             new Item("Weapon_Sword_047",		"Royal Guard's Sword"),
             new Item("Weapon_Sword_051",		"Boomerang"),
+            new Item("Weapon_Sword_070",		"Master Sword"),
             new Item("Weapon_Sword_101",		"Zonaite Sword"),
             new Item("Weapon_Sword_103",		"Wooden Stick"),
             new Item("Weapon_Sword_105",		"Boomerang (decayed)"),
@@ -142,7 +143,7 @@ namespace TOTK_SaveGame_Editor
             new Item("Weapon_Bow_104",		"Construct Bow"),
             new Item("Weapon_Bow_105",		"Strong Construct Bow"),
             new Item("Weapon_Bow_106",		"Mighty Construct Bow"),
-            new Item("Weapon_Bow_107",		"Old Wooden Bow")
+            new Item("Weapon_Bow_107",		"Old Wooden Bow"),
             new Item("Weapon_Bow_166",		"Demon King's Bow")
         };
 
