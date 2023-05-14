@@ -64,6 +64,11 @@ namespace TOTK_SaveGame_Editor
 
         private void FillComboBoxes()
         {
+            GameData.Swords = GameData.Swords.OrderBy(item => item.Name).ToList();
+            GameData.Bows = GameData.Bows.OrderBy(item => item.Name).ToList();
+            GameData.Shields = GameData.Shields.OrderBy(item => item.Name).ToList();
+
+
             ComboSwordSlot0.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
             ComboSwordSlot1.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
             ComboSwordSlot2.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
