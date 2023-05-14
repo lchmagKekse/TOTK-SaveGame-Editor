@@ -12,5 +12,7 @@
         public static int SWORD_POUCH_SIZE     = 0x4AA68;
         public static int BOW_POUCH_SIZE       = 0x47634;
         public static int SHIELD_POUCH_SIZE    = 0x4D084;
+
+        public static int ARROW_ADDRESS        = 0x46FF8;
     }
 }

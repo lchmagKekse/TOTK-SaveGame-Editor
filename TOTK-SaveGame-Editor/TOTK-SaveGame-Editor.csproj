@@ -101,6 +101,7 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Offsets\Offsets_Pattern.cs" />
     <Compile Include="Offsets\Offsets_1_0_0.cs" />
     <Compile Include="Offsets\Offsets_1_1_0.cs" />
     <Compile Include="Program.cs" />

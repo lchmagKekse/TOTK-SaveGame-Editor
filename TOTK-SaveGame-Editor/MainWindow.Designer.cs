@@ -39,6 +39,8 @@
             this.LblHearts = new System.Windows.Forms.Label();
             this.LblRupees = new System.Windows.Forms.Label();
             this.TabSwords = new System.Windows.Forms.TabPage();
+            this.InputSwordPouch = new System.Windows.Forms.NumericUpDown();
+            this.LblSwordPouch = new System.Windows.Forms.Label();
             this.LblSwordSlot4 = new System.Windows.Forms.Label();
             this.LblSwordSlot3 = new System.Windows.Forms.Label();
             this.ComboSwordSlot4 = new System.Windows.Forms.ComboBox();
@@ -50,6 +52,10 @@
             this.LblSwordSlot1 = new System.Windows.Forms.Label();
             this.LblSwordSlot0 = new System.Windows.Forms.Label();
             this.TabBows = new System.Windows.Forms.TabPage();
+            this.InputArrows = new System.Windows.Forms.NumericUpDown();
+            this.LblArrows = new System.Windows.Forms.Label();
+            this.InputBowPouch = new System.Windows.Forms.NumericUpDown();
+            this.LblBowPouch = new System.Windows.Forms.Label();
             this.LblBowSlot4 = new System.Windows.Forms.Label();
             this.LblBowSlot3 = new System.Windows.Forms.Label();
             this.ComboBowSlot4 = new System.Windows.Forms.ComboBox();
@@ -61,6 +67,8 @@
             this.LblBowSlot1 = new System.Windows.Forms.Label();
             this.LblBowSlot0 = new System.Windows.Forms.Label();
             this.TabShields = new System.Windows.Forms.TabPage();
+            this.InputShieldPouch = new System.Windows.Forms.NumericUpDown();
+            this.LblShieldPouch = new System.Windows.Forms.Label();
             this.LblShieldSlot4 = new System.Windows.Forms.Label();
             this.LblShieldSlot3 = new System.Windows.Forms.Label();
             this.ComboShieldSlot4 = new System.Windows.Forms.ComboBox();
@@ -82,29 +90,92 @@
             this.LblArmorSlot2 = new System.Windows.Forms.Label();
             this.LblArmorSlot1 = new System.Windows.Forms.Label();
             this.LblArmorSlot0 = new System.Windows.Forms.Label();
+            this.TabSkyviewTowers = new System.Windows.Forms.TabPage();
+            this.BtnUncheckAll = new System.Windows.Forms.Button();
+            this.BtnCheckAll = new System.Windows.Forms.Button();
+            this.LblPin = new System.Windows.Forms.Label();
+            this.LblActivated = new System.Windows.Forms.Label();
+            this.LblMap = new System.Windows.Forms.Label();
+            this.LblSkyviewTower = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBPin15 = new System.Windows.Forms.CheckBox();
+            this.CBPin14 = new System.Windows.Forms.CheckBox();
+            this.CBPin13 = new System.Windows.Forms.CheckBox();
+            this.CBPin12 = new System.Windows.Forms.CheckBox();
+            this.CBPin11 = new System.Windows.Forms.CheckBox();
+            this.CBPin10 = new System.Windows.Forms.CheckBox();
+            this.CBPin9 = new System.Windows.Forms.CheckBox();
+            this.CBPin8 = new System.Windows.Forms.CheckBox();
+            this.CBPin7 = new System.Windows.Forms.CheckBox();
+            this.CBPin6 = new System.Windows.Forms.CheckBox();
+            this.CBPin5 = new System.Windows.Forms.CheckBox();
+            this.CBPin4 = new System.Windows.Forms.CheckBox();
+            this.CBPin3 = new System.Windows.Forms.CheckBox();
+            this.CBPin2 = new System.Windows.Forms.CheckBox();
+            this.CBPin1 = new System.Windows.Forms.CheckBox();
+            this.CBActivated15 = new System.Windows.Forms.CheckBox();
+            this.CBActivated14 = new System.Windows.Forms.CheckBox();
+            this.CBActivated13 = new System.Windows.Forms.CheckBox();
+            this.CBActivated12 = new System.Windows.Forms.CheckBox();
+            this.CBActivated11 = new System.Windows.Forms.CheckBox();
+            this.CBActivated10 = new System.Windows.Forms.CheckBox();
+            this.CBActivated9 = new System.Windows.Forms.CheckBox();
+            this.CBActivated8 = new System.Windows.Forms.CheckBox();
+            this.CBActivated7 = new System.Windows.Forms.CheckBox();
+            this.CBActivated6 = new System.Windows.Forms.CheckBox();
+            this.CBActivated5 = new System.Windows.Forms.CheckBox();
+            this.CBActivated4 = new System.Windows.Forms.CheckBox();
+            this.CBActivated3 = new System.Windows.Forms.CheckBox();
+            this.CBActivated2 = new System.Windows.Forms.CheckBox();
+            this.CBActivated1 = new System.Windows.Forms.CheckBox();
+            this.CBMap15 = new System.Windows.Forms.CheckBox();
+            this.CBMap14 = new System.Windows.Forms.CheckBox();
+            this.CBMap13 = new System.Windows.Forms.CheckBox();
+            this.CBMap12 = new System.Windows.Forms.CheckBox();
+            this.CBMap11 = new System.Windows.Forms.CheckBox();
+            this.CBMap10 = new System.Windows.Forms.CheckBox();
+            this.CBMap9 = new System.Windows.Forms.CheckBox();
+            this.CBMap8 = new System.Windows.Forms.CheckBox();
+            this.CBMap7 = new System.Windows.Forms.CheckBox();
+            this.CBMap6 = new System.Windows.Forms.CheckBox();
+            this.CBMap5 = new System.Windows.Forms.CheckBox();
+            this.CBMap4 = new System.Windows.Forms.CheckBox();
+            this.CBMap3 = new System.Windows.Forms.CheckBox();
+            this.CBMap2 = new System.Windows.Forms.CheckBox();
+            this.CBMap1 = new System.Windows.Forms.CheckBox();
             this.BtnPatchSaveFile = new System.Windows.Forms.Button();
             this.LblPath = new System.Windows.Forms.Label();
             this.PanelPath = new System.Windows.Forms.Panel();
             this.BtnReset = new System.Windows.Forms.Button();
-            this.LblSwordPouch = new System.Windows.Forms.Label();
-            this.InputSwordPouch = new System.Windows.Forms.NumericUpDown();
-            this.InputBowPouch = new System.Windows.Forms.NumericUpDown();
-            this.LblBowPouch = new System.Windows.Forms.Label();
-            this.InputShieldPouch = new System.Windows.Forms.NumericUpDown();
-            this.LblShieldPouch = new System.Windows.Forms.Label();
             this.TabControlValues.SuspendLayout();
             this.TabGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputStamina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputHearts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputRupees)).BeginInit();
             this.TabSwords.SuspendLayout();
-            this.TabBows.SuspendLayout();
-            this.TabShields.SuspendLayout();
-            this.TabArmor.SuspendLayout();
-            this.PanelPath.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).BeginInit();
+            this.TabBows.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).BeginInit();
+            this.TabShields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).BeginInit();
+            this.TabArmor.SuspendLayout();
+            this.TabSkyviewTowers.SuspendLayout();
+            this.PanelPath.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnOpenSaveFile
@@ -125,11 +196,12 @@
             this.TabControlValues.Controls.Add(this.TabBows);
             this.TabControlValues.Controls.Add(this.TabShields);
             this.TabControlValues.Controls.Add(this.TabArmor);
+            this.TabControlValues.Controls.Add(this.TabSkyviewTowers);
             this.TabControlValues.HotTrack = true;
             this.TabControlValues.Location = new System.Drawing.Point(8, 46);
             this.TabControlValues.Name = "TabControlValues";
             this.TabControlValues.SelectedIndex = 0;
-            this.TabControlValues.Size = new System.Drawing.Size(320, 209);
+            this.TabControlValues.Size = new System.Drawing.Size(320, 409);
             this.TabControlValues.TabIndex = 2;
             // 
             // TabGeneral
@@ -143,7 +215,7 @@
             this.TabGeneral.Location = new System.Drawing.Point(4, 22);
             this.TabGeneral.Name = "TabGeneral";
             this.TabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGeneral.Size = new System.Drawing.Size(312, 183);
+            this.TabGeneral.Size = new System.Drawing.Size(312, 383);
             this.TabGeneral.TabIndex = 0;
             this.TabGeneral.Text = "General";
             this.TabGeneral.UseVisualStyleBackColor = true;
@@ -248,10 +320,26 @@
             this.TabSwords.Location = new System.Drawing.Point(4, 22);
             this.TabSwords.Name = "TabSwords";
             this.TabSwords.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSwords.Size = new System.Drawing.Size(312, 183);
+            this.TabSwords.Size = new System.Drawing.Size(312, 383);
             this.TabSwords.TabIndex = 1;
             this.TabSwords.Text = "Swords";
             this.TabSwords.UseVisualStyleBackColor = true;
+            // 
+            // InputSwordPouch
+            // 
+            this.InputSwordPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputSwordPouch.Name = "InputSwordPouch";
+            this.InputSwordPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputSwordPouch.TabIndex = 12;
+            // 
+            // LblSwordPouch
+            // 
+            this.LblSwordPouch.AutoSize = true;
+            this.LblSwordPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblSwordPouch.Name = "LblSwordPouch";
+            this.LblSwordPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblSwordPouch.TabIndex = 11;
+            this.LblSwordPouch.Text = "Pouch Size:";
             // 
             // LblSwordSlot4
             // 
@@ -340,6 +428,8 @@
             // 
             // TabBows
             // 
+            this.TabBows.Controls.Add(this.InputArrows);
+            this.TabBows.Controls.Add(this.LblArrows);
             this.TabBows.Controls.Add(this.InputBowPouch);
             this.TabBows.Controls.Add(this.LblBowPouch);
             this.TabBows.Controls.Add(this.LblBowSlot4);
@@ -354,10 +444,52 @@
             this.TabBows.Controls.Add(this.LblBowSlot0);
             this.TabBows.Location = new System.Drawing.Point(4, 22);
             this.TabBows.Name = "TabBows";
-            this.TabBows.Size = new System.Drawing.Size(312, 183);
+            this.TabBows.Size = new System.Drawing.Size(312, 383);
             this.TabBows.TabIndex = 2;
             this.TabBows.Text = "Bows";
             this.TabBows.UseVisualStyleBackColor = true;
+            // 
+            // InputArrows
+            // 
+            this.InputArrows.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.InputArrows.Location = new System.Drawing.Point(220, 153);
+            this.InputArrows.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.InputArrows.Name = "InputArrows";
+            this.InputArrows.Size = new System.Drawing.Size(71, 20);
+            this.InputArrows.TabIndex = 24;
+            // 
+            // LblArrows
+            // 
+            this.LblArrows.AutoSize = true;
+            this.LblArrows.Location = new System.Drawing.Point(172, 155);
+            this.LblArrows.Name = "LblArrows";
+            this.LblArrows.Size = new System.Drawing.Size(42, 13);
+            this.LblArrows.TabIndex = 23;
+            this.LblArrows.Text = "Arrows:";
+            // 
+            // InputBowPouch
+            // 
+            this.InputBowPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputBowPouch.Name = "InputBowPouch";
+            this.InputBowPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputBowPouch.TabIndex = 22;
+            // 
+            // LblBowPouch
+            // 
+            this.LblBowPouch.AutoSize = true;
+            this.LblBowPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblBowPouch.Name = "LblBowPouch";
+            this.LblBowPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblBowPouch.TabIndex = 21;
+            this.LblBowPouch.Text = "Pouch Size:";
             // 
             // LblBowSlot4
             // 
@@ -460,10 +592,26 @@
             this.TabShields.Controls.Add(this.LblShieldSlot0);
             this.TabShields.Location = new System.Drawing.Point(4, 22);
             this.TabShields.Name = "TabShields";
-            this.TabShields.Size = new System.Drawing.Size(312, 183);
+            this.TabShields.Size = new System.Drawing.Size(312, 383);
             this.TabShields.TabIndex = 3;
             this.TabShields.Text = "Shields";
             this.TabShields.UseVisualStyleBackColor = true;
+            // 
+            // InputShieldPouch
+            // 
+            this.InputShieldPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputShieldPouch.Name = "InputShieldPouch";
+            this.InputShieldPouch.Size = new System.Drawing.Size(71, 20);
+            this.InputShieldPouch.TabIndex = 32;
+            // 
+            // LblShieldPouch
+            // 
+            this.LblShieldPouch.AutoSize = true;
+            this.LblShieldPouch.Location = new System.Drawing.Point(11, 155);
+            this.LblShieldPouch.Name = "LblShieldPouch";
+            this.LblShieldPouch.Size = new System.Drawing.Size(64, 13);
+            this.LblShieldPouch.TabIndex = 31;
+            this.LblShieldPouch.Text = "Pouch Size:";
             // 
             // LblShieldSlot4
             // 
@@ -564,7 +712,7 @@
             this.TabArmor.Controls.Add(this.LblArmorSlot0);
             this.TabArmor.Location = new System.Drawing.Point(4, 22);
             this.TabArmor.Name = "TabArmor";
-            this.TabArmor.Size = new System.Drawing.Size(312, 183);
+            this.TabArmor.Size = new System.Drawing.Size(312, 383);
             this.TabArmor.TabIndex = 4;
             this.TabArmor.Text = "Armor";
             this.TabArmor.UseVisualStyleBackColor = true;
@@ -654,11 +802,705 @@
             this.LblArmorSlot0.TabIndex = 21;
             this.LblArmorSlot0.Text = "Slot 1";
             // 
+            // TabSkyviewTowers
+            // 
+            this.TabSkyviewTowers.Controls.Add(this.BtnUncheckAll);
+            this.TabSkyviewTowers.Controls.Add(this.BtnCheckAll);
+            this.TabSkyviewTowers.Controls.Add(this.LblPin);
+            this.TabSkyviewTowers.Controls.Add(this.LblActivated);
+            this.TabSkyviewTowers.Controls.Add(this.LblMap);
+            this.TabSkyviewTowers.Controls.Add(this.LblSkyviewTower);
+            this.TabSkyviewTowers.Controls.Add(this.label15);
+            this.TabSkyviewTowers.Controls.Add(this.label14);
+            this.TabSkyviewTowers.Controls.Add(this.label13);
+            this.TabSkyviewTowers.Controls.Add(this.label12);
+            this.TabSkyviewTowers.Controls.Add(this.label11);
+            this.TabSkyviewTowers.Controls.Add(this.label10);
+            this.TabSkyviewTowers.Controls.Add(this.label9);
+            this.TabSkyviewTowers.Controls.Add(this.label8);
+            this.TabSkyviewTowers.Controls.Add(this.label7);
+            this.TabSkyviewTowers.Controls.Add(this.label6);
+            this.TabSkyviewTowers.Controls.Add(this.label5);
+            this.TabSkyviewTowers.Controls.Add(this.label4);
+            this.TabSkyviewTowers.Controls.Add(this.label3);
+            this.TabSkyviewTowers.Controls.Add(this.label2);
+            this.TabSkyviewTowers.Controls.Add(this.label1);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin15);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin14);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin13);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin12);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin11);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin10);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin9);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin8);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin7);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin6);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin5);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin4);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin3);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin2);
+            this.TabSkyviewTowers.Controls.Add(this.CBPin1);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated15);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated14);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated13);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated12);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated11);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated10);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated9);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated8);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated7);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated6);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated5);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated4);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated3);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated2);
+            this.TabSkyviewTowers.Controls.Add(this.CBActivated1);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap15);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap14);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap13);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap12);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap11);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap10);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap9);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap8);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap7);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap6);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap5);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap4);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap3);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap2);
+            this.TabSkyviewTowers.Controls.Add(this.CBMap1);
+            this.TabSkyviewTowers.Location = new System.Drawing.Point(4, 22);
+            this.TabSkyviewTowers.Name = "TabSkyviewTowers";
+            this.TabSkyviewTowers.Size = new System.Drawing.Size(312, 383);
+            this.TabSkyviewTowers.TabIndex = 5;
+            this.TabSkyviewTowers.Text = "Skyview Towers";
+            this.TabSkyviewTowers.UseVisualStyleBackColor = true;
+            // 
+            // BtnUncheckAll
+            // 
+            this.BtnUncheckAll.Location = new System.Drawing.Point(161, 349);
+            this.BtnUncheckAll.Name = "BtnUncheckAll";
+            this.BtnUncheckAll.Size = new System.Drawing.Size(75, 23);
+            this.BtnUncheckAll.TabIndex = 70;
+            this.BtnUncheckAll.Text = "Uncheck All";
+            this.BtnUncheckAll.UseVisualStyleBackColor = true;
+            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
+            // 
+            // BtnCheckAll
+            // 
+            this.BtnCheckAll.Location = new System.Drawing.Point(80, 349);
+            this.BtnCheckAll.Name = "BtnCheckAll";
+            this.BtnCheckAll.Size = new System.Drawing.Size(75, 23);
+            this.BtnCheckAll.TabIndex = 69;
+            this.BtnCheckAll.Text = "Check All";
+            this.BtnCheckAll.UseVisualStyleBackColor = true;
+            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
+            // 
+            // LblPin
+            // 
+            this.LblPin.AutoSize = true;
+            this.LblPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPin.Location = new System.Drawing.Point(242, 14);
+            this.LblPin.Name = "LblPin";
+            this.LblPin.Size = new System.Drawing.Size(25, 13);
+            this.LblPin.TabIndex = 68;
+            this.LblPin.Text = "Pin";
+            this.LblPin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LblActivated
+            // 
+            this.LblActivated.AutoSize = true;
+            this.LblActivated.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblActivated.Location = new System.Drawing.Point(175, 14);
+            this.LblActivated.Name = "LblActivated";
+            this.LblActivated.Size = new System.Drawing.Size(61, 13);
+            this.LblActivated.TabIndex = 67;
+            this.LblActivated.Text = "Activated";
+            this.LblActivated.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LblMap
+            // 
+            this.LblMap.AutoSize = true;
+            this.LblMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMap.Location = new System.Drawing.Point(138, 14);
+            this.LblMap.Name = "LblMap";
+            this.LblMap.Size = new System.Drawing.Size(31, 13);
+            this.LblMap.TabIndex = 66;
+            this.LblMap.Text = "Map";
+            this.LblMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LblSkyviewTower
+            // 
+            this.LblSkyviewTower.AutoSize = true;
+            this.LblSkyviewTower.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSkyviewTower.Location = new System.Drawing.Point(33, 14);
+            this.LblSkyviewTower.Name = "LblSkyviewTower";
+            this.LblSkyviewTower.Size = new System.Drawing.Size(93, 13);
+            this.LblSkyviewTower.TabIndex = 65;
+            this.LblSkyviewTower.Text = "Skyview Tower";
+            this.LblSkyviewTower.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(33, 317);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 13);
+            this.label15.TabIndex = 64;
+            this.label15.Text = "Upland Zorana";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 297);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 13);
+            this.label14.TabIndex = 63;
+            this.label14.Text = "Ulri Mountain";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(33, 277);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Thyphlo Ruins";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(33, 257);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 13);
+            this.label12.TabIndex = 61;
+            this.label12.Text = "Sahasra Slope";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(33, 237);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 13);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Rospro Pass";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(33, 217);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 13);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "Rabella Wetlands";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "Popla Foothills";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(33, 177);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 13);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "Pikida Stonegrove";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Mount Lanayru";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Lookout Landing";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "Lindors Brow";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "Hyrule Field";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Gerudo Highlands";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Gerudo Canyon";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Eldin Canyon";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CBPin15
+            // 
+            this.CBPin15.AutoSize = true;
+            this.CBPin15.Location = new System.Drawing.Point(245, 317);
+            this.CBPin15.Name = "CBPin15";
+            this.CBPin15.Size = new System.Drawing.Size(15, 14);
+            this.CBPin15.TabIndex = 49;
+            this.CBPin15.UseVisualStyleBackColor = true;
+            // 
+            // CBPin14
+            // 
+            this.CBPin14.AutoSize = true;
+            this.CBPin14.Location = new System.Drawing.Point(245, 297);
+            this.CBPin14.Name = "CBPin14";
+            this.CBPin14.Size = new System.Drawing.Size(15, 14);
+            this.CBPin14.TabIndex = 48;
+            this.CBPin14.UseVisualStyleBackColor = true;
+            // 
+            // CBPin13
+            // 
+            this.CBPin13.AutoSize = true;
+            this.CBPin13.Location = new System.Drawing.Point(245, 277);
+            this.CBPin13.Name = "CBPin13";
+            this.CBPin13.Size = new System.Drawing.Size(15, 14);
+            this.CBPin13.TabIndex = 47;
+            this.CBPin13.UseVisualStyleBackColor = true;
+            // 
+            // CBPin12
+            // 
+            this.CBPin12.AutoSize = true;
+            this.CBPin12.Location = new System.Drawing.Point(245, 257);
+            this.CBPin12.Name = "CBPin12";
+            this.CBPin12.Size = new System.Drawing.Size(15, 14);
+            this.CBPin12.TabIndex = 46;
+            this.CBPin12.UseVisualStyleBackColor = true;
+            // 
+            // CBPin11
+            // 
+            this.CBPin11.AutoSize = true;
+            this.CBPin11.Location = new System.Drawing.Point(245, 237);
+            this.CBPin11.Name = "CBPin11";
+            this.CBPin11.Size = new System.Drawing.Size(15, 14);
+            this.CBPin11.TabIndex = 45;
+            this.CBPin11.UseVisualStyleBackColor = true;
+            // 
+            // CBPin10
+            // 
+            this.CBPin10.AutoSize = true;
+            this.CBPin10.Location = new System.Drawing.Point(245, 217);
+            this.CBPin10.Name = "CBPin10";
+            this.CBPin10.Size = new System.Drawing.Size(15, 14);
+            this.CBPin10.TabIndex = 44;
+            this.CBPin10.UseVisualStyleBackColor = true;
+            // 
+            // CBPin9
+            // 
+            this.CBPin9.AutoSize = true;
+            this.CBPin9.Location = new System.Drawing.Point(245, 197);
+            this.CBPin9.Name = "CBPin9";
+            this.CBPin9.Size = new System.Drawing.Size(15, 14);
+            this.CBPin9.TabIndex = 43;
+            this.CBPin9.UseVisualStyleBackColor = true;
+            // 
+            // CBPin8
+            // 
+            this.CBPin8.AutoSize = true;
+            this.CBPin8.Location = new System.Drawing.Point(245, 177);
+            this.CBPin8.Name = "CBPin8";
+            this.CBPin8.Size = new System.Drawing.Size(15, 14);
+            this.CBPin8.TabIndex = 42;
+            this.CBPin8.UseVisualStyleBackColor = true;
+            // 
+            // CBPin7
+            // 
+            this.CBPin7.AutoSize = true;
+            this.CBPin7.Location = new System.Drawing.Point(245, 157);
+            this.CBPin7.Name = "CBPin7";
+            this.CBPin7.Size = new System.Drawing.Size(15, 14);
+            this.CBPin7.TabIndex = 41;
+            this.CBPin7.UseVisualStyleBackColor = true;
+            // 
+            // CBPin6
+            // 
+            this.CBPin6.AutoSize = true;
+            this.CBPin6.Location = new System.Drawing.Point(245, 137);
+            this.CBPin6.Name = "CBPin6";
+            this.CBPin6.Size = new System.Drawing.Size(15, 14);
+            this.CBPin6.TabIndex = 40;
+            this.CBPin6.UseVisualStyleBackColor = true;
+            // 
+            // CBPin5
+            // 
+            this.CBPin5.AutoSize = true;
+            this.CBPin5.Location = new System.Drawing.Point(245, 117);
+            this.CBPin5.Name = "CBPin5";
+            this.CBPin5.Size = new System.Drawing.Size(15, 14);
+            this.CBPin5.TabIndex = 39;
+            this.CBPin5.UseVisualStyleBackColor = true;
+            // 
+            // CBPin4
+            // 
+            this.CBPin4.AutoSize = true;
+            this.CBPin4.Location = new System.Drawing.Point(245, 97);
+            this.CBPin4.Name = "CBPin4";
+            this.CBPin4.Size = new System.Drawing.Size(15, 14);
+            this.CBPin4.TabIndex = 38;
+            this.CBPin4.UseVisualStyleBackColor = true;
+            // 
+            // CBPin3
+            // 
+            this.CBPin3.AutoSize = true;
+            this.CBPin3.Location = new System.Drawing.Point(245, 77);
+            this.CBPin3.Name = "CBPin3";
+            this.CBPin3.Size = new System.Drawing.Size(15, 14);
+            this.CBPin3.TabIndex = 37;
+            this.CBPin3.UseVisualStyleBackColor = true;
+            // 
+            // CBPin2
+            // 
+            this.CBPin2.AutoSize = true;
+            this.CBPin2.Location = new System.Drawing.Point(245, 57);
+            this.CBPin2.Name = "CBPin2";
+            this.CBPin2.Size = new System.Drawing.Size(15, 14);
+            this.CBPin2.TabIndex = 36;
+            this.CBPin2.UseVisualStyleBackColor = true;
+            // 
+            // CBPin1
+            // 
+            this.CBPin1.AutoSize = true;
+            this.CBPin1.Location = new System.Drawing.Point(245, 37);
+            this.CBPin1.Name = "CBPin1";
+            this.CBPin1.Size = new System.Drawing.Size(15, 14);
+            this.CBPin1.TabIndex = 35;
+            this.CBPin1.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated15
+            // 
+            this.CBActivated15.AutoSize = true;
+            this.CBActivated15.Location = new System.Drawing.Point(193, 317);
+            this.CBActivated15.Name = "CBActivated15";
+            this.CBActivated15.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated15.TabIndex = 34;
+            this.CBActivated15.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated14
+            // 
+            this.CBActivated14.AutoSize = true;
+            this.CBActivated14.Location = new System.Drawing.Point(193, 297);
+            this.CBActivated14.Name = "CBActivated14";
+            this.CBActivated14.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated14.TabIndex = 33;
+            this.CBActivated14.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated13
+            // 
+            this.CBActivated13.AutoSize = true;
+            this.CBActivated13.Location = new System.Drawing.Point(193, 277);
+            this.CBActivated13.Name = "CBActivated13";
+            this.CBActivated13.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated13.TabIndex = 32;
+            this.CBActivated13.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated12
+            // 
+            this.CBActivated12.AutoSize = true;
+            this.CBActivated12.Location = new System.Drawing.Point(193, 257);
+            this.CBActivated12.Name = "CBActivated12";
+            this.CBActivated12.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated12.TabIndex = 31;
+            this.CBActivated12.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated11
+            // 
+            this.CBActivated11.AutoSize = true;
+            this.CBActivated11.Location = new System.Drawing.Point(193, 237);
+            this.CBActivated11.Name = "CBActivated11";
+            this.CBActivated11.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated11.TabIndex = 30;
+            this.CBActivated11.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated10
+            // 
+            this.CBActivated10.AutoSize = true;
+            this.CBActivated10.Location = new System.Drawing.Point(193, 217);
+            this.CBActivated10.Name = "CBActivated10";
+            this.CBActivated10.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated10.TabIndex = 29;
+            this.CBActivated10.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated9
+            // 
+            this.CBActivated9.AutoSize = true;
+            this.CBActivated9.Location = new System.Drawing.Point(193, 197);
+            this.CBActivated9.Name = "CBActivated9";
+            this.CBActivated9.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated9.TabIndex = 28;
+            this.CBActivated9.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated8
+            // 
+            this.CBActivated8.AutoSize = true;
+            this.CBActivated8.Location = new System.Drawing.Point(193, 177);
+            this.CBActivated8.Name = "CBActivated8";
+            this.CBActivated8.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated8.TabIndex = 27;
+            this.CBActivated8.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated7
+            // 
+            this.CBActivated7.AutoSize = true;
+            this.CBActivated7.Location = new System.Drawing.Point(193, 157);
+            this.CBActivated7.Name = "CBActivated7";
+            this.CBActivated7.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated7.TabIndex = 26;
+            this.CBActivated7.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated6
+            // 
+            this.CBActivated6.AutoSize = true;
+            this.CBActivated6.Location = new System.Drawing.Point(193, 137);
+            this.CBActivated6.Name = "CBActivated6";
+            this.CBActivated6.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated6.TabIndex = 25;
+            this.CBActivated6.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated5
+            // 
+            this.CBActivated5.AutoSize = true;
+            this.CBActivated5.Location = new System.Drawing.Point(193, 117);
+            this.CBActivated5.Name = "CBActivated5";
+            this.CBActivated5.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated5.TabIndex = 24;
+            this.CBActivated5.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated4
+            // 
+            this.CBActivated4.AutoSize = true;
+            this.CBActivated4.Location = new System.Drawing.Point(193, 97);
+            this.CBActivated4.Name = "CBActivated4";
+            this.CBActivated4.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated4.TabIndex = 23;
+            this.CBActivated4.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated3
+            // 
+            this.CBActivated3.AutoSize = true;
+            this.CBActivated3.Location = new System.Drawing.Point(193, 77);
+            this.CBActivated3.Name = "CBActivated3";
+            this.CBActivated3.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated3.TabIndex = 22;
+            this.CBActivated3.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated2
+            // 
+            this.CBActivated2.AutoSize = true;
+            this.CBActivated2.Location = new System.Drawing.Point(193, 57);
+            this.CBActivated2.Name = "CBActivated2";
+            this.CBActivated2.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated2.TabIndex = 21;
+            this.CBActivated2.UseVisualStyleBackColor = true;
+            // 
+            // CBActivated1
+            // 
+            this.CBActivated1.AutoSize = true;
+            this.CBActivated1.Location = new System.Drawing.Point(193, 37);
+            this.CBActivated1.Name = "CBActivated1";
+            this.CBActivated1.Size = new System.Drawing.Size(15, 14);
+            this.CBActivated1.TabIndex = 20;
+            this.CBActivated1.UseVisualStyleBackColor = true;
+            // 
+            // CBMap15
+            // 
+            this.CBMap15.AutoSize = true;
+            this.CBMap15.Location = new System.Drawing.Point(141, 316);
+            this.CBMap15.Name = "CBMap15";
+            this.CBMap15.Size = new System.Drawing.Size(15, 14);
+            this.CBMap15.TabIndex = 19;
+            this.CBMap15.UseVisualStyleBackColor = true;
+            // 
+            // CBMap14
+            // 
+            this.CBMap14.AutoSize = true;
+            this.CBMap14.Location = new System.Drawing.Point(141, 296);
+            this.CBMap14.Name = "CBMap14";
+            this.CBMap14.Size = new System.Drawing.Size(15, 14);
+            this.CBMap14.TabIndex = 18;
+            this.CBMap14.UseVisualStyleBackColor = true;
+            // 
+            // CBMap13
+            // 
+            this.CBMap13.AutoSize = true;
+            this.CBMap13.Location = new System.Drawing.Point(141, 276);
+            this.CBMap13.Name = "CBMap13";
+            this.CBMap13.Size = new System.Drawing.Size(15, 14);
+            this.CBMap13.TabIndex = 17;
+            this.CBMap13.UseVisualStyleBackColor = true;
+            // 
+            // CBMap12
+            // 
+            this.CBMap12.AutoSize = true;
+            this.CBMap12.Location = new System.Drawing.Point(141, 256);
+            this.CBMap12.Name = "CBMap12";
+            this.CBMap12.Size = new System.Drawing.Size(15, 14);
+            this.CBMap12.TabIndex = 16;
+            this.CBMap12.UseVisualStyleBackColor = true;
+            // 
+            // CBMap11
+            // 
+            this.CBMap11.AutoSize = true;
+            this.CBMap11.Location = new System.Drawing.Point(141, 236);
+            this.CBMap11.Name = "CBMap11";
+            this.CBMap11.Size = new System.Drawing.Size(15, 14);
+            this.CBMap11.TabIndex = 15;
+            this.CBMap11.UseVisualStyleBackColor = true;
+            // 
+            // CBMap10
+            // 
+            this.CBMap10.AutoSize = true;
+            this.CBMap10.Location = new System.Drawing.Point(141, 216);
+            this.CBMap10.Name = "CBMap10";
+            this.CBMap10.Size = new System.Drawing.Size(15, 14);
+            this.CBMap10.TabIndex = 14;
+            this.CBMap10.UseVisualStyleBackColor = true;
+            // 
+            // CBMap9
+            // 
+            this.CBMap9.AutoSize = true;
+            this.CBMap9.Location = new System.Drawing.Point(141, 196);
+            this.CBMap9.Name = "CBMap9";
+            this.CBMap9.Size = new System.Drawing.Size(15, 14);
+            this.CBMap9.TabIndex = 13;
+            this.CBMap9.UseVisualStyleBackColor = true;
+            // 
+            // CBMap8
+            // 
+            this.CBMap8.AutoSize = true;
+            this.CBMap8.Location = new System.Drawing.Point(141, 176);
+            this.CBMap8.Name = "CBMap8";
+            this.CBMap8.Size = new System.Drawing.Size(15, 14);
+            this.CBMap8.TabIndex = 12;
+            this.CBMap8.UseVisualStyleBackColor = true;
+            // 
+            // CBMap7
+            // 
+            this.CBMap7.AutoSize = true;
+            this.CBMap7.Location = new System.Drawing.Point(141, 156);
+            this.CBMap7.Name = "CBMap7";
+            this.CBMap7.Size = new System.Drawing.Size(15, 14);
+            this.CBMap7.TabIndex = 11;
+            this.CBMap7.UseVisualStyleBackColor = true;
+            // 
+            // CBMap6
+            // 
+            this.CBMap6.AutoSize = true;
+            this.CBMap6.Location = new System.Drawing.Point(141, 136);
+            this.CBMap6.Name = "CBMap6";
+            this.CBMap6.Size = new System.Drawing.Size(15, 14);
+            this.CBMap6.TabIndex = 10;
+            this.CBMap6.UseVisualStyleBackColor = true;
+            // 
+            // CBMap5
+            // 
+            this.CBMap5.AutoSize = true;
+            this.CBMap5.Location = new System.Drawing.Point(141, 116);
+            this.CBMap5.Name = "CBMap5";
+            this.CBMap5.Size = new System.Drawing.Size(15, 14);
+            this.CBMap5.TabIndex = 9;
+            this.CBMap5.UseVisualStyleBackColor = true;
+            // 
+            // CBMap4
+            // 
+            this.CBMap4.AutoSize = true;
+            this.CBMap4.Location = new System.Drawing.Point(141, 96);
+            this.CBMap4.Name = "CBMap4";
+            this.CBMap4.Size = new System.Drawing.Size(15, 14);
+            this.CBMap4.TabIndex = 8;
+            this.CBMap4.UseVisualStyleBackColor = true;
+            // 
+            // CBMap3
+            // 
+            this.CBMap3.AutoSize = true;
+            this.CBMap3.Location = new System.Drawing.Point(141, 76);
+            this.CBMap3.Name = "CBMap3";
+            this.CBMap3.Size = new System.Drawing.Size(15, 14);
+            this.CBMap3.TabIndex = 7;
+            this.CBMap3.UseVisualStyleBackColor = true;
+            // 
+            // CBMap2
+            // 
+            this.CBMap2.AutoSize = true;
+            this.CBMap2.Location = new System.Drawing.Point(141, 56);
+            this.CBMap2.Name = "CBMap2";
+            this.CBMap2.Size = new System.Drawing.Size(15, 14);
+            this.CBMap2.TabIndex = 6;
+            this.CBMap2.UseVisualStyleBackColor = true;
+            // 
+            // CBMap1
+            // 
+            this.CBMap1.AutoSize = true;
+            this.CBMap1.Location = new System.Drawing.Point(141, 36);
+            this.CBMap1.Name = "CBMap1";
+            this.CBMap1.Size = new System.Drawing.Size(15, 14);
+            this.CBMap1.TabIndex = 5;
+            this.CBMap1.UseVisualStyleBackColor = true;
+            // 
             // BtnPatchSaveFile
             // 
             this.BtnPatchSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPatchSaveFile.Enabled = false;
-            this.BtnPatchSaveFile.Location = new System.Drawing.Point(104, 261);
+            this.BtnPatchSaveFile.Location = new System.Drawing.Point(104, 461);
             this.BtnPatchSaveFile.Name = "BtnPatchSaveFile";
             this.BtnPatchSaveFile.Size = new System.Drawing.Size(90, 30);
             this.BtnPatchSaveFile.TabIndex = 3;
@@ -691,7 +1533,7 @@
             // 
             this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReset.Enabled = false;
-            this.BtnReset.Location = new System.Drawing.Point(8, 261);
+            this.BtnReset.Location = new System.Drawing.Point(8, 461);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(90, 30);
             this.BtnReset.TabIndex = 7;
@@ -699,60 +1541,12 @@
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // LblSwordPouch
-            // 
-            this.LblSwordPouch.AutoSize = true;
-            this.LblSwordPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblSwordPouch.Name = "LblSwordPouch";
-            this.LblSwordPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblSwordPouch.TabIndex = 11;
-            this.LblSwordPouch.Text = "Pouch Size:";
-            // 
-            // InputSwordPouch
-            // 
-            this.InputSwordPouch.Location = new System.Drawing.Point(81, 153);
-            this.InputSwordPouch.Name = "InputSwordPouch";
-            this.InputSwordPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputSwordPouch.TabIndex = 12;
-            // 
-            // InputBowPouch
-            // 
-            this.InputBowPouch.Location = new System.Drawing.Point(81, 153);
-            this.InputBowPouch.Name = "InputBowPouch";
-            this.InputBowPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputBowPouch.TabIndex = 22;
-            // 
-            // LblBowPouch
-            // 
-            this.LblBowPouch.AutoSize = true;
-            this.LblBowPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblBowPouch.Name = "LblBowPouch";
-            this.LblBowPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblBowPouch.TabIndex = 21;
-            this.LblBowPouch.Text = "Pouch Size:";
-            // 
-            // InputShieldPouch
-            // 
-            this.InputShieldPouch.Location = new System.Drawing.Point(81, 153);
-            this.InputShieldPouch.Name = "InputShieldPouch";
-            this.InputShieldPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputShieldPouch.TabIndex = 32;
-            // 
-            // LblShieldPouch
-            // 
-            this.LblShieldPouch.AutoSize = true;
-            this.LblShieldPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblShieldPouch.Name = "LblShieldPouch";
-            this.LblShieldPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblShieldPouch.TabIndex = 31;
-            this.LblShieldPouch.Text = "Pouch Size:";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(333, 301);
+            this.ClientSize = new System.Drawing.Size(335, 500);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.PanelPath);
             this.Controls.Add(this.BtnPatchSaveFile);
@@ -769,17 +1563,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.InputRupees)).EndInit();
             this.TabSwords.ResumeLayout(false);
             this.TabSwords.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).EndInit();
             this.TabBows.ResumeLayout(false);
             this.TabBows.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).EndInit();
             this.TabShields.ResumeLayout(false);
             this.TabShields.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).EndInit();
             this.TabArmor.ResumeLayout(false);
             this.TabArmor.PerformLayout();
+            this.TabSkyviewTowers.ResumeLayout(false);
+            this.TabSkyviewTowers.PerformLayout();
             this.PanelPath.ResumeLayout(false);
             this.PanelPath.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,6 +1646,75 @@
         private System.Windows.Forms.Label LblBowPouch;
         private System.Windows.Forms.NumericUpDown InputShieldPouch;
         private System.Windows.Forms.Label LblShieldPouch;
+        private System.Windows.Forms.NumericUpDown InputArrows;
+        private System.Windows.Forms.Label LblArrows;
+        private System.Windows.Forms.TabPage TabSkyviewTowers;
+        private System.Windows.Forms.CheckBox CBMap15;
+        private System.Windows.Forms.CheckBox CBMap14;
+        private System.Windows.Forms.CheckBox CBMap13;
+        private System.Windows.Forms.CheckBox CBMap12;
+        private System.Windows.Forms.CheckBox CBMap11;
+        private System.Windows.Forms.CheckBox CBMap10;
+        private System.Windows.Forms.CheckBox CBMap9;
+        private System.Windows.Forms.CheckBox CBMap8;
+        private System.Windows.Forms.CheckBox CBMap7;
+        private System.Windows.Forms.CheckBox CBMap6;
+        private System.Windows.Forms.CheckBox CBMap5;
+        private System.Windows.Forms.CheckBox CBMap4;
+        private System.Windows.Forms.CheckBox CBMap3;
+        private System.Windows.Forms.CheckBox CBMap2;
+        private System.Windows.Forms.CheckBox CBMap1;
+        private System.Windows.Forms.CheckBox CBPin15;
+        private System.Windows.Forms.CheckBox CBPin14;
+        private System.Windows.Forms.CheckBox CBPin13;
+        private System.Windows.Forms.CheckBox CBPin12;
+        private System.Windows.Forms.CheckBox CBPin11;
+        private System.Windows.Forms.CheckBox CBPin10;
+        private System.Windows.Forms.CheckBox CBPin9;
+        private System.Windows.Forms.CheckBox CBPin8;
+        private System.Windows.Forms.CheckBox CBPin7;
+        private System.Windows.Forms.CheckBox CBPin6;
+        private System.Windows.Forms.CheckBox CBPin5;
+        private System.Windows.Forms.CheckBox CBPin4;
+        private System.Windows.Forms.CheckBox CBPin3;
+        private System.Windows.Forms.CheckBox CBPin2;
+        private System.Windows.Forms.CheckBox CBPin1;
+        private System.Windows.Forms.CheckBox CBActivated15;
+        private System.Windows.Forms.CheckBox CBActivated14;
+        private System.Windows.Forms.CheckBox CBActivated13;
+        private System.Windows.Forms.CheckBox CBActivated12;
+        private System.Windows.Forms.CheckBox CBActivated11;
+        private System.Windows.Forms.CheckBox CBActivated10;
+        private System.Windows.Forms.CheckBox CBActivated9;
+        private System.Windows.Forms.CheckBox CBActivated8;
+        private System.Windows.Forms.CheckBox CBActivated7;
+        private System.Windows.Forms.CheckBox CBActivated6;
+        private System.Windows.Forms.CheckBox CBActivated5;
+        private System.Windows.Forms.CheckBox CBActivated4;
+        private System.Windows.Forms.CheckBox CBActivated3;
+        private System.Windows.Forms.CheckBox CBActivated2;
+        private System.Windows.Forms.CheckBox CBActivated1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblPin;
+        private System.Windows.Forms.Label LblActivated;
+        private System.Windows.Forms.Label LblMap;
+        private System.Windows.Forms.Label LblSkyviewTower;
+        private System.Windows.Forms.Button BtnUncheckAll;
+        private System.Windows.Forms.Button BtnCheckAll;
     }
 }
 

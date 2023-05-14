@@ -97,7 +97,9 @@ namespace TOTK_SaveGame_Editor
 
             InputSwordPouch.Value = _SaveFile.ReadSwordPouch();
             InputBowPouch.Value = _SaveFile.ReadBowPouch();
-            InputShieldPouch.Value= _SaveFile.ReadShieldPouch();
+            InputShieldPouch.Value = _SaveFile.ReadShieldPouch();
+
+            InputArrows.Value = _SaveFile.ReadArrows();
 
             SetComboIndex(GameData.Swords, _SaveFile.ReadSword(0), ComboSwordSlot0);
             SetComboIndex(GameData.Swords, _SaveFile.ReadSword(1), ComboSwordSlot1);
@@ -122,6 +124,54 @@ namespace TOTK_SaveGame_Editor
             SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(2), ComboArmorSlot2);
             SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(3), ComboArmorSlot3);
             SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(4), ComboArmorSlot4);
+
+            CBMap1.Checked = _SaveFile.ReadBool(_SaveFile.ELDINCANYON_MAP);
+            CBMap2.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOCANYON_MAP);
+            CBMap3.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOHIGHLANDS_MAP);
+            CBMap4.Checked = _SaveFile.ReadBool(_SaveFile.HYRULEFIELD_MAP);
+            CBMap5.Checked = _SaveFile.ReadBool(_SaveFile.LINDORSBROW_MAP);
+            CBMap6.Checked = _SaveFile.ReadBool(_SaveFile.LOOKOUTLANDING_MAP);
+            CBMap7.Checked = _SaveFile.ReadBool(_SaveFile.MOUNTLANAYRU_MAP);
+            CBMap8.Checked = _SaveFile.ReadBool(_SaveFile.PIKIDASTONEGROVE_MAP);
+            CBMap9.Checked = _SaveFile.ReadBool(_SaveFile.POPLAFOOTHILLS_MAP);
+            CBMap10.Checked = _SaveFile.ReadBool(_SaveFile.RABELLAWETLANDS_MAP);
+            CBMap11.Checked = _SaveFile.ReadBool(_SaveFile.ROSPROPASS_MAP);
+            CBMap12.Checked = _SaveFile.ReadBool(_SaveFile.SAHASRASLOPE_MAP);
+            CBMap13.Checked = _SaveFile.ReadBool(_SaveFile.THYPHLORUINS_MAP);
+            CBMap14.Checked = _SaveFile.ReadBool(_SaveFile.ULRIMOUNTAIN_MAP);
+            CBMap15.Checked = _SaveFile.ReadBool(_SaveFile.UPLANDZORANA_MAP);
+
+            CBActivated1.Checked = _SaveFile.ReadBool(_SaveFile.ELDINCANYON_TOWER_ACTIVE);
+            CBActivated2.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOCANYON_TOWER_ACTIVE);
+            CBActivated3.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOHIGHLANDS_TOWER_ACTIVE);
+            CBActivated4.Checked = _SaveFile.ReadBool(_SaveFile.HYRULEFIELD_TOWER_ACTIVE);
+            CBActivated5.Checked = _SaveFile.ReadBool(_SaveFile.LINDORSBROW_TOWER_ACTIVE);
+            CBActivated6.Checked = _SaveFile.ReadBool(_SaveFile.LOOKOUTLANDING_TOWER_ACTIVE);
+            CBActivated7.Checked = _SaveFile.ReadBool(_SaveFile.MOUNTLANAYRU_TOWER_ACTIVE);
+            CBActivated8.Checked = _SaveFile.ReadBool(_SaveFile.PIKIDASTONEGROVE_TOWER_ACTIVE);
+            CBActivated9.Checked = _SaveFile.ReadBool(_SaveFile.POPLAFOOTHILLS_TOWER_ACTIVE);
+            CBActivated10.Checked = _SaveFile.ReadBool(_SaveFile.RABELLAWETLANDS_TOWER_ACTIVE);
+            CBActivated11.Checked = _SaveFile.ReadBool(_SaveFile.ROSPROPASS_TOWER_ACTIVE);
+            CBActivated12.Checked = _SaveFile.ReadBool(_SaveFile.SAHASRASLOPE_TOWER_ACTIVE);
+            CBActivated13.Checked = _SaveFile.ReadBool(_SaveFile.THYPHLORUINS_TOWER_ACTIVE);
+            CBActivated14.Checked = _SaveFile.ReadBool(_SaveFile.ULRIMOUNTAIN_TOWER_ACTIVE);
+            CBActivated15.Checked = _SaveFile.ReadBool(_SaveFile.UPLANDZORANA_TOWER_ACTIVE);
+
+            CBPin1.Checked = _SaveFile.ReadBool(_SaveFile.ELDINCANYON_TOWER_PIN);
+            CBPin2.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOCANYON_TOWER_PIN);
+            CBPin3.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOHIGHLANDS_TOWER_PIN);
+            CBPin4.Checked = _SaveFile.ReadBool(_SaveFile.HYRULEFIELD_TOWER_PIN);
+            CBPin5.Checked = _SaveFile.ReadBool(_SaveFile.LINDORSBROW_TOWER_PIN);
+            CBPin6.Checked = _SaveFile.ReadBool(_SaveFile.LOOKOUTLANDING_TOWER_PIN);
+            CBPin7.Checked = _SaveFile.ReadBool(_SaveFile.MOUNTLANAYRU_TOWER_PIN);
+            CBPin8.Checked = _SaveFile.ReadBool(_SaveFile.PIKIDASTONEGROVE_TOWER_PIN);
+            CBPin9.Checked = _SaveFile.ReadBool(_SaveFile.POPLAFOOTHILLS_TOWER_PIN);
+            CBPin10.Checked = _SaveFile.ReadBool(_SaveFile.RABELLAWETLANDS_TOWER_PIN);
+            CBPin11.Checked = _SaveFile.ReadBool(_SaveFile.ROSPROPASS_TOWER_PIN);
+            CBPin12.Checked = _SaveFile.ReadBool(_SaveFile.SAHASRASLOPE_TOWER_PIN);
+            CBPin13.Checked = _SaveFile.ReadBool(_SaveFile.THYPHLORUINS_TOWER_PIN);
+            CBPin14.Checked = _SaveFile.ReadBool(_SaveFile.ULRIMOUNTAIN_TOWER_PIN);
+            CBPin15.Checked = _SaveFile.ReadBool(_SaveFile.UPLANDZORANA_TOWER_PIN);
         }
 
         private void BtnPatchSaveFile_Click(object sender, EventArgs e)
@@ -139,6 +189,8 @@ namespace TOTK_SaveGame_Editor
             _SaveFile.WriteSwordPouch((int)InputSwordPouch.Value);
             _SaveFile.WriteBowPouch((int)InputBowPouch.Value);
             _SaveFile.WriteShieldPouch((int)InputShieldPouch.Value);
+
+            _SaveFile.WriteArrows((int)InputArrows.Value);
 
             _SaveFile.WriteSword(0, GameData.Swords[ComboSwordSlot0.SelectedIndex]);
             _SaveFile.WriteSword(1, GameData.Swords[ComboSwordSlot1.SelectedIndex]);
@@ -164,9 +216,154 @@ namespace TOTK_SaveGame_Editor
             _SaveFile.WriteArmor(3, GameData.Armor[ComboArmorSlot3.SelectedIndex]);
             _SaveFile.WriteArmor(4, GameData.Armor[ComboArmorSlot4.SelectedIndex]);
 
+            _SaveFile.WriteBool(_SaveFile.ELDINCANYON_MAP, CBMap1.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOCANYON_MAP, CBMap2.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOHIGHLANDS_MAP, CBMap3.Checked);
+            _SaveFile.WriteBool(_SaveFile.HYRULEFIELD_MAP, CBMap4.Checked);
+            _SaveFile.WriteBool(_SaveFile.LINDORSBROW_MAP, CBMap5.Checked);
+            _SaveFile.WriteBool(_SaveFile.LOOKOUTLANDING_MAP, CBMap6.Checked);
+            _SaveFile.WriteBool(_SaveFile.MOUNTLANAYRU_MAP, CBMap7.Checked);
+            _SaveFile.WriteBool(_SaveFile.PIKIDASTONEGROVE_MAP, CBMap8.Checked);
+            _SaveFile.WriteBool(_SaveFile.POPLAFOOTHILLS_MAP, CBMap9.Checked);
+            _SaveFile.WriteBool(_SaveFile.RABELLAWETLANDS_MAP, CBMap10.Checked);
+            _SaveFile.WriteBool(_SaveFile.ROSPROPASS_MAP, CBMap11.Checked);
+            _SaveFile.WriteBool(_SaveFile.SAHASRASLOPE_MAP, CBMap12.Checked);
+            _SaveFile.WriteBool(_SaveFile.THYPHLORUINS_MAP, CBMap13.Checked);
+            _SaveFile.WriteBool(_SaveFile.ULRIMOUNTAIN_MAP, CBMap14.Checked);
+            _SaveFile.WriteBool(_SaveFile.UPLANDZORANA_MAP, CBMap15.Checked);
+
+            _SaveFile.WriteBool(_SaveFile.ELDINCANYON_TOWER_ACTIVE, CBActivated1.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOCANYON_TOWER_ACTIVE, CBActivated2.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOHIGHLANDS_TOWER_ACTIVE, CBActivated3.Checked);
+            _SaveFile.WriteBool(_SaveFile.HYRULEFIELD_TOWER_ACTIVE, CBActivated4.Checked);
+            _SaveFile.WriteBool(_SaveFile.LINDORSBROW_TOWER_ACTIVE, CBActivated5.Checked);
+            _SaveFile.WriteBool(_SaveFile.LOOKOUTLANDING_TOWER_ACTIVE, CBActivated6.Checked);
+            _SaveFile.WriteBool(_SaveFile.MOUNTLANAYRU_TOWER_ACTIVE, CBActivated7.Checked);
+            _SaveFile.WriteBool(_SaveFile.PIKIDASTONEGROVE_TOWER_ACTIVE, CBActivated8.Checked);
+            _SaveFile.WriteBool(_SaveFile.POPLAFOOTHILLS_TOWER_ACTIVE, CBActivated9.Checked);
+            _SaveFile.WriteBool(_SaveFile.RABELLAWETLANDS_TOWER_ACTIVE, CBActivated10.Checked);
+            _SaveFile.WriteBool(_SaveFile.ROSPROPASS_TOWER_ACTIVE, CBActivated11.Checked);
+            _SaveFile.WriteBool(_SaveFile.SAHASRASLOPE_TOWER_ACTIVE, CBActivated12.Checked);
+            _SaveFile.WriteBool(_SaveFile.THYPHLORUINS_TOWER_ACTIVE, CBActivated13.Checked);
+            _SaveFile.WriteBool(_SaveFile.ULRIMOUNTAIN_TOWER_ACTIVE, CBActivated14.Checked);
+            _SaveFile.WriteBool(_SaveFile.UPLANDZORANA_TOWER_ACTIVE, CBActivated15.Checked);
+
+            _SaveFile.WriteBool(_SaveFile.ELDINCANYON_TOWER_PIN, CBPin1.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOCANYON_TOWER_PIN, CBPin2.Checked);
+            _SaveFile.WriteBool(_SaveFile.GERUDOHIGHLANDS_TOWER_PIN, CBPin3.Checked);
+            _SaveFile.WriteBool(_SaveFile.HYRULEFIELD_TOWER_PIN, CBPin4.Checked);
+            _SaveFile.WriteBool(_SaveFile.LINDORSBROW_TOWER_PIN, CBPin5.Checked);
+            _SaveFile.WriteBool(_SaveFile.LOOKOUTLANDING_TOWER_PIN, CBPin6.Checked);
+            _SaveFile.WriteBool(_SaveFile.MOUNTLANAYRU_TOWER_PIN, CBPin7.Checked);
+            _SaveFile.WriteBool(_SaveFile.PIKIDASTONEGROVE_TOWER_PIN, CBPin8.Checked);
+            _SaveFile.WriteBool(_SaveFile.POPLAFOOTHILLS_TOWER_PIN, CBPin9.Checked);
+            _SaveFile.WriteBool(_SaveFile.RABELLAWETLANDS_TOWER_PIN, CBPin10.Checked);
+            _SaveFile.WriteBool(_SaveFile.ROSPROPASS_TOWER_PIN, CBPin11.Checked);
+            _SaveFile.WriteBool(_SaveFile.SAHASRASLOPE_TOWER_PIN, CBPin12.Checked);
+            _SaveFile.WriteBool(_SaveFile.THYPHLORUINS_TOWER_PIN, CBPin13.Checked);
+            _SaveFile.WriteBool(_SaveFile.ULRIMOUNTAIN_TOWER_PIN, CBPin14.Checked);
+            _SaveFile.WriteBool(_SaveFile.UPLANDZORANA_TOWER_PIN, CBPin15.Checked);
+
             _SaveFile.PatchSaveFile();
 
             MessageBox.Show("Successfully patched savefile!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnCheckAll_Click(object sender, EventArgs e)
+        {
+            CBMap1.Checked = true;
+            CBMap2.Checked = true;
+            CBMap3.Checked = true;
+            CBMap4.Checked = true;
+            CBMap5.Checked = true;
+            CBMap6.Checked = true;
+            CBMap7.Checked = true;
+            CBMap8.Checked = true;
+            CBMap9.Checked = true;
+            CBMap10.Checked = true;
+            CBMap11.Checked = true;
+            CBMap12.Checked = true;
+            CBMap13.Checked = true;
+            CBMap14.Checked = true;
+            CBMap15.Checked = true;
+            CBActivated15.Checked = true;
+            CBActivated14.Checked = true;
+            CBActivated13.Checked = true;
+            CBActivated12.Checked = true;
+            CBActivated11.Checked = true;
+            CBActivated10.Checked = true;
+            CBActivated9.Checked = true;
+            CBActivated8.Checked = true;
+            CBActivated7.Checked = true;
+            CBActivated6.Checked = true;
+            CBActivated5.Checked = true;
+            CBActivated4.Checked = true;
+            CBActivated3.Checked = true;
+            CBActivated2.Checked = true;
+            CBActivated1.Checked = true;
+            CBPin15.Checked = true;
+            CBPin14.Checked = true;
+            CBPin13.Checked = true;
+            CBPin12.Checked = true;
+            CBPin11.Checked = true;
+            CBPin10.Checked = true;
+            CBPin9.Checked = true;
+            CBPin8.Checked = true;
+            CBPin7.Checked = true;
+            CBPin6.Checked = true;
+            CBPin5.Checked = true;
+            CBPin4.Checked = true;
+            CBPin3.Checked = true;
+            CBPin2.Checked = true;
+            CBPin1.Checked = true;
+        }
+        private void BtnUncheckAll_Click(object sender, EventArgs e)
+        {
+            CBMap1.Checked = false;
+            CBMap2.Checked = false;
+            CBMap3.Checked = false;
+            CBMap4.Checked = false;
+            CBMap5.Checked = false;
+            CBMap6.Checked = false;
+            CBMap7.Checked = false;
+            CBMap8.Checked = false;
+            CBMap9.Checked = false;
+            CBMap10.Checked = false;
+            CBMap11.Checked = false;
+            CBMap12.Checked = false;
+            CBMap13.Checked = false;
+            CBMap14.Checked = false;
+            CBMap15.Checked = false;
+            CBActivated15.Checked = false;
+            CBActivated14.Checked = false;
+            CBActivated13.Checked = false;
+            CBActivated12.Checked = false;
+            CBActivated11.Checked = false;
+            CBActivated10.Checked = false;
+            CBActivated9.Checked = false;
+            CBActivated8.Checked = false;
+            CBActivated7.Checked = false;
+            CBActivated6.Checked = false;
+            CBActivated5.Checked = false;
+            CBActivated4.Checked = false;
+            CBActivated3.Checked = false;
+            CBActivated2.Checked = false;
+            CBActivated1.Checked = false;
+            CBPin15.Checked = false;
+            CBPin14.Checked = false;
+            CBPin13.Checked = false;
+            CBPin12.Checked = false;
+            CBPin11.Checked = false;
+            CBPin10.Checked = false;
+            CBPin9.Checked = false;
+            CBPin8.Checked = false;
+            CBPin7.Checked = false;
+            CBPin6.Checked = false;
+            CBPin5.Checked = false;
+            CBPin4.Checked = false;
+            CBPin3.Checked = false;
+            CBPin2.Checked = false;
+            CBPin1.Checked = false;
         }
     }
 }

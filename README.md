@@ -1,7 +1,10 @@
 # The Legend of Zelda: Tears of the Kingdom | Savegame Editor
 
+### [Download here](https://github.com/lchmagKekse/TOTK-SaveGame-Editor/releases/latest)
+
 ## Preview
 
+![Preview](https://cdn.discordapp.com/attachments/1104154655518376021/1107321327959941240/image.png)
 ![Preview](https://cdn.discordapp.com/attachments/1104154655518376021/1105492767423070238/image.png)
 
 **Make sure to backup your save before using the savegame editor**
@@ -15,13 +18,16 @@ Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame
 - Rupees
 - Max Hearts
 - Stamina
+- Map
 - Swords
 - Bows
+- Arrows
 - Shields
-- Armor 
+- Armor
 
 ## Usage
 
+- **Backup your save**
 - Click on `Open Savefile`
 - Select your `progress.sav` in the file dialog
 - Check if the Rupee and Heart ammount matches with your savefile
@@ -38,6 +44,4 @@ You can go above 3 wheels but they dont show in game
 
 ## Compatibility
 
-This savegame editor scans the savefile for specific byte patterns. It should work with all versions if there are no major changes with savefiles. 
-
-Make sure to check if the values/items are correct when opening a savefile!
+Works with Gameversion V1.0.0 and V1.1.0
