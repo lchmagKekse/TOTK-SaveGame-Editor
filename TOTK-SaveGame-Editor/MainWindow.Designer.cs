@@ -191,6 +191,9 @@
             // 
             // TabControlValues
             // 
+            this.TabControlValues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControlValues.Controls.Add(this.TabGeneral);
             this.TabControlValues.Controls.Add(this.TabSwords);
             this.TabControlValues.Controls.Add(this.TabBows);
@@ -201,8 +204,9 @@
             this.TabControlValues.Location = new System.Drawing.Point(8, 46);
             this.TabControlValues.Name = "TabControlValues";
             this.TabControlValues.SelectedIndex = 0;
-            this.TabControlValues.Size = new System.Drawing.Size(320, 409);
+            this.TabControlValues.Size = new System.Drawing.Size(320, 127);
             this.TabControlValues.TabIndex = 2;
+            this.TabControlValues.SelectedIndexChanged += new System.EventHandler(this.TabControlSelectedIndexChanged);
             // 
             // TabGeneral
             // 
@@ -215,7 +219,7 @@
             this.TabGeneral.Location = new System.Drawing.Point(4, 22);
             this.TabGeneral.Name = "TabGeneral";
             this.TabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGeneral.Size = new System.Drawing.Size(312, 383);
+            this.TabGeneral.Size = new System.Drawing.Size(312, 101);
             this.TabGeneral.TabIndex = 0;
             this.TabGeneral.Text = "General";
             this.TabGeneral.UseVisualStyleBackColor = true;
@@ -320,7 +324,7 @@
             this.TabSwords.Location = new System.Drawing.Point(4, 22);
             this.TabSwords.Name = "TabSwords";
             this.TabSwords.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSwords.Size = new System.Drawing.Size(312, 383);
+            this.TabSwords.Size = new System.Drawing.Size(312, 382);
             this.TabSwords.TabIndex = 1;
             this.TabSwords.Text = "Swords";
             this.TabSwords.UseVisualStyleBackColor = true;
@@ -444,7 +448,7 @@
             this.TabBows.Controls.Add(this.LblBowSlot0);
             this.TabBows.Location = new System.Drawing.Point(4, 22);
             this.TabBows.Name = "TabBows";
-            this.TabBows.Size = new System.Drawing.Size(312, 383);
+            this.TabBows.Size = new System.Drawing.Size(312, 382);
             this.TabBows.TabIndex = 2;
             this.TabBows.Text = "Bows";
             this.TabBows.UseVisualStyleBackColor = true;
@@ -592,7 +596,7 @@
             this.TabShields.Controls.Add(this.LblShieldSlot0);
             this.TabShields.Location = new System.Drawing.Point(4, 22);
             this.TabShields.Name = "TabShields";
-            this.TabShields.Size = new System.Drawing.Size(312, 383);
+            this.TabShields.Size = new System.Drawing.Size(312, 382);
             this.TabShields.TabIndex = 3;
             this.TabShields.Text = "Shields";
             this.TabShields.UseVisualStyleBackColor = true;
@@ -712,7 +716,7 @@
             this.TabArmor.Controls.Add(this.LblArmorSlot0);
             this.TabArmor.Location = new System.Drawing.Point(4, 22);
             this.TabArmor.Name = "TabArmor";
-            this.TabArmor.Size = new System.Drawing.Size(312, 383);
+            this.TabArmor.Size = new System.Drawing.Size(312, 382);
             this.TabArmor.TabIndex = 4;
             this.TabArmor.Text = "Armor";
             this.TabArmor.UseVisualStyleBackColor = true;
@@ -872,7 +876,7 @@
             this.TabSkyviewTowers.Controls.Add(this.CBMap1);
             this.TabSkyviewTowers.Location = new System.Drawing.Point(4, 22);
             this.TabSkyviewTowers.Name = "TabSkyviewTowers";
-            this.TabSkyviewTowers.Size = new System.Drawing.Size(312, 383);
+            this.TabSkyviewTowers.Size = new System.Drawing.Size(312, 382);
             this.TabSkyviewTowers.TabIndex = 5;
             this.TabSkyviewTowers.Text = "Skyview Towers";
             this.TabSkyviewTowers.UseVisualStyleBackColor = true;
@@ -885,7 +889,7 @@
             this.BtnUncheckAll.TabIndex = 70;
             this.BtnUncheckAll.Text = "Uncheck All";
             this.BtnUncheckAll.UseVisualStyleBackColor = true;
-            this.BtnUncheckAll.Click += new System.EventHandler(this.BtnUncheckAll_Click);
+            this.BtnUncheckAll.Click += new System.EventHandler(this.SetAllCheckboxes);
             // 
             // BtnCheckAll
             // 
@@ -895,7 +899,7 @@
             this.BtnCheckAll.TabIndex = 69;
             this.BtnCheckAll.Text = "Check All";
             this.BtnCheckAll.UseVisualStyleBackColor = true;
-            this.BtnCheckAll.Click += new System.EventHandler(this.BtnCheckAll_Click);
+            this.BtnCheckAll.Click += new System.EventHandler(this.SetAllCheckboxes);
             // 
             // LblPin
             // 
@@ -1498,11 +1502,12 @@
             // 
             // BtnPatchSaveFile
             // 
+            this.BtnPatchSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnPatchSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPatchSaveFile.Enabled = false;
-            this.BtnPatchSaveFile.Location = new System.Drawing.Point(104, 461);
+            this.BtnPatchSaveFile.Location = new System.Drawing.Point(112, 179);
             this.BtnPatchSaveFile.Name = "BtnPatchSaveFile";
-            this.BtnPatchSaveFile.Size = new System.Drawing.Size(90, 30);
+            this.BtnPatchSaveFile.Size = new System.Drawing.Size(98, 30);
             this.BtnPatchSaveFile.TabIndex = 3;
             this.BtnPatchSaveFile.Text = "Patch Savefile";
             this.BtnPatchSaveFile.UseVisualStyleBackColor = true;
@@ -1521,21 +1526,24 @@
             // 
             // PanelPath
             // 
+            this.PanelPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelPath.Controls.Add(this.LblPath);
             this.PanelPath.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PanelPath.Location = new System.Drawing.Point(104, 12);
             this.PanelPath.Name = "PanelPath";
-            this.PanelPath.Size = new System.Drawing.Size(220, 26);
+            this.PanelPath.Size = new System.Drawing.Size(224, 26);
             this.PanelPath.TabIndex = 6;
             // 
             // BtnReset
             // 
+            this.BtnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReset.Enabled = false;
-            this.BtnReset.Location = new System.Drawing.Point(8, 461);
+            this.BtnReset.Location = new System.Drawing.Point(8, 179);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(90, 30);
+            this.BtnReset.Size = new System.Drawing.Size(98, 30);
             this.BtnReset.TabIndex = 7;
             this.BtnReset.Text = "Unload Savefile";
             this.BtnReset.UseVisualStyleBackColor = true;
@@ -1546,7 +1554,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(335, 500);
+            this.ClientSize = new System.Drawing.Size(335, 221);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.PanelPath);
             this.Controls.Add(this.BtnPatchSaveFile);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace TOTK_SaveGame_Editor
 {
     public partial class MainWindow : Form
     {
-        private SaveFile _SaveFile;
+        private TOTK_SaveFile _SaveFile;
 
         public MainWindow()
         {
@@ -35,7 +36,7 @@ namespace TOTK_SaveGame_Editor
             if (FileDialog.ShowDialog() != DialogResult.OK) return;
             if (!FileDialog.CheckFileExists) return;
 
-            _SaveFile = new SaveFile(FileDialog.FileName);
+            _SaveFile = new TOTK_SaveFile(FileDialog.FileName);
 
             if (!_SaveFile.IsLoaded)
             {
@@ -60,6 +61,33 @@ namespace TOTK_SaveGame_Editor
             BtnOpenSaveFile.Enabled = true;
             BtnPatchSaveFile.Enabled = false;
             BtnReset.Enabled = false;
+        }
+
+        private void TabControlSelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabControl tabControl = (TabControl)sender;
+
+            switch (tabControl.SelectedIndex)
+            {
+                case 0:
+                    Size = new Size(351, 260);
+                    break;
+                case 1:
+                    Size = new Size(351, 344);
+                    break;
+                case 2:
+                    Size = new Size(351, 344);
+                    break;
+                case 3:
+                    Size = new Size(351, 344);
+                    break;
+                case 4:
+                    Size = new Size(351, 312);
+                    break;
+                case 5:
+                    Size = new Size(351, 541);
+                    break;
+            }
         }
 
         private void FillComboBoxes()
@@ -274,101 +302,56 @@ namespace TOTK_SaveGame_Editor
             MessageBox.Show("Successfully patched savefile!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtnCheckAll_Click(object sender, EventArgs e)
+        private void SetAllCheckboxes(object sender, EventArgs e)
         {
-            CBMap1.Checked = true;
-            CBMap2.Checked = true;
-            CBMap3.Checked = true;
-            CBMap4.Checked = true;
-            CBMap5.Checked = true;
-            CBMap6.Checked = true;
-            CBMap7.Checked = true;
-            CBMap8.Checked = true;
-            CBMap9.Checked = true;
-            CBMap10.Checked = true;
-            CBMap11.Checked = true;
-            CBMap12.Checked = true;
-            CBMap13.Checked = true;
-            CBMap14.Checked = true;
-            CBMap15.Checked = true;
-            CBActivated15.Checked = true;
-            CBActivated14.Checked = true;
-            CBActivated13.Checked = true;
-            CBActivated12.Checked = true;
-            CBActivated11.Checked = true;
-            CBActivated10.Checked = true;
-            CBActivated9.Checked = true;
-            CBActivated8.Checked = true;
-            CBActivated7.Checked = true;
-            CBActivated6.Checked = true;
-            CBActivated5.Checked = true;
-            CBActivated4.Checked = true;
-            CBActivated3.Checked = true;
-            CBActivated2.Checked = true;
-            CBActivated1.Checked = true;
-            CBPin15.Checked = true;
-            CBPin14.Checked = true;
-            CBPin13.Checked = true;
-            CBPin12.Checked = true;
-            CBPin11.Checked = true;
-            CBPin10.Checked = true;
-            CBPin9.Checked = true;
-            CBPin8.Checked = true;
-            CBPin7.Checked = true;
-            CBPin6.Checked = true;
-            CBPin5.Checked = true;
-            CBPin4.Checked = true;
-            CBPin3.Checked = true;
-            CBPin2.Checked = true;
-            CBPin1.Checked = true;
-        }
-        private void BtnUncheckAll_Click(object sender, EventArgs e)
-        {
-            CBMap1.Checked = false;
-            CBMap2.Checked = false;
-            CBMap3.Checked = false;
-            CBMap4.Checked = false;
-            CBMap5.Checked = false;
-            CBMap6.Checked = false;
-            CBMap7.Checked = false;
-            CBMap8.Checked = false;
-            CBMap9.Checked = false;
-            CBMap10.Checked = false;
-            CBMap11.Checked = false;
-            CBMap12.Checked = false;
-            CBMap13.Checked = false;
-            CBMap14.Checked = false;
-            CBMap15.Checked = false;
-            CBActivated15.Checked = false;
-            CBActivated14.Checked = false;
-            CBActivated13.Checked = false;
-            CBActivated12.Checked = false;
-            CBActivated11.Checked = false;
-            CBActivated10.Checked = false;
-            CBActivated9.Checked = false;
-            CBActivated8.Checked = false;
-            CBActivated7.Checked = false;
-            CBActivated6.Checked = false;
-            CBActivated5.Checked = false;
-            CBActivated4.Checked = false;
-            CBActivated3.Checked = false;
-            CBActivated2.Checked = false;
-            CBActivated1.Checked = false;
-            CBPin15.Checked = false;
-            CBPin14.Checked = false;
-            CBPin13.Checked = false;
-            CBPin12.Checked = false;
-            CBPin11.Checked = false;
-            CBPin10.Checked = false;
-            CBPin9.Checked = false;
-            CBPin8.Checked = false;
-            CBPin7.Checked = false;
-            CBPin6.Checked = false;
-            CBPin5.Checked = false;
-            CBPin4.Checked = false;
-            CBPin3.Checked = false;
-            CBPin2.Checked = false;
-            CBPin1.Checked = false;
+            var btn = (Button)sender;
+            bool value = btn.Name == "BtnCheckAll";
+
+            CBMap1.Checked = value;
+            CBMap2.Checked = value;
+            CBMap3.Checked = value;
+            CBMap4.Checked = value;
+            CBMap5.Checked = value;
+            CBMap6.Checked = value;
+            CBMap7.Checked = value;
+            CBMap8.Checked = value;
+            CBMap9.Checked = value;
+            CBMap10.Checked = value;
+            CBMap11.Checked = value;
+            CBMap12.Checked = value;
+            CBMap13.Checked = value;
+            CBMap14.Checked = value;
+            CBMap15.Checked = value;
+            CBActivated15.Checked = value;
+            CBActivated14.Checked = value;
+            CBActivated13.Checked = value;
+            CBActivated12.Checked = value;
+            CBActivated11.Checked = value;
+            CBActivated10.Checked = value;
+            CBActivated9.Checked = value;
+            CBActivated8.Checked = value;
+            CBActivated7.Checked = value;
+            CBActivated6.Checked = value;
+            CBActivated5.Checked = value;
+            CBActivated4.Checked = value;
+            CBActivated3.Checked = value;
+            CBActivated2.Checked = value;
+            CBActivated1.Checked = value;
+            CBPin15.Checked = value;
+            CBPin14.Checked = value;
+            CBPin13.Checked = value;
+            CBPin12.Checked = value;
+            CBPin11.Checked = value;
+            CBPin10.Checked = value;
+            CBPin9.Checked = value;
+            CBPin8.Checked = value;
+            CBPin7.Checked = value;
+            CBPin6.Checked = value;
+            CBPin5.Checked = value;
+            CBPin4.Checked = value;
+            CBPin3.Checked = value;
+            CBPin2.Checked = value;
+            CBPin1.Checked = value;
         }
     }
 }
