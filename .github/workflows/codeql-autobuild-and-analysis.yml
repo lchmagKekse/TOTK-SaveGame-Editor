@@ -1,0 +1,30 @@
+name: CodeQL Autobuild & Analysis
+
+on:
+  push:
+
+jobs:
+  AutobuildAndAnalyze:
+    runs-on: windows-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+
+      - name: Perform CodeQL autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Upload application artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TOTK-SaveGame-Editor
+          path: TOTK-SaveGame-Editor/bin/Debug/TOTK-SaveGame-Editor.exe
