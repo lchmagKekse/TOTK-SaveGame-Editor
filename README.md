@@ -33,7 +33,7 @@ Check out his [TOTK SaveEditor](https://www.marcrobledo.com/savegame-editors/zel
 - **Backup your save**
 - Click on `Open Savefile`
 - Select your `progress.sav` in the file dialog
-- Check if the Rupee and Heart ammount matches with your savefile
+- Check if the Rupee and Heart amount matches with your savefile
 - Edit the values to your desired amounts
 - Click on `Patch Savefile`
 
