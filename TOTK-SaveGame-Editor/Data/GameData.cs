@@ -78,6 +78,7 @@ namespace TOTK_SaveGame_Editor.Data
             { "Weapon_Sword_058",  "Sword of the Hero" },
             { "Weapon_Sword_059",  "Sea-Breeze Boomerang" },
             { "Weapon_Sword_070",  "Master Sword" },
+            { "Weapon_Sword_077", "Unbreakable Master Sword" },
             { "Weapon_Sword_101",  "Zonaite Sword" },
             { "Weapon_Sword_103",  "Wooden Stick" },
             { "Weapon_Sword_105",  "Boomerang" },
