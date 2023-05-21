@@ -39,57 +39,49 @@
             this.LblHearts = new System.Windows.Forms.Label();
             this.LblRupees = new System.Windows.Forms.Label();
             this.TabSwords = new System.Windows.Forms.TabPage();
+            this.BtnDeleteSword = new System.Windows.Forms.Button();
+            this.BtnAddSword = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.InputSwordPouch = new System.Windows.Forms.NumericUpDown();
-            this.LblSwordPouch = new System.Windows.Forms.Label();
-            this.LblSwordSlot4 = new System.Windows.Forms.Label();
-            this.LblSwordSlot3 = new System.Windows.Forms.Label();
-            this.ComboSwordSlot4 = new System.Windows.Forms.ComboBox();
-            this.ComboSwordSlot3 = new System.Windows.Forms.ComboBox();
-            this.ComboSwordSlot2 = new System.Windows.Forms.ComboBox();
-            this.ComboSwordSlot1 = new System.Windows.Forms.ComboBox();
-            this.ComboSwordSlot0 = new System.Windows.Forms.ComboBox();
-            this.LblSwordSlot2 = new System.Windows.Forms.Label();
-            this.LblSwordSlot1 = new System.Windows.Forms.Label();
-            this.LblSwordSlot0 = new System.Windows.Forms.Label();
+            this.ComboSwordModifier = new System.Windows.Forms.ComboBox();
+            this.InputSwordDurability = new System.Windows.Forms.NumericUpDown();
+            this.ComboSwords = new System.Windows.Forms.ComboBox();
+            this.ListBoxSwords = new System.Windows.Forms.ListBox();
             this.TabBows = new System.Windows.Forms.TabPage();
+            this.BtnDeleteBow = new System.Windows.Forms.Button();
+            this.BtnAddBow = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.InputBowPouch = new System.Windows.Forms.NumericUpDown();
+            this.ComboBowModifier = new System.Windows.Forms.ComboBox();
+            this.InputBowDurability = new System.Windows.Forms.NumericUpDown();
+            this.ComboBows = new System.Windows.Forms.ComboBox();
+            this.ListBoxBows = new System.Windows.Forms.ListBox();
             this.InputArrows = new System.Windows.Forms.NumericUpDown();
             this.LblArrows = new System.Windows.Forms.Label();
-            this.InputBowPouch = new System.Windows.Forms.NumericUpDown();
-            this.LblBowPouch = new System.Windows.Forms.Label();
-            this.LblBowSlot4 = new System.Windows.Forms.Label();
-            this.LblBowSlot3 = new System.Windows.Forms.Label();
-            this.ComboBowSlot4 = new System.Windows.Forms.ComboBox();
-            this.ComboBowSlot3 = new System.Windows.Forms.ComboBox();
-            this.ComboBowSlot2 = new System.Windows.Forms.ComboBox();
-            this.ComboBowSlot1 = new System.Windows.Forms.ComboBox();
-            this.ComboBowSlot0 = new System.Windows.Forms.ComboBox();
-            this.LblBowSlot2 = new System.Windows.Forms.Label();
-            this.LblBowSlot1 = new System.Windows.Forms.Label();
-            this.LblBowSlot0 = new System.Windows.Forms.Label();
             this.TabShields = new System.Windows.Forms.TabPage();
+            this.BtnDeleteShield = new System.Windows.Forms.Button();
+            this.BtnAddShield = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.InputShieldPouch = new System.Windows.Forms.NumericUpDown();
-            this.LblShieldPouch = new System.Windows.Forms.Label();
-            this.LblShieldSlot4 = new System.Windows.Forms.Label();
-            this.LblShieldSlot3 = new System.Windows.Forms.Label();
-            this.ComboShieldSlot4 = new System.Windows.Forms.ComboBox();
-            this.ComboShieldSlot3 = new System.Windows.Forms.ComboBox();
-            this.ComboShieldSlot2 = new System.Windows.Forms.ComboBox();
-            this.ComboShieldSlot1 = new System.Windows.Forms.ComboBox();
-            this.ComboShieldSlot0 = new System.Windows.Forms.ComboBox();
-            this.LblShieldSlot2 = new System.Windows.Forms.Label();
-            this.LblShieldSlot1 = new System.Windows.Forms.Label();
-            this.LblShieldSlot0 = new System.Windows.Forms.Label();
+            this.ComboShieldModifier = new System.Windows.Forms.ComboBox();
+            this.InputShieldDurability = new System.Windows.Forms.NumericUpDown();
+            this.ComboShields = new System.Windows.Forms.ComboBox();
+            this.ListBoxShields = new System.Windows.Forms.ListBox();
             this.TabArmor = new System.Windows.Forms.TabPage();
-            this.LblArmorSlot4 = new System.Windows.Forms.Label();
-            this.LblArmorSlot3 = new System.Windows.Forms.Label();
-            this.ComboArmorSlot4 = new System.Windows.Forms.ComboBox();
-            this.ComboArmorSlot3 = new System.Windows.Forms.ComboBox();
-            this.ComboArmorSlot2 = new System.Windows.Forms.ComboBox();
-            this.ComboArmorSlot1 = new System.Windows.Forms.ComboBox();
-            this.ComboArmorSlot0 = new System.Windows.Forms.ComboBox();
-            this.LblArmorSlot2 = new System.Windows.Forms.Label();
-            this.LblArmorSlot1 = new System.Windows.Forms.Label();
-            this.LblArmorSlot0 = new System.Windows.Forms.Label();
+            this.BtnDeleteArmor = new System.Windows.Forms.Button();
+            this.BtnAddArmor = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.ComboArmor = new System.Windows.Forms.ComboBox();
+            this.ListBoxArmor = new System.Windows.Forms.ListBox();
             this.TabSkyviewTowers = new System.Windows.Forms.TabPage();
             this.BtnUncheckAll = new System.Windows.Forms.Button();
             this.BtnCheckAll = new System.Windows.Forms.Button();
@@ -168,11 +160,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.InputRupees)).BeginInit();
             this.TabSwords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputSwordDurability)).BeginInit();
             this.TabBows.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBowDurability)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).BeginInit();
             this.TabShields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputShieldDurability)).BeginInit();
             this.TabArmor.SuspendLayout();
             this.TabSkyviewTowers.SuspendLayout();
             this.PanelPath.SuspendLayout();
@@ -187,7 +182,7 @@
             this.BtnOpenSaveFile.TabIndex = 0;
             this.BtnOpenSaveFile.Text = "Open Savefile";
             this.BtnOpenSaveFile.UseVisualStyleBackColor = true;
-            this.BtnOpenSaveFile.Click += new System.EventHandler(this.BtnOpenSaveFile_Click);
+            this.BtnOpenSaveFile.Click += new System.EventHandler(this.OpenSaveFile);
             // 
             // TabControlValues
             // 
@@ -204,7 +199,7 @@
             this.TabControlValues.Location = new System.Drawing.Point(8, 46);
             this.TabControlValues.Name = "TabControlValues";
             this.TabControlValues.SelectedIndex = 0;
-            this.TabControlValues.Size = new System.Drawing.Size(320, 127);
+            this.TabControlValues.Size = new System.Drawing.Size(427, 208);
             this.TabControlValues.TabIndex = 2;
             this.TabControlValues.SelectedIndexChanged += new System.EventHandler(this.TabControlSelectedIndexChanged);
             // 
@@ -219,7 +214,7 @@
             this.TabGeneral.Location = new System.Drawing.Point(4, 22);
             this.TabGeneral.Name = "TabGeneral";
             this.TabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGeneral.Size = new System.Drawing.Size(312, 101);
+            this.TabGeneral.Size = new System.Drawing.Size(433, 182);
             this.TabGeneral.TabIndex = 0;
             this.TabGeneral.Text = "General";
             this.TabGeneral.UseVisualStyleBackColor = true;
@@ -240,6 +235,7 @@
             this.InputStamina.Name = "InputStamina";
             this.InputStamina.Size = new System.Drawing.Size(131, 20);
             this.InputStamina.TabIndex = 5;
+            this.InputStamina.ValueChanged += new System.EventHandler(this.OnStaminaChanged);
             // 
             // InputHearts
             // 
@@ -262,6 +258,7 @@
             0,
             0,
             0});
+            this.InputHearts.ValueChanged += new System.EventHandler(this.OnHeartsChanged);
             // 
             // InputRupees
             // 
@@ -279,6 +276,7 @@
             this.InputRupees.Name = "InputRupees";
             this.InputRupees.Size = new System.Drawing.Size(131, 20);
             this.InputRupees.TabIndex = 3;
+            this.InputRupees.ValueChanged += new System.EventHandler(this.OnRupeesChanged);
             // 
             // LblStamina
             // 
@@ -309,149 +307,264 @@
             // 
             // TabSwords
             // 
+            this.TabSwords.Controls.Add(this.BtnDeleteSword);
+            this.TabSwords.Controls.Add(this.BtnAddSword);
+            this.TabSwords.Controls.Add(this.label21);
+            this.TabSwords.Controls.Add(this.label22);
+            this.TabSwords.Controls.Add(this.label23);
+            this.TabSwords.Controls.Add(this.label24);
             this.TabSwords.Controls.Add(this.InputSwordPouch);
-            this.TabSwords.Controls.Add(this.LblSwordPouch);
-            this.TabSwords.Controls.Add(this.LblSwordSlot4);
-            this.TabSwords.Controls.Add(this.LblSwordSlot3);
-            this.TabSwords.Controls.Add(this.ComboSwordSlot4);
-            this.TabSwords.Controls.Add(this.ComboSwordSlot3);
-            this.TabSwords.Controls.Add(this.ComboSwordSlot2);
-            this.TabSwords.Controls.Add(this.ComboSwordSlot1);
-            this.TabSwords.Controls.Add(this.ComboSwordSlot0);
-            this.TabSwords.Controls.Add(this.LblSwordSlot2);
-            this.TabSwords.Controls.Add(this.LblSwordSlot1);
-            this.TabSwords.Controls.Add(this.LblSwordSlot0);
+            this.TabSwords.Controls.Add(this.ComboSwordModifier);
+            this.TabSwords.Controls.Add(this.InputSwordDurability);
+            this.TabSwords.Controls.Add(this.ComboSwords);
+            this.TabSwords.Controls.Add(this.ListBoxSwords);
             this.TabSwords.Location = new System.Drawing.Point(4, 22);
             this.TabSwords.Name = "TabSwords";
             this.TabSwords.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSwords.Size = new System.Drawing.Size(312, 382);
+            this.TabSwords.Size = new System.Drawing.Size(433, 182);
             this.TabSwords.TabIndex = 1;
             this.TabSwords.Text = "Swords";
             this.TabSwords.UseVisualStyleBackColor = true;
             // 
+            // BtnDeleteSword
+            // 
+            this.BtnDeleteSword.Location = new System.Drawing.Point(100, 146);
+            this.BtnDeleteSword.Name = "BtnDeleteSword";
+            this.BtnDeleteSword.Size = new System.Drawing.Size(98, 25);
+            this.BtnDeleteSword.TabIndex = 25;
+            this.BtnDeleteSword.Text = "Delete Item";
+            this.BtnDeleteSword.UseVisualStyleBackColor = true;
+            this.BtnDeleteSword.Click += new System.EventHandler(this.DeleteSword);
+            // 
+            // BtnAddSword
+            // 
+            this.BtnAddSword.Location = new System.Drawing.Point(6, 146);
+            this.BtnAddSword.Name = "BtnAddSword";
+            this.BtnAddSword.Size = new System.Drawing.Size(88, 25);
+            this.BtnAddSword.TabIndex = 24;
+            this.BtnAddSword.Text = "Add Item";
+            this.BtnAddSword.UseVisualStyleBackColor = true;
+            this.BtnAddSword.Click += new System.EventHandler(this.AddSword);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(201, 122);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "Pouch Size";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(212, 62);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(50, 13);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Durability";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(218, 36);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 13);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Modifier";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(235, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(27, 13);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "Item";
+            // 
             // InputSwordPouch
             // 
-            this.InputSwordPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputSwordPouch.Location = new System.Drawing.Point(268, 120);
             this.InputSwordPouch.Name = "InputSwordPouch";
-            this.InputSwordPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputSwordPouch.TabIndex = 12;
+            this.InputSwordPouch.Size = new System.Drawing.Size(67, 20);
+            this.InputSwordPouch.TabIndex = 19;
+            this.InputSwordPouch.ValueChanged += new System.EventHandler(this.OnSwordPouchChanged);
             // 
-            // LblSwordPouch
+            // ComboSwordModifier
             // 
-            this.LblSwordPouch.AutoSize = true;
-            this.LblSwordPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblSwordPouch.Name = "LblSwordPouch";
-            this.LblSwordPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblSwordPouch.TabIndex = 11;
-            this.LblSwordPouch.Text = "Pouch Size:";
+            this.ComboSwordModifier.FormattingEnabled = true;
+            this.ComboSwordModifier.Location = new System.Drawing.Point(268, 33);
+            this.ComboSwordModifier.Name = "ComboSwordModifier";
+            this.ComboSwordModifier.Size = new System.Drawing.Size(144, 21);
+            this.ComboSwordModifier.TabIndex = 18;
+            this.ComboSwordModifier.SelectedIndexChanged += new System.EventHandler(this.OnSelectSwordModifier);
             // 
-            // LblSwordSlot4
+            // InputSwordDurability
             // 
-            this.LblSwordSlot4.AutoSize = true;
-            this.LblSwordSlot4.Location = new System.Drawing.Point(11, 124);
-            this.LblSwordSlot4.Name = "LblSwordSlot4";
-            this.LblSwordSlot4.Size = new System.Drawing.Size(34, 13);
-            this.LblSwordSlot4.TabIndex = 10;
-            this.LblSwordSlot4.Text = "Slot 5";
+            this.InputSwordDurability.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.InputSwordDurability.Location = new System.Drawing.Point(268, 60);
+            this.InputSwordDurability.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.InputSwordDurability.Name = "InputSwordDurability";
+            this.InputSwordDurability.Size = new System.Drawing.Size(67, 20);
+            this.InputSwordDurability.TabIndex = 17;
+            this.InputSwordDurability.ValueChanged += new System.EventHandler(this.OnSelectSwordDurability);
             // 
-            // LblSwordSlot3
+            // ComboSwords
             // 
-            this.LblSwordSlot3.AutoSize = true;
-            this.LblSwordSlot3.Location = new System.Drawing.Point(11, 97);
-            this.LblSwordSlot3.Name = "LblSwordSlot3";
-            this.LblSwordSlot3.Size = new System.Drawing.Size(34, 13);
-            this.LblSwordSlot3.TabIndex = 9;
-            this.LblSwordSlot3.Text = "Slot 4";
+            this.ComboSwords.FormattingEnabled = true;
+            this.ComboSwords.Location = new System.Drawing.Point(268, 6);
+            this.ComboSwords.Name = "ComboSwords";
+            this.ComboSwords.Size = new System.Drawing.Size(144, 21);
+            this.ComboSwords.TabIndex = 16;
+            this.ComboSwords.SelectedIndexChanged += new System.EventHandler(this.OnSelectSwordItem);
             // 
-            // ComboSwordSlot4
+            // ListBoxSwords
             // 
-            this.ComboSwordSlot4.FormattingEnabled = true;
-            this.ComboSwordSlot4.Location = new System.Drawing.Point(51, 121);
-            this.ComboSwordSlot4.Name = "ComboSwordSlot4";
-            this.ComboSwordSlot4.Size = new System.Drawing.Size(250, 21);
-            this.ComboSwordSlot4.TabIndex = 8;
-            // 
-            // ComboSwordSlot3
-            // 
-            this.ComboSwordSlot3.FormattingEnabled = true;
-            this.ComboSwordSlot3.Location = new System.Drawing.Point(51, 94);
-            this.ComboSwordSlot3.Name = "ComboSwordSlot3";
-            this.ComboSwordSlot3.Size = new System.Drawing.Size(250, 21);
-            this.ComboSwordSlot3.TabIndex = 7;
-            // 
-            // ComboSwordSlot2
-            // 
-            this.ComboSwordSlot2.FormattingEnabled = true;
-            this.ComboSwordSlot2.Location = new System.Drawing.Point(51, 67);
-            this.ComboSwordSlot2.Name = "ComboSwordSlot2";
-            this.ComboSwordSlot2.Size = new System.Drawing.Size(250, 21);
-            this.ComboSwordSlot2.TabIndex = 6;
-            // 
-            // ComboSwordSlot1
-            // 
-            this.ComboSwordSlot1.FormattingEnabled = true;
-            this.ComboSwordSlot1.Location = new System.Drawing.Point(51, 40);
-            this.ComboSwordSlot1.Name = "ComboSwordSlot1";
-            this.ComboSwordSlot1.Size = new System.Drawing.Size(250, 21);
-            this.ComboSwordSlot1.TabIndex = 5;
-            // 
-            // ComboSwordSlot0
-            // 
-            this.ComboSwordSlot0.FormattingEnabled = true;
-            this.ComboSwordSlot0.Location = new System.Drawing.Point(51, 13);
-            this.ComboSwordSlot0.Name = "ComboSwordSlot0";
-            this.ComboSwordSlot0.Size = new System.Drawing.Size(250, 21);
-            this.ComboSwordSlot0.TabIndex = 4;
-            // 
-            // LblSwordSlot2
-            // 
-            this.LblSwordSlot2.AutoSize = true;
-            this.LblSwordSlot2.Location = new System.Drawing.Point(11, 70);
-            this.LblSwordSlot2.Name = "LblSwordSlot2";
-            this.LblSwordSlot2.Size = new System.Drawing.Size(34, 13);
-            this.LblSwordSlot2.TabIndex = 3;
-            this.LblSwordSlot2.Text = "Slot 3";
-            // 
-            // LblSwordSlot1
-            // 
-            this.LblSwordSlot1.AutoSize = true;
-            this.LblSwordSlot1.Location = new System.Drawing.Point(11, 43);
-            this.LblSwordSlot1.Name = "LblSwordSlot1";
-            this.LblSwordSlot1.Size = new System.Drawing.Size(34, 13);
-            this.LblSwordSlot1.TabIndex = 2;
-            this.LblSwordSlot1.Text = "Slot 2";
-            // 
-            // LblSwordSlot0
-            // 
-            this.LblSwordSlot0.AutoSize = true;
-            this.LblSwordSlot0.Location = new System.Drawing.Point(11, 16);
-            this.LblSwordSlot0.Name = "LblSwordSlot0";
-            this.LblSwordSlot0.Size = new System.Drawing.Size(34, 13);
-            this.LblSwordSlot0.TabIndex = 1;
-            this.LblSwordSlot0.Text = "Slot 1";
+            this.ListBoxSwords.FormattingEnabled = true;
+            this.ListBoxSwords.Location = new System.Drawing.Point(6, 6);
+            this.ListBoxSwords.Name = "ListBoxSwords";
+            this.ListBoxSwords.Size = new System.Drawing.Size(192, 134);
+            this.ListBoxSwords.TabIndex = 15;
+            this.ListBoxSwords.Click += new System.EventHandler(this.OnSelectSword);
             // 
             // TabBows
             // 
+            this.TabBows.Controls.Add(this.BtnDeleteBow);
+            this.TabBows.Controls.Add(this.BtnAddBow);
+            this.TabBows.Controls.Add(this.label16);
+            this.TabBows.Controls.Add(this.label17);
+            this.TabBows.Controls.Add(this.label18);
+            this.TabBows.Controls.Add(this.label19);
+            this.TabBows.Controls.Add(this.InputBowPouch);
+            this.TabBows.Controls.Add(this.ComboBowModifier);
+            this.TabBows.Controls.Add(this.InputBowDurability);
+            this.TabBows.Controls.Add(this.ComboBows);
+            this.TabBows.Controls.Add(this.ListBoxBows);
             this.TabBows.Controls.Add(this.InputArrows);
             this.TabBows.Controls.Add(this.LblArrows);
-            this.TabBows.Controls.Add(this.InputBowPouch);
-            this.TabBows.Controls.Add(this.LblBowPouch);
-            this.TabBows.Controls.Add(this.LblBowSlot4);
-            this.TabBows.Controls.Add(this.LblBowSlot3);
-            this.TabBows.Controls.Add(this.ComboBowSlot4);
-            this.TabBows.Controls.Add(this.ComboBowSlot3);
-            this.TabBows.Controls.Add(this.ComboBowSlot2);
-            this.TabBows.Controls.Add(this.ComboBowSlot1);
-            this.TabBows.Controls.Add(this.ComboBowSlot0);
-            this.TabBows.Controls.Add(this.LblBowSlot2);
-            this.TabBows.Controls.Add(this.LblBowSlot1);
-            this.TabBows.Controls.Add(this.LblBowSlot0);
             this.TabBows.Location = new System.Drawing.Point(4, 22);
             this.TabBows.Name = "TabBows";
-            this.TabBows.Size = new System.Drawing.Size(312, 382);
+            this.TabBows.Size = new System.Drawing.Size(433, 182);
             this.TabBows.TabIndex = 2;
             this.TabBows.Text = "Bows";
             this.TabBows.UseVisualStyleBackColor = true;
+            // 
+            // BtnDeleteBow
+            // 
+            this.BtnDeleteBow.Location = new System.Drawing.Point(100, 146);
+            this.BtnDeleteBow.Name = "BtnDeleteBow";
+            this.BtnDeleteBow.Size = new System.Drawing.Size(98, 25);
+            this.BtnDeleteBow.TabIndex = 36;
+            this.BtnDeleteBow.Text = "Delete Item";
+            this.BtnDeleteBow.UseVisualStyleBackColor = true;
+            this.BtnDeleteBow.Click += new System.EventHandler(this.DeleteBow);
+            // 
+            // BtnAddBow
+            // 
+            this.BtnAddBow.Location = new System.Drawing.Point(6, 146);
+            this.BtnAddBow.Name = "BtnAddBow";
+            this.BtnAddBow.Size = new System.Drawing.Size(88, 25);
+            this.BtnAddBow.TabIndex = 35;
+            this.BtnAddBow.Text = "Add Item";
+            this.BtnAddBow.UseVisualStyleBackColor = true;
+            this.BtnAddBow.Click += new System.EventHandler(this.AddBow);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(201, 122);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Pouch Size";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(212, 62);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(50, 13);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Durability";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(218, 36);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Modifier";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(235, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Item";
+            // 
+            // InputBowPouch
+            // 
+            this.InputBowPouch.Location = new System.Drawing.Point(268, 120);
+            this.InputBowPouch.Name = "InputBowPouch";
+            this.InputBowPouch.Size = new System.Drawing.Size(67, 20);
+            this.InputBowPouch.TabIndex = 30;
+            this.InputBowPouch.ValueChanged += new System.EventHandler(this.OnBowPouchChanged);
+            // 
+            // ComboBowModifier
+            // 
+            this.ComboBowModifier.FormattingEnabled = true;
+            this.ComboBowModifier.Location = new System.Drawing.Point(268, 33);
+            this.ComboBowModifier.Name = "ComboBowModifier";
+            this.ComboBowModifier.Size = new System.Drawing.Size(144, 21);
+            this.ComboBowModifier.TabIndex = 29;
+            this.ComboBowModifier.SelectedIndexChanged += new System.EventHandler(this.OnSelectBowModifier);
+            // 
+            // InputBowDurability
+            // 
+            this.InputBowDurability.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.InputBowDurability.Location = new System.Drawing.Point(268, 60);
+            this.InputBowDurability.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.InputBowDurability.Name = "InputBowDurability";
+            this.InputBowDurability.Size = new System.Drawing.Size(67, 20);
+            this.InputBowDurability.TabIndex = 28;
+            this.InputBowDurability.ValueChanged += new System.EventHandler(this.OnSelectBowDurability);
+            // 
+            // ComboBows
+            // 
+            this.ComboBows.FormattingEnabled = true;
+            this.ComboBows.Location = new System.Drawing.Point(268, 6);
+            this.ComboBows.Name = "ComboBows";
+            this.ComboBows.Size = new System.Drawing.Size(144, 21);
+            this.ComboBows.TabIndex = 27;
+            this.ComboBows.SelectedIndexChanged += new System.EventHandler(this.OnSelectBowItem);
+            // 
+            // ListBoxBows
+            // 
+            this.ListBoxBows.FormattingEnabled = true;
+            this.ListBoxBows.Location = new System.Drawing.Point(6, 6);
+            this.ListBoxBows.Name = "ListBoxBows";
+            this.ListBoxBows.Size = new System.Drawing.Size(192, 134);
+            this.ListBoxBows.TabIndex = 26;
+            this.ListBoxBows.Click += new System.EventHandler(this.OnSelectBow);
             // 
             // InputArrows
             // 
@@ -460,351 +573,215 @@
             0,
             0,
             0});
-            this.InputArrows.Location = new System.Drawing.Point(220, 153);
+            this.InputArrows.Location = new System.Drawing.Point(268, 146);
             this.InputArrows.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
             this.InputArrows.Name = "InputArrows";
-            this.InputArrows.Size = new System.Drawing.Size(71, 20);
+            this.InputArrows.Size = new System.Drawing.Size(67, 20);
             this.InputArrows.TabIndex = 24;
+            this.InputArrows.ValueChanged += new System.EventHandler(this.OnArrowsChanged);
             // 
             // LblArrows
             // 
             this.LblArrows.AutoSize = true;
-            this.LblArrows.Location = new System.Drawing.Point(172, 155);
+            this.LblArrows.Location = new System.Drawing.Point(223, 148);
             this.LblArrows.Name = "LblArrows";
-            this.LblArrows.Size = new System.Drawing.Size(42, 13);
+            this.LblArrows.Size = new System.Drawing.Size(39, 13);
             this.LblArrows.TabIndex = 23;
-            this.LblArrows.Text = "Arrows:";
-            // 
-            // InputBowPouch
-            // 
-            this.InputBowPouch.Location = new System.Drawing.Point(81, 153);
-            this.InputBowPouch.Name = "InputBowPouch";
-            this.InputBowPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputBowPouch.TabIndex = 22;
-            // 
-            // LblBowPouch
-            // 
-            this.LblBowPouch.AutoSize = true;
-            this.LblBowPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblBowPouch.Name = "LblBowPouch";
-            this.LblBowPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblBowPouch.TabIndex = 21;
-            this.LblBowPouch.Text = "Pouch Size:";
-            // 
-            // LblBowSlot4
-            // 
-            this.LblBowSlot4.AutoSize = true;
-            this.LblBowSlot4.Location = new System.Drawing.Point(11, 124);
-            this.LblBowSlot4.Name = "LblBowSlot4";
-            this.LblBowSlot4.Size = new System.Drawing.Size(34, 13);
-            this.LblBowSlot4.TabIndex = 20;
-            this.LblBowSlot4.Text = "Slot 5";
-            // 
-            // LblBowSlot3
-            // 
-            this.LblBowSlot3.AutoSize = true;
-            this.LblBowSlot3.Location = new System.Drawing.Point(11, 97);
-            this.LblBowSlot3.Name = "LblBowSlot3";
-            this.LblBowSlot3.Size = new System.Drawing.Size(34, 13);
-            this.LblBowSlot3.TabIndex = 19;
-            this.LblBowSlot3.Text = "Slot 4";
-            // 
-            // ComboBowSlot4
-            // 
-            this.ComboBowSlot4.FormattingEnabled = true;
-            this.ComboBowSlot4.Location = new System.Drawing.Point(51, 121);
-            this.ComboBowSlot4.Name = "ComboBowSlot4";
-            this.ComboBowSlot4.Size = new System.Drawing.Size(250, 21);
-            this.ComboBowSlot4.TabIndex = 18;
-            // 
-            // ComboBowSlot3
-            // 
-            this.ComboBowSlot3.FormattingEnabled = true;
-            this.ComboBowSlot3.Location = new System.Drawing.Point(51, 94);
-            this.ComboBowSlot3.Name = "ComboBowSlot3";
-            this.ComboBowSlot3.Size = new System.Drawing.Size(250, 21);
-            this.ComboBowSlot3.TabIndex = 17;
-            // 
-            // ComboBowSlot2
-            // 
-            this.ComboBowSlot2.FormattingEnabled = true;
-            this.ComboBowSlot2.Location = new System.Drawing.Point(51, 67);
-            this.ComboBowSlot2.Name = "ComboBowSlot2";
-            this.ComboBowSlot2.Size = new System.Drawing.Size(250, 21);
-            this.ComboBowSlot2.TabIndex = 16;
-            // 
-            // ComboBowSlot1
-            // 
-            this.ComboBowSlot1.FormattingEnabled = true;
-            this.ComboBowSlot1.Location = new System.Drawing.Point(51, 40);
-            this.ComboBowSlot1.Name = "ComboBowSlot1";
-            this.ComboBowSlot1.Size = new System.Drawing.Size(250, 21);
-            this.ComboBowSlot1.TabIndex = 15;
-            // 
-            // ComboBowSlot0
-            // 
-            this.ComboBowSlot0.FormattingEnabled = true;
-            this.ComboBowSlot0.Location = new System.Drawing.Point(51, 13);
-            this.ComboBowSlot0.Name = "ComboBowSlot0";
-            this.ComboBowSlot0.Size = new System.Drawing.Size(250, 21);
-            this.ComboBowSlot0.TabIndex = 14;
-            // 
-            // LblBowSlot2
-            // 
-            this.LblBowSlot2.AutoSize = true;
-            this.LblBowSlot2.Location = new System.Drawing.Point(11, 70);
-            this.LblBowSlot2.Name = "LblBowSlot2";
-            this.LblBowSlot2.Size = new System.Drawing.Size(34, 13);
-            this.LblBowSlot2.TabIndex = 13;
-            this.LblBowSlot2.Text = "Slot 3";
-            // 
-            // LblBowSlot1
-            // 
-            this.LblBowSlot1.AutoSize = true;
-            this.LblBowSlot1.Location = new System.Drawing.Point(11, 43);
-            this.LblBowSlot1.Name = "LblBowSlot1";
-            this.LblBowSlot1.Size = new System.Drawing.Size(34, 13);
-            this.LblBowSlot1.TabIndex = 12;
-            this.LblBowSlot1.Text = "Slot 2";
-            // 
-            // LblBowSlot0
-            // 
-            this.LblBowSlot0.AutoSize = true;
-            this.LblBowSlot0.Location = new System.Drawing.Point(11, 16);
-            this.LblBowSlot0.Name = "LblBowSlot0";
-            this.LblBowSlot0.Size = new System.Drawing.Size(34, 13);
-            this.LblBowSlot0.TabIndex = 11;
-            this.LblBowSlot0.Text = "Slot 1";
+            this.LblArrows.Text = "Arrows";
             // 
             // TabShields
             // 
+            this.TabShields.Controls.Add(this.BtnDeleteShield);
+            this.TabShields.Controls.Add(this.BtnAddShield);
+            this.TabShields.Controls.Add(this.label20);
+            this.TabShields.Controls.Add(this.label25);
+            this.TabShields.Controls.Add(this.label26);
+            this.TabShields.Controls.Add(this.label27);
             this.TabShields.Controls.Add(this.InputShieldPouch);
-            this.TabShields.Controls.Add(this.LblShieldPouch);
-            this.TabShields.Controls.Add(this.LblShieldSlot4);
-            this.TabShields.Controls.Add(this.LblShieldSlot3);
-            this.TabShields.Controls.Add(this.ComboShieldSlot4);
-            this.TabShields.Controls.Add(this.ComboShieldSlot3);
-            this.TabShields.Controls.Add(this.ComboShieldSlot2);
-            this.TabShields.Controls.Add(this.ComboShieldSlot1);
-            this.TabShields.Controls.Add(this.ComboShieldSlot0);
-            this.TabShields.Controls.Add(this.LblShieldSlot2);
-            this.TabShields.Controls.Add(this.LblShieldSlot1);
-            this.TabShields.Controls.Add(this.LblShieldSlot0);
+            this.TabShields.Controls.Add(this.ComboShieldModifier);
+            this.TabShields.Controls.Add(this.InputShieldDurability);
+            this.TabShields.Controls.Add(this.ComboShields);
+            this.TabShields.Controls.Add(this.ListBoxShields);
             this.TabShields.Location = new System.Drawing.Point(4, 22);
             this.TabShields.Name = "TabShields";
-            this.TabShields.Size = new System.Drawing.Size(312, 382);
+            this.TabShields.Size = new System.Drawing.Size(419, 182);
             this.TabShields.TabIndex = 3;
             this.TabShields.Text = "Shields";
             this.TabShields.UseVisualStyleBackColor = true;
             // 
+            // BtnDeleteShield
+            // 
+            this.BtnDeleteShield.Location = new System.Drawing.Point(100, 146);
+            this.BtnDeleteShield.Name = "BtnDeleteShield";
+            this.BtnDeleteShield.Size = new System.Drawing.Size(98, 25);
+            this.BtnDeleteShield.TabIndex = 49;
+            this.BtnDeleteShield.Text = "Delete Item";
+            this.BtnDeleteShield.UseVisualStyleBackColor = true;
+            this.BtnDeleteShield.Click += new System.EventHandler(this.DeleteShield);
+            // 
+            // BtnAddShield
+            // 
+            this.BtnAddShield.Location = new System.Drawing.Point(6, 146);
+            this.BtnAddShield.Name = "BtnAddShield";
+            this.BtnAddShield.Size = new System.Drawing.Size(88, 25);
+            this.BtnAddShield.TabIndex = 48;
+            this.BtnAddShield.Text = "Add Item";
+            this.BtnAddShield.UseVisualStyleBackColor = true;
+            this.BtnAddShield.Click += new System.EventHandler(this.AddShield);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(201, 122);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 13);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Pouch Size";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(212, 62);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(50, 13);
+            this.label25.TabIndex = 46;
+            this.label25.Text = "Durability";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(218, 36);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 13);
+            this.label26.TabIndex = 45;
+            this.label26.Text = "Modifier";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(235, 9);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(27, 13);
+            this.label27.TabIndex = 44;
+            this.label27.Text = "Item";
+            // 
             // InputShieldPouch
             // 
-            this.InputShieldPouch.Location = new System.Drawing.Point(81, 153);
+            this.InputShieldPouch.Location = new System.Drawing.Point(268, 120);
             this.InputShieldPouch.Name = "InputShieldPouch";
-            this.InputShieldPouch.Size = new System.Drawing.Size(71, 20);
-            this.InputShieldPouch.TabIndex = 32;
+            this.InputShieldPouch.Size = new System.Drawing.Size(67, 20);
+            this.InputShieldPouch.TabIndex = 43;
+            this.InputShieldPouch.ValueChanged += new System.EventHandler(this.OnShieldPouchChanged);
             // 
-            // LblShieldPouch
+            // ComboShieldModifier
             // 
-            this.LblShieldPouch.AutoSize = true;
-            this.LblShieldPouch.Location = new System.Drawing.Point(11, 155);
-            this.LblShieldPouch.Name = "LblShieldPouch";
-            this.LblShieldPouch.Size = new System.Drawing.Size(64, 13);
-            this.LblShieldPouch.TabIndex = 31;
-            this.LblShieldPouch.Text = "Pouch Size:";
+            this.ComboShieldModifier.FormattingEnabled = true;
+            this.ComboShieldModifier.Location = new System.Drawing.Point(268, 33);
+            this.ComboShieldModifier.Name = "ComboShieldModifier";
+            this.ComboShieldModifier.Size = new System.Drawing.Size(144, 21);
+            this.ComboShieldModifier.TabIndex = 42;
+            this.ComboShieldModifier.SelectedIndexChanged += new System.EventHandler(this.OnSelectShieldModifier);
             // 
-            // LblShieldSlot4
+            // InputShieldDurability
             // 
-            this.LblShieldSlot4.AutoSize = true;
-            this.LblShieldSlot4.Location = new System.Drawing.Point(11, 124);
-            this.LblShieldSlot4.Name = "LblShieldSlot4";
-            this.LblShieldSlot4.Size = new System.Drawing.Size(34, 13);
-            this.LblShieldSlot4.TabIndex = 30;
-            this.LblShieldSlot4.Text = "Slot 5";
+            this.InputShieldDurability.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.InputShieldDurability.Location = new System.Drawing.Point(268, 60);
+            this.InputShieldDurability.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.InputShieldDurability.Name = "InputShieldDurability";
+            this.InputShieldDurability.Size = new System.Drawing.Size(67, 20);
+            this.InputShieldDurability.TabIndex = 41;
+            this.InputShieldDurability.ValueChanged += new System.EventHandler(this.OnSelectShieldDurability);
             // 
-            // LblShieldSlot3
+            // ComboShields
             // 
-            this.LblShieldSlot3.AutoSize = true;
-            this.LblShieldSlot3.Location = new System.Drawing.Point(11, 97);
-            this.LblShieldSlot3.Name = "LblShieldSlot3";
-            this.LblShieldSlot3.Size = new System.Drawing.Size(34, 13);
-            this.LblShieldSlot3.TabIndex = 29;
-            this.LblShieldSlot3.Text = "Slot 4";
+            this.ComboShields.FormattingEnabled = true;
+            this.ComboShields.Location = new System.Drawing.Point(268, 6);
+            this.ComboShields.Name = "ComboShields";
+            this.ComboShields.Size = new System.Drawing.Size(144, 21);
+            this.ComboShields.TabIndex = 40;
+            this.ComboShields.SelectedIndexChanged += new System.EventHandler(this.OnSelectShieldItem);
             // 
-            // ComboShieldSlot4
+            // ListBoxShields
             // 
-            this.ComboShieldSlot4.FormattingEnabled = true;
-            this.ComboShieldSlot4.Location = new System.Drawing.Point(51, 121);
-            this.ComboShieldSlot4.Name = "ComboShieldSlot4";
-            this.ComboShieldSlot4.Size = new System.Drawing.Size(250, 21);
-            this.ComboShieldSlot4.TabIndex = 28;
-            // 
-            // ComboShieldSlot3
-            // 
-            this.ComboShieldSlot3.FormattingEnabled = true;
-            this.ComboShieldSlot3.Location = new System.Drawing.Point(51, 94);
-            this.ComboShieldSlot3.Name = "ComboShieldSlot3";
-            this.ComboShieldSlot3.Size = new System.Drawing.Size(250, 21);
-            this.ComboShieldSlot3.TabIndex = 27;
-            // 
-            // ComboShieldSlot2
-            // 
-            this.ComboShieldSlot2.FormattingEnabled = true;
-            this.ComboShieldSlot2.Location = new System.Drawing.Point(51, 67);
-            this.ComboShieldSlot2.Name = "ComboShieldSlot2";
-            this.ComboShieldSlot2.Size = new System.Drawing.Size(250, 21);
-            this.ComboShieldSlot2.TabIndex = 26;
-            // 
-            // ComboShieldSlot1
-            // 
-            this.ComboShieldSlot1.FormattingEnabled = true;
-            this.ComboShieldSlot1.Location = new System.Drawing.Point(51, 40);
-            this.ComboShieldSlot1.Name = "ComboShieldSlot1";
-            this.ComboShieldSlot1.Size = new System.Drawing.Size(250, 21);
-            this.ComboShieldSlot1.TabIndex = 25;
-            // 
-            // ComboShieldSlot0
-            // 
-            this.ComboShieldSlot0.FormattingEnabled = true;
-            this.ComboShieldSlot0.Location = new System.Drawing.Point(51, 13);
-            this.ComboShieldSlot0.Name = "ComboShieldSlot0";
-            this.ComboShieldSlot0.Size = new System.Drawing.Size(250, 21);
-            this.ComboShieldSlot0.TabIndex = 24;
-            // 
-            // LblShieldSlot2
-            // 
-            this.LblShieldSlot2.AutoSize = true;
-            this.LblShieldSlot2.Location = new System.Drawing.Point(11, 70);
-            this.LblShieldSlot2.Name = "LblShieldSlot2";
-            this.LblShieldSlot2.Size = new System.Drawing.Size(34, 13);
-            this.LblShieldSlot2.TabIndex = 23;
-            this.LblShieldSlot2.Text = "Slot 3";
-            // 
-            // LblShieldSlot1
-            // 
-            this.LblShieldSlot1.AutoSize = true;
-            this.LblShieldSlot1.Location = new System.Drawing.Point(11, 43);
-            this.LblShieldSlot1.Name = "LblShieldSlot1";
-            this.LblShieldSlot1.Size = new System.Drawing.Size(34, 13);
-            this.LblShieldSlot1.TabIndex = 22;
-            this.LblShieldSlot1.Text = "Slot 2";
-            // 
-            // LblShieldSlot0
-            // 
-            this.LblShieldSlot0.AutoSize = true;
-            this.LblShieldSlot0.Location = new System.Drawing.Point(11, 16);
-            this.LblShieldSlot0.Name = "LblShieldSlot0";
-            this.LblShieldSlot0.Size = new System.Drawing.Size(34, 13);
-            this.LblShieldSlot0.TabIndex = 21;
-            this.LblShieldSlot0.Text = "Slot 1";
+            this.ListBoxShields.FormattingEnabled = true;
+            this.ListBoxShields.Location = new System.Drawing.Point(6, 6);
+            this.ListBoxShields.Name = "ListBoxShields";
+            this.ListBoxShields.Size = new System.Drawing.Size(192, 134);
+            this.ListBoxShields.TabIndex = 39;
+            this.ListBoxShields.Click += new System.EventHandler(this.OnSelectShield);
             // 
             // TabArmor
             // 
-            this.TabArmor.Controls.Add(this.LblArmorSlot4);
-            this.TabArmor.Controls.Add(this.LblArmorSlot3);
-            this.TabArmor.Controls.Add(this.ComboArmorSlot4);
-            this.TabArmor.Controls.Add(this.ComboArmorSlot3);
-            this.TabArmor.Controls.Add(this.ComboArmorSlot2);
-            this.TabArmor.Controls.Add(this.ComboArmorSlot1);
-            this.TabArmor.Controls.Add(this.ComboArmorSlot0);
-            this.TabArmor.Controls.Add(this.LblArmorSlot2);
-            this.TabArmor.Controls.Add(this.LblArmorSlot1);
-            this.TabArmor.Controls.Add(this.LblArmorSlot0);
+            this.TabArmor.Controls.Add(this.BtnDeleteArmor);
+            this.TabArmor.Controls.Add(this.BtnAddArmor);
+            this.TabArmor.Controls.Add(this.label32);
+            this.TabArmor.Controls.Add(this.ComboArmor);
+            this.TabArmor.Controls.Add(this.ListBoxArmor);
             this.TabArmor.Location = new System.Drawing.Point(4, 22);
             this.TabArmor.Name = "TabArmor";
-            this.TabArmor.Size = new System.Drawing.Size(312, 382);
+            this.TabArmor.Size = new System.Drawing.Size(413, 182);
             this.TabArmor.TabIndex = 4;
             this.TabArmor.Text = "Armor";
             this.TabArmor.UseVisualStyleBackColor = true;
             // 
-            // LblArmorSlot4
+            // BtnDeleteArmor
             // 
-            this.LblArmorSlot4.AutoSize = true;
-            this.LblArmorSlot4.Location = new System.Drawing.Point(11, 124);
-            this.LblArmorSlot4.Name = "LblArmorSlot4";
-            this.LblArmorSlot4.Size = new System.Drawing.Size(34, 13);
-            this.LblArmorSlot4.TabIndex = 30;
-            this.LblArmorSlot4.Text = "Slot 5";
+            this.BtnDeleteArmor.Location = new System.Drawing.Point(100, 146);
+            this.BtnDeleteArmor.Name = "BtnDeleteArmor";
+            this.BtnDeleteArmor.Size = new System.Drawing.Size(98, 25);
+            this.BtnDeleteArmor.TabIndex = 49;
+            this.BtnDeleteArmor.Text = "Delete Item";
+            this.BtnDeleteArmor.UseVisualStyleBackColor = true;
+            this.BtnDeleteArmor.Click += new System.EventHandler(this.DeleteArmor);
             // 
-            // LblArmorSlot3
+            // BtnAddArmor
             // 
-            this.LblArmorSlot3.AutoSize = true;
-            this.LblArmorSlot3.Location = new System.Drawing.Point(11, 97);
-            this.LblArmorSlot3.Name = "LblArmorSlot3";
-            this.LblArmorSlot3.Size = new System.Drawing.Size(34, 13);
-            this.LblArmorSlot3.TabIndex = 29;
-            this.LblArmorSlot3.Text = "Slot 4";
+            this.BtnAddArmor.Location = new System.Drawing.Point(6, 146);
+            this.BtnAddArmor.Name = "BtnAddArmor";
+            this.BtnAddArmor.Size = new System.Drawing.Size(88, 25);
+            this.BtnAddArmor.TabIndex = 48;
+            this.BtnAddArmor.Text = "Add Item";
+            this.BtnAddArmor.UseVisualStyleBackColor = true;
+            this.BtnAddArmor.Click += new System.EventHandler(this.AddArmor);
             // 
-            // ComboArmorSlot4
+            // label32
             // 
-            this.ComboArmorSlot4.FormattingEnabled = true;
-            this.ComboArmorSlot4.Location = new System.Drawing.Point(51, 121);
-            this.ComboArmorSlot4.Name = "ComboArmorSlot4";
-            this.ComboArmorSlot4.Size = new System.Drawing.Size(250, 21);
-            this.ComboArmorSlot4.TabIndex = 28;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(206, 9);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(27, 13);
+            this.label32.TabIndex = 44;
+            this.label32.Text = "Item";
             // 
-            // ComboArmorSlot3
+            // ComboArmor
             // 
-            this.ComboArmorSlot3.FormattingEnabled = true;
-            this.ComboArmorSlot3.Location = new System.Drawing.Point(51, 94);
-            this.ComboArmorSlot3.Name = "ComboArmorSlot3";
-            this.ComboArmorSlot3.Size = new System.Drawing.Size(250, 21);
-            this.ComboArmorSlot3.TabIndex = 27;
+            this.ComboArmor.FormattingEnabled = true;
+            this.ComboArmor.Location = new System.Drawing.Point(239, 6);
+            this.ComboArmor.Name = "ComboArmor";
+            this.ComboArmor.Size = new System.Drawing.Size(167, 21);
+            this.ComboArmor.TabIndex = 40;
+            this.ComboArmor.SelectedIndexChanged += new System.EventHandler(this.OnSelectArmorItem);
             // 
-            // ComboArmorSlot2
+            // ListBoxArmor
             // 
-            this.ComboArmorSlot2.FormattingEnabled = true;
-            this.ComboArmorSlot2.Location = new System.Drawing.Point(51, 67);
-            this.ComboArmorSlot2.Name = "ComboArmorSlot2";
-            this.ComboArmorSlot2.Size = new System.Drawing.Size(250, 21);
-            this.ComboArmorSlot2.TabIndex = 26;
-            // 
-            // ComboArmorSlot1
-            // 
-            this.ComboArmorSlot1.FormattingEnabled = true;
-            this.ComboArmorSlot1.Location = new System.Drawing.Point(51, 40);
-            this.ComboArmorSlot1.Name = "ComboArmorSlot1";
-            this.ComboArmorSlot1.Size = new System.Drawing.Size(250, 21);
-            this.ComboArmorSlot1.TabIndex = 25;
-            // 
-            // ComboArmorSlot0
-            // 
-            this.ComboArmorSlot0.FormattingEnabled = true;
-            this.ComboArmorSlot0.Location = new System.Drawing.Point(51, 13);
-            this.ComboArmorSlot0.Name = "ComboArmorSlot0";
-            this.ComboArmorSlot0.Size = new System.Drawing.Size(250, 21);
-            this.ComboArmorSlot0.TabIndex = 24;
-            // 
-            // LblArmorSlot2
-            // 
-            this.LblArmorSlot2.AutoSize = true;
-            this.LblArmorSlot2.Location = new System.Drawing.Point(11, 70);
-            this.LblArmorSlot2.Name = "LblArmorSlot2";
-            this.LblArmorSlot2.Size = new System.Drawing.Size(34, 13);
-            this.LblArmorSlot2.TabIndex = 23;
-            this.LblArmorSlot2.Text = "Slot 3";
-            // 
-            // LblArmorSlot1
-            // 
-            this.LblArmorSlot1.AutoSize = true;
-            this.LblArmorSlot1.Location = new System.Drawing.Point(11, 43);
-            this.LblArmorSlot1.Name = "LblArmorSlot1";
-            this.LblArmorSlot1.Size = new System.Drawing.Size(34, 13);
-            this.LblArmorSlot1.TabIndex = 22;
-            this.LblArmorSlot1.Text = "Slot 2";
-            // 
-            // LblArmorSlot0
-            // 
-            this.LblArmorSlot0.AutoSize = true;
-            this.LblArmorSlot0.Location = new System.Drawing.Point(11, 16);
-            this.LblArmorSlot0.Name = "LblArmorSlot0";
-            this.LblArmorSlot0.Size = new System.Drawing.Size(34, 13);
-            this.LblArmorSlot0.TabIndex = 21;
-            this.LblArmorSlot0.Text = "Slot 1";
+            this.ListBoxArmor.FormattingEnabled = true;
+            this.ListBoxArmor.Location = new System.Drawing.Point(6, 6);
+            this.ListBoxArmor.Name = "ListBoxArmor";
+            this.ListBoxArmor.Size = new System.Drawing.Size(192, 134);
+            this.ListBoxArmor.TabIndex = 39;
+            this.ListBoxArmor.Click += new System.EventHandler(this.OnSelectArmor);
             // 
             // TabSkyviewTowers
             // 
@@ -876,7 +853,7 @@
             this.TabSkyviewTowers.Controls.Add(this.CBMap1);
             this.TabSkyviewTowers.Location = new System.Drawing.Point(4, 22);
             this.TabSkyviewTowers.Name = "TabSkyviewTowers";
-            this.TabSkyviewTowers.Size = new System.Drawing.Size(312, 382);
+            this.TabSkyviewTowers.Size = new System.Drawing.Size(433, 182);
             this.TabSkyviewTowers.TabIndex = 5;
             this.TabSkyviewTowers.Text = "Skyview Towers";
             this.TabSkyviewTowers.UseVisualStyleBackColor = true;
@@ -1505,7 +1482,7 @@
             this.BtnPatchSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnPatchSaveFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPatchSaveFile.Enabled = false;
-            this.BtnPatchSaveFile.Location = new System.Drawing.Point(112, 179);
+            this.BtnPatchSaveFile.Location = new System.Drawing.Point(112, 260);
             this.BtnPatchSaveFile.Name = "BtnPatchSaveFile";
             this.BtnPatchSaveFile.Size = new System.Drawing.Size(98, 30);
             this.BtnPatchSaveFile.TabIndex = 3;
@@ -1533,7 +1510,7 @@
             this.PanelPath.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PanelPath.Location = new System.Drawing.Point(104, 12);
             this.PanelPath.Name = "PanelPath";
-            this.PanelPath.Size = new System.Drawing.Size(224, 26);
+            this.PanelPath.Size = new System.Drawing.Size(331, 26);
             this.PanelPath.TabIndex = 6;
             // 
             // BtnReset
@@ -1541,20 +1518,20 @@
             this.BtnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReset.Enabled = false;
-            this.BtnReset.Location = new System.Drawing.Point(8, 179);
+            this.BtnReset.Location = new System.Drawing.Point(8, 260);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(98, 30);
             this.BtnReset.TabIndex = 7;
             this.BtnReset.Text = "Unload Savefile";
             this.BtnReset.UseVisualStyleBackColor = true;
-            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            this.BtnReset.Click += new System.EventHandler(this.CloseSaveFile);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(335, 221);
+            this.ClientSize = new System.Drawing.Size(442, 302);
             this.Controls.Add(this.BtnReset);
             this.Controls.Add(this.PanelPath);
             this.Controls.Add(this.BtnPatchSaveFile);
@@ -1572,13 +1549,16 @@
             this.TabSwords.ResumeLayout(false);
             this.TabSwords.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputSwordPouch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputSwordDurability)).EndInit();
             this.TabBows.ResumeLayout(false);
             this.TabBows.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputBowPouch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBowDurability)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputArrows)).EndInit();
             this.TabShields.ResumeLayout(false);
             this.TabShields.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InputShieldPouch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputShieldDurability)).EndInit();
             this.TabArmor.ResumeLayout(false);
             this.TabArmor.PerformLayout();
             this.TabSkyviewTowers.ResumeLayout(false);
@@ -1594,7 +1574,6 @@
         private System.Windows.Forms.Button BtnOpenSaveFile;
         private System.Windows.Forms.TabControl TabControlValues;
         private System.Windows.Forms.TabPage TabGeneral;
-        private System.Windows.Forms.TabPage TabSwords;
         private System.Windows.Forms.TabPage TabBows;
         private System.Windows.Forms.TabPage TabShields;
         private System.Windows.Forms.NumericUpDown InputStamina;
@@ -1603,57 +1582,11 @@
         private System.Windows.Forms.Label LblStamina;
         private System.Windows.Forms.Label LblHearts;
         private System.Windows.Forms.Label LblRupees;
-        private System.Windows.Forms.ComboBox ComboSwordSlot0;
-        private System.Windows.Forms.Label LblSwordSlot2;
-        private System.Windows.Forms.Label LblSwordSlot1;
-        private System.Windows.Forms.Label LblSwordSlot0;
-        private System.Windows.Forms.ComboBox ComboSwordSlot4;
-        private System.Windows.Forms.ComboBox ComboSwordSlot3;
-        private System.Windows.Forms.ComboBox ComboSwordSlot2;
-        private System.Windows.Forms.ComboBox ComboSwordSlot1;
-        private System.Windows.Forms.Label LblSwordSlot4;
-        private System.Windows.Forms.Label LblSwordSlot3;
-        private System.Windows.Forms.Label LblBowSlot4;
-        private System.Windows.Forms.Label LblBowSlot3;
-        private System.Windows.Forms.ComboBox ComboBowSlot4;
-        private System.Windows.Forms.ComboBox ComboBowSlot3;
-        private System.Windows.Forms.ComboBox ComboBowSlot2;
-        private System.Windows.Forms.ComboBox ComboBowSlot1;
-        private System.Windows.Forms.ComboBox ComboBowSlot0;
-        private System.Windows.Forms.Label LblBowSlot2;
-        private System.Windows.Forms.Label LblBowSlot1;
-        private System.Windows.Forms.Label LblBowSlot0;
         private System.Windows.Forms.Button BtnPatchSaveFile;
-        private System.Windows.Forms.Label LblShieldSlot4;
-        private System.Windows.Forms.Label LblShieldSlot3;
-        private System.Windows.Forms.ComboBox ComboShieldSlot4;
-        private System.Windows.Forms.ComboBox ComboShieldSlot3;
-        private System.Windows.Forms.ComboBox ComboShieldSlot2;
-        private System.Windows.Forms.ComboBox ComboShieldSlot1;
-        private System.Windows.Forms.ComboBox ComboShieldSlot0;
-        private System.Windows.Forms.Label LblShieldSlot2;
-        private System.Windows.Forms.Label LblShieldSlot1;
-        private System.Windows.Forms.Label LblShieldSlot0;
         private System.Windows.Forms.TabPage TabArmor;
-        private System.Windows.Forms.Label LblArmorSlot4;
-        private System.Windows.Forms.Label LblArmorSlot3;
-        private System.Windows.Forms.ComboBox ComboArmorSlot4;
-        private System.Windows.Forms.ComboBox ComboArmorSlot3;
-        private System.Windows.Forms.ComboBox ComboArmorSlot2;
-        private System.Windows.Forms.ComboBox ComboArmorSlot1;
-        private System.Windows.Forms.ComboBox ComboArmorSlot0;
-        private System.Windows.Forms.Label LblArmorSlot2;
-        private System.Windows.Forms.Label LblArmorSlot1;
-        private System.Windows.Forms.Label LblArmorSlot0;
         private System.Windows.Forms.Label LblPath;
         private System.Windows.Forms.Panel PanelPath;
         private System.Windows.Forms.Button BtnReset;
-        private System.Windows.Forms.NumericUpDown InputSwordPouch;
-        private System.Windows.Forms.Label LblSwordPouch;
-        private System.Windows.Forms.NumericUpDown InputBowPouch;
-        private System.Windows.Forms.Label LblBowPouch;
-        private System.Windows.Forms.NumericUpDown InputShieldPouch;
-        private System.Windows.Forms.Label LblShieldPouch;
         private System.Windows.Forms.NumericUpDown InputArrows;
         private System.Windows.Forms.Label LblArrows;
         private System.Windows.Forms.TabPage TabSkyviewTowers;
@@ -1723,6 +1656,45 @@
         private System.Windows.Forms.Label LblSkyviewTower;
         private System.Windows.Forms.Button BtnUncheckAll;
         private System.Windows.Forms.Button BtnCheckAll;
+        private System.Windows.Forms.TabPage TabSwords;
+        private System.Windows.Forms.Button BtnDeleteSword;
+        private System.Windows.Forms.Button BtnAddSword;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown InputSwordPouch;
+        private System.Windows.Forms.ComboBox ComboSwordModifier;
+        private System.Windows.Forms.NumericUpDown InputSwordDurability;
+        private System.Windows.Forms.ComboBox ComboSwords;
+        private System.Windows.Forms.ListBox ListBoxSwords;
+        private System.Windows.Forms.Button BtnDeleteBow;
+        private System.Windows.Forms.Button BtnAddBow;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown InputBowPouch;
+        private System.Windows.Forms.ComboBox ComboBowModifier;
+        private System.Windows.Forms.NumericUpDown InputBowDurability;
+        private System.Windows.Forms.ComboBox ComboBows;
+        private System.Windows.Forms.ListBox ListBoxBows;
+        private System.Windows.Forms.Button BtnDeleteShield;
+        private System.Windows.Forms.Button BtnAddShield;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.NumericUpDown InputShieldPouch;
+        private System.Windows.Forms.ComboBox ComboShieldModifier;
+        private System.Windows.Forms.NumericUpDown InputShieldDurability;
+        private System.Windows.Forms.ComboBox ComboShields;
+        private System.Windows.Forms.ListBox ListBoxShields;
+        private System.Windows.Forms.Button BtnDeleteArmor;
+        private System.Windows.Forms.Button BtnAddArmor;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox ComboArmor;
+        private System.Windows.Forms.ListBox ListBoxArmor;
     }
 }
 

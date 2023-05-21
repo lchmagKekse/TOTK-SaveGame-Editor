@@ -1,10 +1,15 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using TOTK_SaveGame_Editor.Offsets;
+using TOTK_SaveGame_Editor.Data;
+using System.Linq;
 
 namespace TOTK_SaveGame_Editor
 {
     public class TOTK_SaveFile : SaveFile
     {
+        #region Offsets
+
         private int RUPEE_ADDRESS;              // 0x04 | int32 | Pattern: D7 21 79 A7       
         private int HEART_ADDRESS;              // 0x04 | int32 | Pattern: A1 1D E0 FB      
         private int MAX_HEART_ADDRESS;          // 0x04 | int32 | Pattern: 80 55 AB 31     
@@ -14,6 +19,14 @@ namespace TOTK_SaveGame_Editor
         private int BOW_ADDRESS;
         private int SHIELD_ADDRESS;
         private int ARMOR_ADDRESS;
+
+        private int SWORD_DURABILITY;
+        private int BOW_DURABILITY;
+        private int SHIELD_DURABILITY;
+
+        public int SWORD_MODIFIER;
+        public int BOW_MODIFIER;
+        public int SHIELD_MODIFIER;
 
         private int SWORD_POUCH_SIZE;
         private int BOW_POUCH_SIZE;
@@ -69,6 +82,27 @@ namespace TOTK_SaveGame_Editor
         public int LINDORSBROW_TOWER_PIN;
         public int SAHASRASLOPE_TOWER_PIN;
 
+        #endregion
+
+        public int Rupees;
+        public int Hearts;
+        public int Stamina;
+
+        public List<Sword> Swords;
+        public List<Bow> Bows;
+        public List<Shield> Shields;
+        public List<Armor> Armor;
+
+        public int Arrows;
+
+        public int PouchSizeSwords;
+        public int PouchSizeBows;
+        public int PouchSizeShields;
+
+        private int _SwordCount;
+        private int _BowCount;
+        private int _ShieldCount;
+        private int _ArmorCount;
 
         public TOTK_SaveFile(string path)
         {
@@ -79,7 +113,31 @@ namespace TOTK_SaveGame_Editor
             IsLoaded = true;
 
             CreateBackup();
+            LoadOffsets();
+            
+            Rupees = ReadRupees();
+            Hearts = ReadHearts();
+            Stamina = ReadStamina();
 
+            Arrows = ReadArrows();
+
+            PouchSizeSwords = ReadSwordPouch();
+            PouchSizeBows = ReadBowPouch();
+            PouchSizeShields = ReadShieldPouch();
+
+            Swords = ReadSwords();
+            Bows = ReadBows();
+            Shields = ReadShields();
+            Armor = ReadArmor();
+
+            _SwordCount = Swords.Count;
+            _BowCount = Bows.Count;
+            _ShieldCount = Shields.Count;
+            _ArmorCount = Armor.Count;
+        }
+
+        private void LoadOffsets()
+        {
             RUPEE_ADDRESS = FindBytePatternOffset(Offsets_Pattern.RUPEE_PATTERN);
             MAX_HEART_ADDRESS = FindBytePatternOffset(Offsets_Pattern.MAX_HEART_PATTERN);
             HEART_ADDRESS = FindBytePatternOffset(Offsets_Pattern.HEART_PATTERN);
@@ -133,13 +191,20 @@ namespace TOTK_SaveGame_Editor
             LINDORSBROW_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.LINDORSBROW_TOWER_PIN);
             SAHASRASLOPE_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.SAHASRASLOPE_TOWER_PIN);
 
-
             if (_Data.Length == Offsets_1_0_0.FILESIZE)
             {
                 SWORD_ADDRESS = Offsets_1_0_0.SWORD_ADDRESS;
                 BOW_ADDRESS = Offsets_1_0_0.BOW_ADDRESS;
                 SHIELD_ADDRESS = Offsets_1_0_0.SHIELD_ADDRESS;
                 ARMOR_ADDRESS = Offsets_1_0_0.ARMOR_ADDRESS;
+
+                SWORD_DURABILITY = Offsets_1_0_0.SWORD_DURABILITY;
+                BOW_DURABILITY = Offsets_1_0_0.BOW_DURABILITY;
+                SHIELD_DURABILITY = Offsets_1_0_0.SHIELD_DURABILITY;
+
+                SWORD_MODIFIER = Offsets_1_0_0.SWORD_MODIFIER;
+                BOW_MODIFIER = Offsets_1_0_0.BOW_MODIFIER;
+                SHIELD_MODIFIER = Offsets_1_0_0.SHIELD_MODIFIER;
 
                 SWORD_POUCH_SIZE = Offsets_1_0_0.SWORD_POUCH_SIZE;
                 BOW_POUCH_SIZE = Offsets_1_0_0.BOW_POUCH_SIZE;
@@ -157,6 +222,14 @@ namespace TOTK_SaveGame_Editor
                 SHIELD_ADDRESS = Offsets_1_1_0.SHIELD_ADDRESS;
                 ARMOR_ADDRESS = Offsets_1_1_0.ARMOR_ADDRESS;
 
+                SWORD_DURABILITY = Offsets_1_1_0.SWORD_DURABILITY;
+                BOW_DURABILITY = Offsets_1_1_0.BOW_DURABILITY;
+                SHIELD_DURABILITY = Offsets_1_1_0.SHIELD_DURABILITY;
+
+                SWORD_MODIFIER = Offsets_1_1_0.SWORD_MODIFIER;
+                BOW_MODIFIER = Offsets_1_1_0.BOW_MODIFIER;
+                SHIELD_MODIFIER = Offsets_1_1_0.SHIELD_MODIFIER;
+
                 SWORD_POUCH_SIZE = Offsets_1_1_0.SWORD_POUCH_SIZE;
                 BOW_POUCH_SIZE = Offsets_1_1_0.BOW_POUCH_SIZE;
                 SHIELD_POUCH_SIZE = Offsets_1_1_0.SHIELD_POUCH_SIZE;
@@ -167,7 +240,205 @@ namespace TOTK_SaveGame_Editor
             }
         }
 
-        // ReadData
+        public void PatchSaveFile()
+        {
+            WriteRupees(Rupees);
+            WriteHearts(Hearts);
+            WriteStamina(Stamina);
+
+            WriteArrows(Arrows);
+
+            WriteSwordPouch(PouchSizeSwords);
+            WriteBowPouch(PouchSizeBows);
+            WriteShieldPouch(PouchSizeShields);
+
+            RemoveItems();
+
+            WriteSwords(Swords);
+            WriteBows(Bows);
+            WriteShields(Shields);
+            WriteArmor(Armor);
+
+            WriteSaveFile();
+        }
+
+        private void RemoveItems()
+        {
+            for (int index = 0; index < _SwordCount; index++)
+            {
+                WriteString(SWORD_ADDRESS + (0x40 * index), "");
+            }
+
+            for (int index = 0; index < _BowCount; index++)
+            {
+                WriteString(BOW_ADDRESS + (0x40 * index), "");
+            }
+
+            for (int index = 0; index < _ShieldCount; index++)
+            {
+                WriteString(SHIELD_ADDRESS + (0x40 * index), "");
+            }
+
+            for (int index = 0; index < _ArmorCount; index++)
+            {
+                WriteString(ARMOR_ADDRESS + (0x40 * index), "");
+            }
+        }
+
+        private List<Sword> ReadSwords()
+        {
+            var Swords = new List<Sword>();
+
+            for (int index = 0; index <= PouchSizeSwords; index++)
+            {
+                var id = ReadSword(index);
+
+                if (string.IsNullOrWhiteSpace(id))
+                {
+                    break;
+                }
+                
+                var durability = ReadSwordDurability(index);
+
+                var modifier = ReadSwordModifier(index);
+
+                Swords.Add(new Sword(id, durability, modifier));
+            }
+
+            return Swords;
+        }
+
+        private List<Bow> ReadBows()
+        {
+            var Bows = new List<Bow>();
+
+            for (int index = 0; index <= PouchSizeBows; index++)
+            {
+                var id = ReadBow(index);
+
+                if (string.IsNullOrWhiteSpace(id))
+                {
+                    break;
+                }
+
+                var durability = ReadBowDurability(index);
+
+                var modifier = ReadBowModifier(index);
+
+                Bows.Add(new Bow(id, durability, modifier));
+            }
+
+            return Bows;
+        }
+
+        private List<Shield> ReadShields()
+        {
+            var Shields = new List<Shield>();
+
+            for (int index = 0; index <= PouchSizeShields; index++)
+            {
+                var id = ReadShield(index);
+
+                if (string.IsNullOrWhiteSpace(id))
+                {
+                    break;
+                }
+
+                var durability = ReadShieldDurability(index);
+
+                var modifier = ReadShieldModifier(index);
+
+                Shields.Add(new Shield(id, durability, modifier));
+            }
+
+            return Shields;
+        }
+
+        private List<Armor> ReadArmor()
+        {
+            var armor = new List<Armor>();
+
+            int index = 0;
+
+            while(true)
+            {
+                var id = ReadArmor(index);
+
+                if (string.IsNullOrWhiteSpace(id))
+                {
+                    break;
+                }
+
+                armor.Add(new Armor(id));
+
+                index++;
+            }
+
+            return armor;
+        }
+
+        public void WriteSwords(List<Sword> swords)
+        {         
+            int index = 0;
+
+            foreach (var sword in swords)
+            {
+                WriteSword(index, sword.Id);
+                WriteSwordDurability(index, sword.Durability);
+
+                var modifierId = GameData.Modifiers.FirstOrDefault(modifier => modifier.Value == sword.Modifier).Key;
+
+                WriteSwordModifier(index, modifierId);
+
+                index++;
+            }
+        }
+
+        public void WriteBows(List<Bow> bows)
+        {
+            int index = 0;
+
+            foreach (var bow in bows)
+            {
+                WriteBow(index, bow.Id);
+                WriteBowDurability(index, bow.Durability);
+
+                var modifierId = GameData.Modifiers.FirstOrDefault(modifier => modifier.Value == bow.Modifier).Key;
+
+                WriteBowModifier(index, modifierId);
+
+                index++;
+            }
+        }
+
+        public void WriteShields(List<Shield> shields)
+        {
+            int index = 0;
+
+            foreach (var shield in shields)
+            {
+                WriteShield(index, shield.Id);
+                WriteShieldDurability(index, shield.Durability);
+
+                var modifierId = GameData.Modifiers.FirstOrDefault(modifier => modifier.Value == shield.Modifier).Key;
+
+                WriteShieldModifier(index, modifierId);
+
+                index++;
+            }
+        }
+
+        public void WriteArmor(List<Armor> armor)
+        {
+            int index = 0;
+
+            foreach (var item in armor)
+            {
+                WriteArmor(index, item.Id);
+                index++;
+            }
+        }
+
         public int ReadRupees()
         {
             return ReadInt(RUPEE_ADDRESS);
@@ -203,6 +474,36 @@ namespace TOTK_SaveGame_Editor
             return ReadString(ARMOR_ADDRESS + (slot * 0x40));
         }
 
+        public uint ReadSwordModifier(int slot)
+        {
+            return ReadUInt32(SWORD_MODIFIER + (slot * 0x04));
+        }
+
+        public uint ReadBowModifier(int slot)
+        {
+            return ReadUInt32(BOW_MODIFIER + (slot * 0x04));
+        }
+
+        public uint ReadShieldModifier(int slot)
+        {
+            return ReadUInt32(SHIELD_MODIFIER + (slot * 0x04));
+        }
+
+        public int ReadSwordDurability(int slot)
+        {
+            return ReadInt(SWORD_DURABILITY +  (slot * 0x04));
+        }
+
+        public int ReadBowDurability(int slot)
+        {
+            return ReadInt(BOW_DURABILITY + (slot * 0x04));
+        }
+
+        public int ReadShieldDurability(int slot)
+        {
+            return ReadInt(SHIELD_DURABILITY + (slot * 0x04));
+        }
+
         public int ReadSwordPouch()
         {
             return ReadInt(SWORD_POUCH_SIZE);
@@ -223,7 +524,6 @@ namespace TOTK_SaveGame_Editor
             return ReadInt(ARROW_ADDRESS);
         }
 
-        // WriteData
         public void WriteRupees(int value)
         {
             WriteInt(RUPEE_ADDRESS, value);
@@ -240,24 +540,52 @@ namespace TOTK_SaveGame_Editor
             WriteFloat(STAMINA_ADDRESS, value);
         }
 
-        public void WriteSword(int slot, Item item)
+        public void WriteSword(int slot, string item)
         {
-            WriteString(SWORD_ADDRESS + (slot * 0x40), item.Id);
+            WriteString(SWORD_ADDRESS + (slot * 0x40), item);
         }
 
-        public void WriteBow(int slot, Item item)
+        public void WriteBow(int slot, string item)
         {
-            WriteString(BOW_ADDRESS + (slot * 0x40), item.Id);
+            WriteString(BOW_ADDRESS + (slot * 0x40), item);
         }
 
-        public void WriteShield(int slot, Item item)
+        public void WriteShield(int slot, string item)
         {
-            WriteString(SHIELD_ADDRESS + (slot * 0x40), item.Id);
+            WriteString(SHIELD_ADDRESS + (slot * 0x40), item);
         }
 
-        public void WriteArmor(int slot, Item item)
+        public void WriteArmor(int slot, string item)
         {
-            WriteString(ARMOR_ADDRESS + (slot * 0x40), item.Id);
+            WriteString(ARMOR_ADDRESS + (slot * 0x40), item);
+        }
+
+        public void WriteSwordDurability(int slot, int value)
+        {
+            WriteInt(SWORD_DURABILITY + (slot * 0x04), value);
+        }
+
+        public void WriteBowDurability(int slot, int value)
+        {
+            WriteInt(BOW_DURABILITY + (slot * 0x04), value);
+        }
+
+        public void WriteShieldDurability(int slot, int value)
+        {
+            WriteInt(SHIELD_DURABILITY + (slot * 0x04), value);
+        }
+
+        public void WriteSwordModifier(int slot, uint value)
+        {
+            WriteUInt32(SWORD_MODIFIER + (slot * 0x04), value);
+        }
+        public void WriteBowModifier(int slot, uint value)
+        {
+            WriteUInt32(BOW_MODIFIER + (slot * 0x04), value);
+        }
+        public void WriteShieldModifier(int slot, uint value)
+        {
+            WriteUInt32(SHIELD_MODIFIER + (slot * 0x04), value);
         }
 
         public void WriteSwordPouch(int value)

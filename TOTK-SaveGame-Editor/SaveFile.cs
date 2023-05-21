@@ -11,7 +11,7 @@ namespace TOTK_SaveGame_Editor
         internal string _Path = "progress.sav";
         internal byte[] _Data;
         
-        public void PatchSaveFile()
+        public void WriteSaveFile()
         {
             File.WriteAllBytes(_Path, _Data);
         }
@@ -60,6 +60,17 @@ namespace TOTK_SaveGame_Editor
         }
 
         public void WriteInt(int offset, int value)
+        {
+            byte[] valueBytes = BitConverter.GetBytes(value);
+            Array.Copy(valueBytes, 0, _Data, offset, sizeof(int));
+        }
+
+        public uint ReadUInt32(int offset)
+        {
+            return BitConverter.ToUInt32(_Data, offset);
+        }
+
+        public void WriteUInt32(int offset, uint value)
         {
             byte[] valueBytes = BitConverter.GetBytes(value);
             Array.Copy(valueBytes, 0, _Data, offset, sizeof(int));

@@ -93,8 +93,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Armor.cs" />
+    <Compile Include="Data\Bow.cs" />
     <Compile Include="Data\GameData.cs" />
     <Compile Include="Data\Item.cs" />
+    <Compile Include="Data\Shield.cs" />
+    <Compile Include="Data\Sword.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using TOTK_SaveGame_Editor.Data;
 
 namespace TOTK_SaveGame_Editor
 {
@@ -14,19 +14,12 @@ namespace TOTK_SaveGame_Editor
         {
             InitializeComponent();
             FillComboBoxes();
+
+            Size = new Size(351, 260);
+            TabControlValues.Enabled = false;
         }
 
-        private void SetComboIndex(List<Item> items, string value, ComboBox comboBox)
-        {
-            comboBox.SelectedIndex = 0;
-
-            var index = items.FindIndex(item => item.Id == value);
-            if (index == -1) return;
-
-            comboBox.SelectedIndex = index;
-        }
-
-        private void BtnOpenSaveFile_Click(object sender, EventArgs e)
+        private void OpenSaveFile(object sender, EventArgs e)
         {
             OpenFileDialog FileDialog = new OpenFileDialog
             {
@@ -50,10 +43,12 @@ namespace TOTK_SaveGame_Editor
             BtnPatchSaveFile.Enabled = true;
             BtnReset.Enabled = true;
 
+            TabControlValues.Enabled = true;
+
             SetValuesFromSavefile();
         }
 
-        private void BtnReset_Click(object sender, EventArgs e)
+        private void CloseSaveFile(object sender, EventArgs e)
         {
             LblPath.Text = "progress.sav";
             _SaveFile = null;
@@ -61,6 +56,16 @@ namespace TOTK_SaveGame_Editor
             BtnOpenSaveFile.Enabled = true;
             BtnPatchSaveFile.Enabled = false;
             BtnReset.Enabled = false;
+
+            TabControlValues.Enabled = false;
+        }
+
+        private void SetComboIndex(ComboBox comboBox, string value)
+        {
+            var index = comboBox.Items.IndexOf(value);
+            if (index == -1) return;
+
+            comboBox.SelectedIndex = index;
         }
 
         private void TabControlSelectedIndexChanged(object sender, EventArgs e)
@@ -73,16 +78,16 @@ namespace TOTK_SaveGame_Editor
                     Size = new Size(351, 260);
                     break;
                 case 1:
-                    Size = new Size(351, 344);
+                    Size = new Size(458, 341);
                     break;
                 case 2:
-                    Size = new Size(351, 344);
+                    Size = new Size(458, 341);
                     break;
                 case 3:
-                    Size = new Size(351, 344);
+                    Size = new Size(458, 341);
                     break;
                 case 4:
-                    Size = new Size(351, 312);
+                    Size = new Size(458, 341);
                     break;
                 case 5:
                     Size = new Size(351, 541);
@@ -92,71 +97,46 @@ namespace TOTK_SaveGame_Editor
 
         private void FillComboBoxes()
         {
-            GameData.Swords = GameData.Swords.OrderBy(item => item.Name).ToList();
-            GameData.Bows = GameData.Bows.OrderBy(item => item.Name).ToList();
-            GameData.Shields = GameData.Shields.OrderBy(item => item.Name).ToList();
+            ComboSwords.Items.Clear();
+            ComboBows.Items.Clear();
+            ComboShields.Items.Clear();           
+            ComboArmor.Items.Clear();
 
+            ComboSwordModifier.Items.Clear();
+            ComboBowModifier.Items.Clear();
+            ComboShieldModifier.Items.Clear();
 
-            ComboSwordSlot0.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
-            ComboSwordSlot1.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
-            ComboSwordSlot2.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
-            ComboSwordSlot3.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
-            ComboSwordSlot4.Items.AddRange(GameData.Swords.Select(item => item.Name).ToArray());
+            ComboSwords.Items.AddRange(GameData.Swords.Values.ToArray());          
+            ComboBows.Items.AddRange(GameData.Bows.Values.ToArray());                 
+            ComboShields.Items.AddRange(GameData.Shields.Values.ToArray());                     
+            ComboArmor.Items.AddRange(GameData.Armor.Values.ToArray());
 
-            ComboBowSlot0.Items.AddRange(GameData.Bows.Select(item => item.Name).ToArray());
-            ComboBowSlot1.Items.AddRange(GameData.Bows.Select(item => item.Name).ToArray());
-            ComboBowSlot2.Items.AddRange(GameData.Bows.Select(item => item.Name).ToArray());
-            ComboBowSlot3.Items.AddRange(GameData.Bows.Select(item => item.Name).ToArray());
-            ComboBowSlot4.Items.AddRange(GameData.Bows.Select(item => item.Name).ToArray());
-
-            ComboShieldSlot0.Items.AddRange(GameData.Shields.Select(item => item.Name).ToArray());
-            ComboShieldSlot1.Items.AddRange(GameData.Shields.Select(item => item.Name).ToArray());
-            ComboShieldSlot2.Items.AddRange(GameData.Shields.Select(item => item.Name).ToArray());
-            ComboShieldSlot3.Items.AddRange(GameData.Shields.Select(item => item.Name).ToArray());
-            ComboShieldSlot4.Items.AddRange(GameData.Shields.Select(item => item.Name).ToArray());
-
-            ComboArmorSlot0.Items.AddRange(GameData.Armor.Select(item => item.Name).ToArray());
-            ComboArmorSlot1.Items.AddRange(GameData.Armor.Select(item => item.Name).ToArray());
-            ComboArmorSlot2.Items.AddRange(GameData.Armor.Select(item => item.Name).ToArray());
-            ComboArmorSlot3.Items.AddRange(GameData.Armor.Select(item => item.Name).ToArray());
-            ComboArmorSlot4.Items.AddRange(GameData.Armor.Select(item => item.Name).ToArray());
+            ComboSwordModifier.Items.AddRange(GameData.Modifiers.Values.ToArray());
+            ComboBowModifier.Items.AddRange(GameData.Modifiers.Values.ToArray());
+            ComboShieldModifier.Items.AddRange(GameData.Modifiers.Values.ToArray());
         }
 
         private void SetValuesFromSavefile()
         {
-            InputRupees.Value = _SaveFile.ReadRupees();
-            InputHearts.Value = _SaveFile.ReadHearts();
-            InputStamina.Value = _SaveFile.ReadStamina();
+            InputRupees.Value = _SaveFile.Rupees;
+            InputHearts.Value = _SaveFile.Hearts;
+            InputStamina.Value = _SaveFile.Stamina;
 
-            InputSwordPouch.Value = _SaveFile.ReadSwordPouch();
-            InputBowPouch.Value = _SaveFile.ReadBowPouch();
-            InputShieldPouch.Value = _SaveFile.ReadShieldPouch();
+            InputSwordPouch.Value = _SaveFile.PouchSizeSwords;
+            InputBowPouch.Value = _SaveFile.PouchSizeBows;
+            InputShieldPouch.Value = _SaveFile.PouchSizeShields;
 
-            InputArrows.Value = _SaveFile.ReadArrows();
+            InputArrows.Value = _SaveFile.Arrows;
 
-            SetComboIndex(GameData.Swords, _SaveFile.ReadSword(0), ComboSwordSlot0);
-            SetComboIndex(GameData.Swords, _SaveFile.ReadSword(1), ComboSwordSlot1);
-            SetComboIndex(GameData.Swords, _SaveFile.ReadSword(2), ComboSwordSlot2);
-            SetComboIndex(GameData.Swords, _SaveFile.ReadSword(3), ComboSwordSlot3);
-            SetComboIndex(GameData.Swords, _SaveFile.ReadSword(4), ComboSwordSlot4);
+            ListBoxSwords.Items.Clear();
+            ListBoxBows.Items.Clear();
+            ListBoxShields.Items.Clear();
+            ListBoxArmor.Items.Clear();
 
-            SetComboIndex(GameData.Bows, _SaveFile.ReadBow(0), ComboBowSlot0);
-            SetComboIndex(GameData.Bows, _SaveFile.ReadBow(1), ComboBowSlot1);
-            SetComboIndex(GameData.Bows, _SaveFile.ReadBow(2), ComboBowSlot2);
-            SetComboIndex(GameData.Bows, _SaveFile.ReadBow(3), ComboBowSlot3);
-            SetComboIndex(GameData.Bows, _SaveFile.ReadBow(4), ComboBowSlot4);
-
-            SetComboIndex(GameData.Shields, _SaveFile.ReadShield(0), ComboShieldSlot0);
-            SetComboIndex(GameData.Shields, _SaveFile.ReadShield(1), ComboShieldSlot1);
-            SetComboIndex(GameData.Shields, _SaveFile.ReadShield(2), ComboShieldSlot2);
-            SetComboIndex(GameData.Shields, _SaveFile.ReadShield(3), ComboShieldSlot3);
-            SetComboIndex(GameData.Shields, _SaveFile.ReadShield(4), ComboShieldSlot4);
-
-            SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(0), ComboArmorSlot0);
-            SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(1), ComboArmorSlot1);
-            SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(2), ComboArmorSlot2);
-            SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(3), ComboArmorSlot3);
-            SetComboIndex(GameData.Armor, _SaveFile.ReadArmor(4), ComboArmorSlot4);
+            ListBoxSwords.Items.AddRange(_SaveFile.Swords.Select(item => item.Name).ToArray());
+            ListBoxBows.Items.AddRange(_SaveFile.Bows.Select(item => item.Name).ToArray());
+            ListBoxShields.Items.AddRange(_SaveFile.Shields.Select(item => item.Name).ToArray());
+            ListBoxArmor.Items.AddRange(_SaveFile.Armor.Select(item => item.Name).ToArray());
 
             CBMap1.Checked = _SaveFile.ReadBool(_SaveFile.ELDINCANYON_MAP);
             CBMap2.Checked = _SaveFile.ReadBool(_SaveFile.GERUDOCANYON_MAP);
@@ -214,40 +194,6 @@ namespace TOTK_SaveGame_Editor
                 MessageBox.Show("Invalid Savefile!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            _SaveFile.WriteRupees((int)InputRupees.Value);
-            _SaveFile.WriteHearts((int)InputHearts.Value);
-            _SaveFile.WriteStamina((int)InputStamina.Value);
-
-            _SaveFile.WriteSwordPouch((int)InputSwordPouch.Value);
-            _SaveFile.WriteBowPouch((int)InputBowPouch.Value);
-            _SaveFile.WriteShieldPouch((int)InputShieldPouch.Value);
-
-            _SaveFile.WriteArrows((int)InputArrows.Value);
-
-            _SaveFile.WriteSword(0, GameData.Swords[ComboSwordSlot0.SelectedIndex]);
-            _SaveFile.WriteSword(1, GameData.Swords[ComboSwordSlot1.SelectedIndex]);
-            _SaveFile.WriteSword(2, GameData.Swords[ComboSwordSlot2.SelectedIndex]);
-            _SaveFile.WriteSword(3, GameData.Swords[ComboSwordSlot3.SelectedIndex]);
-            _SaveFile.WriteSword(4, GameData.Swords[ComboSwordSlot4.SelectedIndex]);
-
-            _SaveFile.WriteBow(0, GameData.Bows[ComboBowSlot0.SelectedIndex]);
-            _SaveFile.WriteBow(1, GameData.Bows[ComboBowSlot1.SelectedIndex]);
-            _SaveFile.WriteBow(2, GameData.Bows[ComboBowSlot2.SelectedIndex]);
-            _SaveFile.WriteBow(3, GameData.Bows[ComboBowSlot3.SelectedIndex]);
-            _SaveFile.WriteBow(4, GameData.Bows[ComboBowSlot4.SelectedIndex]);
-
-            _SaveFile.WriteShield(0, GameData.Shields[ComboShieldSlot0.SelectedIndex]);
-            _SaveFile.WriteShield(1, GameData.Shields[ComboShieldSlot1.SelectedIndex]);
-            _SaveFile.WriteShield(2, GameData.Shields[ComboShieldSlot2.SelectedIndex]);
-            _SaveFile.WriteShield(3, GameData.Shields[ComboShieldSlot3.SelectedIndex]);
-            _SaveFile.WriteShield(4, GameData.Shields[ComboShieldSlot4.SelectedIndex]);
-
-            _SaveFile.WriteArmor(0, GameData.Armor[ComboArmorSlot0.SelectedIndex]);
-            _SaveFile.WriteArmor(1, GameData.Armor[ComboArmorSlot1.SelectedIndex]);
-            _SaveFile.WriteArmor(2, GameData.Armor[ComboArmorSlot2.SelectedIndex]);
-            _SaveFile.WriteArmor(3, GameData.Armor[ComboArmorSlot3.SelectedIndex]);
-            _SaveFile.WriteArmor(4, GameData.Armor[ComboArmorSlot4.SelectedIndex]);
 
             _SaveFile.WriteBool(_SaveFile.ELDINCANYON_MAP, CBMap1.Checked);
             _SaveFile.WriteBool(_SaveFile.GERUDOCANYON_MAP, CBMap2.Checked);
@@ -307,51 +253,363 @@ namespace TOTK_SaveGame_Editor
             var btn = (Button)sender;
             bool value = btn.Name == "BtnCheckAll";
 
-            CBMap1.Checked = value;
-            CBMap2.Checked = value;
-            CBMap3.Checked = value;
-            CBMap4.Checked = value;
-            CBMap5.Checked = value;
-            CBMap6.Checked = value;
-            CBMap7.Checked = value;
-            CBMap8.Checked = value;
-            CBMap9.Checked = value;
-            CBMap10.Checked = value;
-            CBMap11.Checked = value;
-            CBMap12.Checked = value;
-            CBMap13.Checked = value;
-            CBMap14.Checked = value;
-            CBMap15.Checked = value;
-            CBActivated15.Checked = value;
-            CBActivated14.Checked = value;
-            CBActivated13.Checked = value;
-            CBActivated12.Checked = value;
-            CBActivated11.Checked = value;
-            CBActivated10.Checked = value;
-            CBActivated9.Checked = value;
-            CBActivated8.Checked = value;
-            CBActivated7.Checked = value;
-            CBActivated6.Checked = value;
-            CBActivated5.Checked = value;
-            CBActivated4.Checked = value;
-            CBActivated3.Checked = value;
-            CBActivated2.Checked = value;
-            CBActivated1.Checked = value;
-            CBPin15.Checked = value;
-            CBPin14.Checked = value;
-            CBPin13.Checked = value;
-            CBPin12.Checked = value;
-            CBPin11.Checked = value;
-            CBPin10.Checked = value;
-            CBPin9.Checked = value;
-            CBPin8.Checked = value;
-            CBPin7.Checked = value;
-            CBPin6.Checked = value;
-            CBPin5.Checked = value;
-            CBPin4.Checked = value;
-            CBPin3.Checked = value;
-            CBPin2.Checked = value;
-            CBPin1.Checked = value;
+            foreach (CheckBox checkbox in TabSkyviewTowers.Controls.OfType<CheckBox>())
+            {
+                checkbox.Checked = value;
+            }
+        }
+
+
+        #region SwordSelector
+
+        private void OnSelectSword(object sender, EventArgs e)
+        {
+            if (ListBoxSwords.SelectedIndex < 0 || ListBoxSwords.SelectedIndex >= _SaveFile.Swords.Count)
+            {
+                return;
+            }
+
+            var selectedSword = _SaveFile.Swords[ListBoxSwords.SelectedIndex];
+
+            SetComboIndex(ComboSwords, selectedSword.Name);
+            SetComboIndex(ComboSwordModifier, selectedSword.Modifier);
+
+            InputSwordDurability.Value = selectedSword.Durability;
+        }
+
+        private void OnSelectSwordItem(object sender, EventArgs e)
+        {
+            if (ListBoxSwords.SelectedIndex < 0 || ListBoxSwords.SelectedIndex >= _SaveFile.Swords.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Swords[ListBoxSwords.SelectedIndex].Name = GameData.Swords.Values.ToArray()[ComboSwords.SelectedIndex];
+            _SaveFile.Swords[ListBoxSwords.SelectedIndex].Id = GameData.Swords.Keys.ToArray()[ComboSwords.SelectedIndex];
+
+            UpdateSwordListBox();
+        }
+
+        private void OnSelectSwordModifier(object sender, EventArgs e)
+        {
+            if (ListBoxSwords.SelectedIndex < 0 || ListBoxSwords.SelectedIndex >= _SaveFile.Swords.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Swords[ListBoxSwords.SelectedIndex].Modifier = GameData.Modifiers.Values.ToArray()[ComboSwordModifier.SelectedIndex];
+        }
+
+        private void OnSelectSwordDurability(object sender, EventArgs e)
+        {
+            if (ListBoxSwords.SelectedIndex < 0 || ListBoxSwords.SelectedIndex >= _SaveFile.Swords.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Swords[ListBoxSwords.SelectedIndex].Durability = (int)InputSwordDurability.Value;
+        }
+
+        private void UpdateSwordListBox()
+        {
+            var index = ListBoxSwords.SelectedIndex;
+
+            ListBoxSwords.Items.Clear();
+            ListBoxSwords.Items.AddRange(_SaveFile.Swords.Select(item => item.Name).ToArray());
+
+            ListBoxSwords.SelectedIndex = index;
+        }
+
+        private void AddSword(object sender, EventArgs e)
+        {
+            _SaveFile.Swords.Add(new Sword("Weapon_Sword_070", 1000, 0xB6EEDE09));
+            UpdateSwordListBox();
+            ListBoxSwords.SelectedIndex = ListBoxSwords.Items.Count - 1;
+            OnSelectSword(null, null);
+        }
+
+        private void DeleteSword(object sender, EventArgs e)
+        {
+            if (ListBoxSwords.SelectedIndex < 0 || ListBoxSwords.SelectedIndex >= _SaveFile.Swords.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Swords.RemoveAt(ListBoxSwords.SelectedIndex);
+
+            ListBoxSwords.SelectedIndex--;
+
+            UpdateSwordListBox();
+            OnSelectSword(null, null);
+        }
+
+        #endregion
+
+        #region BowSelector
+
+        private void OnSelectBow(object sender, EventArgs e)
+        {
+            if (ListBoxBows.SelectedIndex < 0 || ListBoxBows.SelectedIndex >= _SaveFile.Bows.Count)
+            {
+                return;
+            }
+
+            var selectedBow = _SaveFile.Bows[ListBoxBows.SelectedIndex];
+
+            SetComboIndex(ComboBows, selectedBow.Name);
+            SetComboIndex(ComboBowModifier, selectedBow.Modifier);
+
+            InputBowDurability.Value = selectedBow.Durability;
+        }
+
+        private void OnSelectBowItem(object sender, EventArgs e)
+        {
+            if (ListBoxBows.SelectedIndex < 0 || ListBoxBows.SelectedIndex >= _SaveFile.Bows.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Bows[ListBoxBows.SelectedIndex].Name = GameData.Bows.Values.ToArray()[ComboBows.SelectedIndex];
+            _SaveFile.Bows[ListBoxBows.SelectedIndex].Id = GameData.Bows.Keys.ToArray()[ComboBows.SelectedIndex];
+
+            UpdateBowListBox();
+        }
+
+        private void OnSelectBowModifier(object sender, EventArgs e)
+        {
+            if (ListBoxBows.SelectedIndex < 0 || ListBoxBows.SelectedIndex >= _SaveFile.Bows.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Bows[ListBoxBows.SelectedIndex].Modifier = GameData.Modifiers.Values.ToArray()[ComboBowModifier.SelectedIndex];
+        }
+
+        private void OnSelectBowDurability(object sender, EventArgs e)
+        {
+            if (ListBoxBows.SelectedIndex < 0 || ListBoxBows.SelectedIndex >= _SaveFile.Bows.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Bows[ListBoxBows.SelectedIndex].Durability = (int)InputBowDurability.Value;
+        }
+
+        private void UpdateBowListBox()
+        {
+            var index = ListBoxBows.SelectedIndex;
+
+            ListBoxBows.Items.Clear();
+            ListBoxBows.Items.AddRange(_SaveFile.Bows.Select(item => item.Name).ToArray());
+
+            ListBoxBows.SelectedIndex = index;
+        }
+
+        private void AddBow(object sender, EventArgs e)
+        {
+            _SaveFile.Bows.Add(new Bow("Weapon_Bow_166", 1000, 0xB6EEDE09));
+            UpdateBowListBox();
+            ListBoxBows.SelectedIndex = ListBoxBows.Items.Count - 1;
+            OnSelectBow(null, null);
+        }
+
+        private void DeleteBow(object sender, EventArgs e)
+        {
+            if (ListBoxBows.SelectedIndex < 0 || ListBoxBows.SelectedIndex >= _SaveFile.Bows.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Bows.RemoveAt(ListBoxBows.SelectedIndex);
+
+            ListBoxBows.SelectedIndex--;
+
+            UpdateBowListBox();
+            OnSelectBow(null, null);
+        }
+
+        #endregion
+
+        #region ShieldSelector
+
+        private void OnSelectShield(object sender, EventArgs e)
+        {
+            if (ListBoxShields.SelectedIndex < 0 || ListBoxShields.SelectedIndex >= _SaveFile.Shields.Count)
+            {
+                return;
+            }
+
+            var selectedShield = _SaveFile.Shields[ListBoxShields.SelectedIndex];
+
+            SetComboIndex(ComboShields, selectedShield.Name);
+            SetComboIndex(ComboShieldModifier, selectedShield.Modifier);
+
+            InputShieldDurability.Value = selectedShield.Durability;
+        }
+
+        private void OnSelectShieldItem(object sender, EventArgs e)
+        {
+            if (ListBoxShields.SelectedIndex < 0 || ListBoxShields.SelectedIndex >= _SaveFile.Shields.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Shields[ListBoxShields.SelectedIndex].Name = GameData.Shields.Values.ToArray()[ComboShields.SelectedIndex];
+            _SaveFile.Shields[ListBoxShields.SelectedIndex].Id = GameData.Shields.Keys.ToArray()[ComboShields.SelectedIndex];
+
+            UpdateShieldListBox();
+        }
+
+        private void OnSelectShieldModifier(object sender, EventArgs e)
+        {
+            if (ListBoxShields.SelectedIndex < 0 || ListBoxShields.SelectedIndex >= _SaveFile.Shields.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Shields[ListBoxShields.SelectedIndex].Modifier = GameData.Modifiers.Values.ToArray()[ComboShieldModifier.SelectedIndex];
+        }
+
+        private void OnSelectShieldDurability(object sender, EventArgs e)
+        {
+            if (ListBoxShields.SelectedIndex < 0 || ListBoxShields.SelectedIndex >= _SaveFile.Shields.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Shields[ListBoxShields.SelectedIndex].Durability = (int)InputShieldDurability.Value;
+        }
+
+        private void UpdateShieldListBox()
+        {
+            var index = ListBoxShields.SelectedIndex;
+
+            ListBoxShields.Items.Clear();
+            ListBoxShields.Items.AddRange(_SaveFile.Shields.Select(item => item.Name).ToArray());
+
+            ListBoxShields.SelectedIndex = index;
+        }
+
+        private void AddShield(object sender, EventArgs e)
+        {
+            _SaveFile.Shields.Add(new Shield("Weapon_Shield_030", 1000, 0xB6EEDE09));
+            UpdateShieldListBox();
+            ListBoxShields.SelectedIndex = ListBoxShields.Items.Count - 1;
+            OnSelectShield(null, null);
+        }
+
+        private void DeleteShield(object sender, EventArgs e)
+        {
+            if (ListBoxShields.SelectedIndex < 0 || ListBoxShields.SelectedIndex >= _SaveFile.Shields.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Shields.RemoveAt(ListBoxShields.SelectedIndex);
+
+            ListBoxShields.SelectedIndex--;
+
+            UpdateShieldListBox();
+            OnSelectShield(null, null);
+        }
+
+        #endregion
+
+        #region ArmorSelector
+
+        private void OnSelectArmor(object sender, EventArgs e)
+        {
+            if (ListBoxArmor.SelectedIndex < 0 || ListBoxArmor.SelectedIndex >= _SaveFile.Armor.Count)
+            {
+                return;
+            }
+
+            var selectedArmor = _SaveFile.Armor[ListBoxArmor.SelectedIndex];
+
+            SetComboIndex(ComboArmor, selectedArmor.Name);
+        }
+
+        private void OnSelectArmorItem(object sender, EventArgs e)
+        {
+            if (ListBoxArmor.SelectedIndex < 0 || ListBoxArmor.SelectedIndex >= _SaveFile.Armor.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Armor[ListBoxArmor.SelectedIndex].Name = GameData.Armor.Values.ToArray()[ComboArmor.SelectedIndex];
+            _SaveFile.Armor[ListBoxArmor.SelectedIndex].Id = GameData.Armor.Keys.ToArray()[ComboArmor.SelectedIndex];
+
+            UpdateArmorListBox();
+        }
+
+        private void UpdateArmorListBox()
+        {
+            var index = ListBoxArmor.SelectedIndex;
+
+            ListBoxArmor.Items.Clear();
+            ListBoxArmor.Items.AddRange(_SaveFile.Armor.Select(item => item.Name).ToArray());
+
+            ListBoxArmor.SelectedIndex = index;
+        }
+
+        private void AddArmor(object sender, EventArgs e)
+        {
+            _SaveFile.Armor.Add(new Armor("Armor_1086_Head"));
+            UpdateArmorListBox();
+            ListBoxArmor.SelectedIndex = ListBoxArmor.Items.Count - 1;
+            OnSelectArmor(null, null);
+        }
+
+        private void DeleteArmor(object sender, EventArgs e)
+        {
+            if (ListBoxArmor.SelectedIndex < 0 || ListBoxArmor.SelectedIndex >= _SaveFile.Armor.Count)
+            {
+                return;
+            }
+
+            _SaveFile.Armor.RemoveAt(ListBoxArmor.SelectedIndex);
+
+            ListBoxArmor.SelectedIndex--;
+
+            UpdateArmorListBox();
+            OnSelectArmor(null, null);
+        }
+
+        #endregion
+
+        private void OnRupeesChanged(object sender, EventArgs e)
+        {
+            _SaveFile.Rupees = (int)InputRupees.Value;
+        }
+
+        private void OnHeartsChanged(object sender, EventArgs e)
+        {
+            _SaveFile.Hearts = (int)InputHearts.Value;
+        }
+
+        private void OnStaminaChanged(object sender, EventArgs e)
+        {
+            _SaveFile.Stamina = (int)InputStamina.Value;
+        }
+
+        private void OnSwordPouchChanged(object sender, EventArgs e)
+        {
+            _SaveFile.PouchSizeSwords = (int)InputSwordPouch.Value;
+        }
+
+        private void OnBowPouchChanged(object sender, EventArgs e)
+        {
+            _SaveFile.PouchSizeBows = (int)InputBowPouch.Value;
+        }
+
+        private void OnShieldPouchChanged(object sender, EventArgs e)
+        {
+            _SaveFile.PouchSizeShields = (int)InputShieldPouch.Value;
+        }
+
+        private void OnArrowsChanged(object sender, EventArgs e)
+        {
+            _SaveFile.Arrows = (int)InputArrows.Value;
         }
     }
 }
