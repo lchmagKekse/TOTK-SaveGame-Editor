@@ -5,13 +5,15 @@
 ## Preview
 
 ![Preview](https://cdn.discordapp.com/attachments/1104154655518376021/1107321327959941240/image.png)
-![Preview](https://cdn.discordapp.com/attachments/1104154655518376021/1105492767423070238/image.png)
+![Preview](https://cdn.discordapp.com/attachments/1104154655518376021/1109884348976611359/image.png)
 
 **Make sure to backup your save before using the savegame editor**
 
 If you get an error upon launching install [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48<>)
 
 Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-botw)
+
+Check out his [TOTK SaveEditor](https://www.marcrobledo.com/savegame-editors/zelda-totk/) (its better than this one)
 
 ## Features:
 
@@ -24,6 +26,7 @@ Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame
 - Arrows
 - Shields
 - Armor
+- Towers
 
 ## Usage
 
@@ -41,7 +44,3 @@ Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame
 - 3000 = 3 Wheels
 
 You can go above 3 wheels but they dont show in game
-
-## Compatibility
-
-Works with Gameversion V1.0.0 and V1.1.0
