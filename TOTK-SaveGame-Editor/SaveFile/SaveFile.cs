@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace TOTK_SaveGame_Editor
+namespace TOTK_SaveGame_Editor.SaveFile
 {
     public class SaveFile
     {

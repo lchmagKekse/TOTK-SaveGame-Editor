@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace TOTK_SaveGame_Editor
+namespace TOTK_SaveGame_Editor.Data
 {
     public static class GameData
     {

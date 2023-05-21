@@ -1,12 +1,31 @@
-﻿namespace TOTK_SaveGame_Editor.Offsets
+﻿namespace TOTK_SaveGame_Editor.Data
 {
-    public static class Offsets_Pattern
+    public static class Byte_Patterns
     {
         //General
         public static byte[] RUPEE_PATTERN                  = new byte[] { 0xD7, 0x21, 0x79, 0xA7 };
         public static byte[] MAX_HEART_PATTERN              = new byte[] { 0xA1, 0x1D, 0xE0, 0xFB };
         public static byte[] HEART_PATTERN                  = new byte[] { 0x80, 0x55, 0xAB, 0x31 };
         public static byte[] STAMINA_PATTERN                = new byte[] { 0x74, 0x2C, 0x21, 0xF9 };
+        public static byte[] ARROW_PATTERN                  = new byte[] { 0x94, 0x7D, 0xB2, 0x53 };
+
+        //Items
+        public static byte[] SWORD_PATTERN                  = new byte[] { 0xBE, 0xD0, 0xEF, 0x65 };
+        public static byte[] BOW_PATTERN                    = new byte[] { 0x0B, 0x4A, 0x1C, 0x79 };
+        public static byte[] SHIELD_PATTERN                 = new byte[] { 0xF4, 0x90, 0x31, 0x27 };
+        public static byte[] ARMOR_PATTERN                  = new byte[] { 0x49, 0x85, 0x4E, 0x75 };
+
+        public static byte[] SWORD_DURABILITY_PATTERN       = new byte[] { 0x62, 0xD0, 0x12, 0x8B };
+        public static byte[] BOW_DURABILITY_PATTERN         = new byte[] { 0x00, 0x92, 0x58, 0x60 };
+        public static byte[] SHIELD_DURABILITY_PATTERN      = new byte[] { 0x19, 0x6D, 0x41, 0xC3 };
+
+        public static byte[] SWORD_MODIFIER_PATTERN         = new byte[] { 0x88, 0x62, 0x84, 0xDD };
+        public static byte[] BOW_MODIFIER_PATTERN           = new byte[] { 0xD5, 0xEE, 0x9A, 0xD5 };
+        public static byte[] SHIELD_MODIFIER_PATTERN        = new byte[] { 0x0C, 0x41, 0x4B, 0x46 };
+
+        public static byte[] SWORD_POUCH_SIZE_PATTERN       = new byte[] { 0xBA, 0xF6, 0xA3, 0xD7 };
+        public static byte[] BOW_POUCH_SIZE_PATTERN         = new byte[] { 0xC2, 0x85, 0x17, 0xC6 };
+        public static byte[] SHIELD_POUCH_SIZE_PATTERN      = new byte[] { 0x7D, 0x1E, 0x27, 0x05 };
 
         //Map
         public static byte[] LOOKOUTLANDING_MAP             = new byte[] { 0xCF, 0x2A, 0x4A, 0x03 };
@@ -58,6 +77,5 @@
         public static byte[] ROSPROPASS_TOWER_PIN           = new byte[] { 0x10, 0x5C, 0x41, 0xF4 };
         public static byte[] LINDORSBROW_TOWER_PIN          = new byte[] { 0xBE, 0xC3, 0x38, 0xEC };
         public static byte[] SAHASRASLOPE_TOWER_PIN         = new byte[] { 0xC5, 0x4B, 0xBC, 0x6B };
-
     }
 }

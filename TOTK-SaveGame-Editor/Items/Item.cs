@@ -1,4 +1,4 @@
-﻿namespace TOTK_SaveGame_Editor
+﻿namespace TOTK_SaveGame_Editor.Items
 {
     public class Item
     {

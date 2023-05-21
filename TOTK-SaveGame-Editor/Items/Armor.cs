@@ -1,4 +1,6 @@
-﻿namespace TOTK_SaveGame_Editor.Data
+﻿using TOTK_SaveGame_Editor.Data;
+
+namespace TOTK_SaveGame_Editor.Items
 {
     public class Armor : Item
     {

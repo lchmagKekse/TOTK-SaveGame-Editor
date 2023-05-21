@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TOTK_SaveGame_Editor.Data;
+using TOTK_SaveGame_Editor.Items;
+using TOTK_SaveGame_Editor.SaveFile;
 
 namespace TOTK_SaveGame_Editor
 {
@@ -322,7 +324,7 @@ namespace TOTK_SaveGame_Editor
 
         private void AddSword(object sender, EventArgs e)
         {
-            _SaveFile.Swords.Add(new Sword("Weapon_Sword_070", 1000, 0xB6EEDE09));
+            _SaveFile.Swords.Add(new Sword("Weapon_Sword_166", 1000, 0xB6EEDE09));
             UpdateSwordListBox();
             ListBoxSwords.SelectedIndex = ListBoxSwords.Items.Count - 1;
             OnSelectSword(null, null);

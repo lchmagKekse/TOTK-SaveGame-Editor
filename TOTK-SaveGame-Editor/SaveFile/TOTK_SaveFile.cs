@@ -1,19 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using TOTK_SaveGame_Editor.Offsets;
-using TOTK_SaveGame_Editor.Data;
 using System.Linq;
+using TOTK_SaveGame_Editor.Data;
+using TOTK_SaveGame_Editor.Items;
 
-namespace TOTK_SaveGame_Editor
+namespace TOTK_SaveGame_Editor.SaveFile
 {
     public class TOTK_SaveFile : SaveFile
     {
         #region Offsets
 
-        private int RUPEE_ADDRESS;              // 0x04 | int32 | Pattern: D7 21 79 A7       
-        private int HEART_ADDRESS;              // 0x04 | int32 | Pattern: A1 1D E0 FB      
-        private int MAX_HEART_ADDRESS;          // 0x04 | int32 | Pattern: 80 55 AB 31     
-        private int STAMINA_ADDRESS;            // 0x04 | float | Pattern: 74 2C 21 F9
+        private int RUPEE_ADDRESS;           
+        private int HEART_ADDRESS;          
+        private int MAX_HEART_ADDRESS;     
+        private int STAMINA_ADDRESS;
+        
+        private int ARROW_ADDRESS;
 
         private int SWORD_ADDRESS;
         private int BOW_ADDRESS;
@@ -24,15 +26,13 @@ namespace TOTK_SaveGame_Editor
         private int BOW_DURABILITY;
         private int SHIELD_DURABILITY;
 
-        public int SWORD_MODIFIER;
-        public int BOW_MODIFIER;
-        public int SHIELD_MODIFIER;
+        private int SWORD_MODIFIER;
+        private int BOW_MODIFIER;
+        private int SHIELD_MODIFIER;
 
         private int SWORD_POUCH_SIZE;
         private int BOW_POUCH_SIZE;
         private int SHIELD_POUCH_SIZE;
-
-        private int ARROW_ADDRESS;
 
         public int LOOKOUTLANDING_MAP;
         public int GERUDOCANYON_MAP;
@@ -138,106 +138,77 @@ namespace TOTK_SaveGame_Editor
 
         private void LoadOffsets()
         {
-            RUPEE_ADDRESS = FindBytePatternOffset(Offsets_Pattern.RUPEE_PATTERN);
-            MAX_HEART_ADDRESS = FindBytePatternOffset(Offsets_Pattern.MAX_HEART_PATTERN);
-            HEART_ADDRESS = FindBytePatternOffset(Offsets_Pattern.HEART_PATTERN);
-            STAMINA_ADDRESS = FindBytePatternOffset(Offsets_Pattern.STAMINA_PATTERN);
+            RUPEE_ADDRESS                           = FindBytePatternOffset(Byte_Patterns.RUPEE_PATTERN);
+            MAX_HEART_ADDRESS                       = FindBytePatternOffset(Byte_Patterns.MAX_HEART_PATTERN);
+            HEART_ADDRESS                           = FindBytePatternOffset(Byte_Patterns.HEART_PATTERN);
+            STAMINA_ADDRESS                         = FindBytePatternOffset(Byte_Patterns.STAMINA_PATTERN);
 
-            LOOKOUTLANDING_MAP = FindBytePatternOffset(Offsets_Pattern.LOOKOUTLANDING_MAP);
-            GERUDOCANYON_MAP = FindBytePatternOffset(Offsets_Pattern.GERUDOCANYON_MAP);
-            POPLAFOOTHILLS_MAP = FindBytePatternOffset(Offsets_Pattern.POPLAFOOTHILLS_MAP);
-            MOUNTLANAYRU_MAP = FindBytePatternOffset(Offsets_Pattern.MOUNTLANAYRU_MAP);
-            UPLANDZORANA_MAP = FindBytePatternOffset(Offsets_Pattern.UPLANDZORANA_MAP);
-            ULRIMOUNTAIN_MAP = FindBytePatternOffset(Offsets_Pattern.ULRIMOUNTAIN_MAP);
-            ELDINCANYON_MAP = FindBytePatternOffset(Offsets_Pattern.ELDINCANYON_MAP);
-            THYPHLORUINS_MAP = FindBytePatternOffset(Offsets_Pattern.THYPHLORUINS_MAP);
-            GERUDOHIGHLANDS_MAP = FindBytePatternOffset(Offsets_Pattern.GERUDOHIGHLANDS_MAP);
-            HYRULEFIELD_MAP = FindBytePatternOffset(Offsets_Pattern.HYRULEFIELD_MAP);
-            RABELLAWETLANDS_MAP = FindBytePatternOffset(Offsets_Pattern.RABELLAWETLANDS_MAP);
-            PIKIDASTONEGROVE_MAP = FindBytePatternOffset(Offsets_Pattern.PIKIDASTONEGROVE_MAP);
-            ROSPROPASS_MAP = FindBytePatternOffset(Offsets_Pattern.ROSPROPASS_MAP);
-            LINDORSBROW_MAP = FindBytePatternOffset(Offsets_Pattern.LINDORSBROW_MAP);
-            SAHASRASLOPE_MAP = FindBytePatternOffset(Offsets_Pattern.SAHASRASLOPE_MAP);
+            ARROW_ADDRESS                           = ReadInt(FindBytePatternOffset(Byte_Patterns.ARROW_PATTERN)) + 0x04;
 
-            LOOKOUTLANDING_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.LOOKOUTLANDING_TOWER_ACTIVE);
-            GERUDOCANYON_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.GERUDOCANYON_TOWER_ACTIVE);
-            POPLAFOOTHILLS_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.POPLAFOOTHILLS_TOWER_ACTIVE);
-            MOUNTLANAYRU_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.MOUNTLANAYRU_TOWER_ACTIVE);
-            UPLANDZORANA_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.UPLANDZORANA_TOWER_ACTIVE);
-            ULRIMOUNTAIN_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.ULRIMOUNTAIN_TOWER_ACTIVE);
-            ELDINCANYON_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.ELDINCANYON_TOWER_ACTIVE);
-            THYPHLORUINS_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.THYPHLORUINS_TOWER_ACTIVE);
-            GERUDOHIGHLANDS_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.GERUDOHIGHLANDS_TOWER_ACTIVE);
-            HYRULEFIELD_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.HYRULEFIELD_TOWER_ACTIVE);
-            RABELLAWETLANDS_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.RABELLAWETLANDS_TOWER_ACTIVE);
-            PIKIDASTONEGROVE_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.PIKIDASTONEGROVE_TOWER_ACTIVE);
-            ROSPROPASS_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.ROSPROPASS_TOWER_ACTIVE);
-            LINDORSBROW_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.LINDORSBROW_TOWER_ACTIVE);
-            SAHASRASLOPE_TOWER_ACTIVE = FindBytePatternOffset(Offsets_Pattern.SAHASRASLOPE_TOWER_ACTIVE);
+            SWORD_ADDRESS                           = ReadInt(FindBytePatternOffset(Byte_Patterns.SWORD_PATTERN)) + 0x04;
+            BOW_ADDRESS                             = ReadInt(FindBytePatternOffset(Byte_Patterns.BOW_PATTERN)) + 0x04;
+            SHIELD_ADDRESS                          = ReadInt(FindBytePatternOffset(Byte_Patterns.SHIELD_PATTERN)) + 0x04;
+            ARMOR_ADDRESS                           = ReadInt(FindBytePatternOffset(Byte_Patterns.ARMOR_PATTERN)) + 0x04;
 
-            LOOKOUTLANDING_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.LOOKOUTLANDING_TOWER_PIN);
-            GERUDOCANYON_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.GERUDOCANYON_TOWER_PIN);
-            POPLAFOOTHILLS_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.POPLAFOOTHILLS_TOWER_PIN);
-            MOUNTLANAYRU_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.MOUNTLANAYRU_TOWER_PIN);
-            UPLANDZORANA_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.UPLANDZORANA_TOWER_PIN);
-            ULRIMOUNTAIN_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.ULRIMOUNTAIN_TOWER_PIN);
-            ELDINCANYON_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.ELDINCANYON_TOWER_PIN);
-            THYPHLORUINS_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.THYPHLORUINS_TOWER_PIN);
-            GERUDOHIGHLANDS_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.GERUDOHIGHLANDS_TOWER_PIN);
-            HYRULEFIELD_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.HYRULEFIELD_TOWER_PIN);
-            RABELLAWETLANDS_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.RABELLAWETLANDS_TOWER_PIN);
-            PIKIDASTONEGROVE_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.PIKIDASTONEGROVE_TOWER_PIN);
-            ROSPROPASS_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.ROSPROPASS_TOWER_PIN);
-            LINDORSBROW_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.LINDORSBROW_TOWER_PIN);
-            SAHASRASLOPE_TOWER_PIN = FindBytePatternOffset(Offsets_Pattern.SAHASRASLOPE_TOWER_PIN);
+            SWORD_DURABILITY                        = ReadInt(FindBytePatternOffset(Byte_Patterns.SWORD_DURABILITY_PATTERN)) + 0x04;
+            BOW_DURABILITY                          = ReadInt(FindBytePatternOffset(Byte_Patterns.BOW_DURABILITY_PATTERN)) + 0x04;
+            SHIELD_DURABILITY                       = ReadInt(FindBytePatternOffset(Byte_Patterns.SHIELD_DURABILITY_PATTERN)) + 0x04;
 
-            if (_Data.Length == Offsets_1_0_0.FILESIZE)
-            {
-                SWORD_ADDRESS = Offsets_1_0_0.SWORD_ADDRESS;
-                BOW_ADDRESS = Offsets_1_0_0.BOW_ADDRESS;
-                SHIELD_ADDRESS = Offsets_1_0_0.SHIELD_ADDRESS;
-                ARMOR_ADDRESS = Offsets_1_0_0.ARMOR_ADDRESS;
+            SWORD_MODIFIER                          = ReadInt(FindBytePatternOffset(Byte_Patterns.SWORD_MODIFIER_PATTERN)) + 0x04;
+            BOW_MODIFIER                            = ReadInt(FindBytePatternOffset(Byte_Patterns.BOW_MODIFIER_PATTERN)) + 0x04;
+            SHIELD_MODIFIER                         = ReadInt(FindBytePatternOffset(Byte_Patterns.SHIELD_MODIFIER_PATTERN)) + 0x04;
 
-                SWORD_DURABILITY = Offsets_1_0_0.SWORD_DURABILITY;
-                BOW_DURABILITY = Offsets_1_0_0.BOW_DURABILITY;
-                SHIELD_DURABILITY = Offsets_1_0_0.SHIELD_DURABILITY;
+            SWORD_POUCH_SIZE                        = ReadInt(FindBytePatternOffset(Byte_Patterns.SWORD_POUCH_SIZE_PATTERN)) + 0x04;
+            BOW_POUCH_SIZE                          = ReadInt(FindBytePatternOffset(Byte_Patterns.BOW_POUCH_SIZE_PATTERN)) + 0x04;
+            SHIELD_POUCH_SIZE                       = ReadInt(FindBytePatternOffset(Byte_Patterns.SHIELD_POUCH_SIZE_PATTERN)) + 0x04;
 
-                SWORD_MODIFIER = Offsets_1_0_0.SWORD_MODIFIER;
-                BOW_MODIFIER = Offsets_1_0_0.BOW_MODIFIER;
-                SHIELD_MODIFIER = Offsets_1_0_0.SHIELD_MODIFIER;
+            LOOKOUTLANDING_MAP                      = FindBytePatternOffset(Byte_Patterns.LOOKOUTLANDING_MAP);
+            GERUDOCANYON_MAP                        = FindBytePatternOffset(Byte_Patterns.GERUDOCANYON_MAP);
+            POPLAFOOTHILLS_MAP                      = FindBytePatternOffset(Byte_Patterns.POPLAFOOTHILLS_MAP);
+            MOUNTLANAYRU_MAP                        = FindBytePatternOffset(Byte_Patterns.MOUNTLANAYRU_MAP);
+            UPLANDZORANA_MAP                        = FindBytePatternOffset(Byte_Patterns.UPLANDZORANA_MAP);
+            ULRIMOUNTAIN_MAP                        = FindBytePatternOffset(Byte_Patterns.ULRIMOUNTAIN_MAP);
+            ELDINCANYON_MAP                         = FindBytePatternOffset(Byte_Patterns.ELDINCANYON_MAP);
+            THYPHLORUINS_MAP                        = FindBytePatternOffset(Byte_Patterns.THYPHLORUINS_MAP);
+            GERUDOHIGHLANDS_MAP                     = FindBytePatternOffset(Byte_Patterns.GERUDOHIGHLANDS_MAP);
+            HYRULEFIELD_MAP                         = FindBytePatternOffset(Byte_Patterns.HYRULEFIELD_MAP);
+            RABELLAWETLANDS_MAP                     = FindBytePatternOffset(Byte_Patterns.RABELLAWETLANDS_MAP);
+            PIKIDASTONEGROVE_MAP                    = FindBytePatternOffset(Byte_Patterns.PIKIDASTONEGROVE_MAP);
+            ROSPROPASS_MAP                          = FindBytePatternOffset(Byte_Patterns.ROSPROPASS_MAP);
+            LINDORSBROW_MAP                         = FindBytePatternOffset(Byte_Patterns.LINDORSBROW_MAP);
+            SAHASRASLOPE_MAP                        = FindBytePatternOffset(Byte_Patterns.SAHASRASLOPE_MAP);
 
-                SWORD_POUCH_SIZE = Offsets_1_0_0.SWORD_POUCH_SIZE;
-                BOW_POUCH_SIZE = Offsets_1_0_0.BOW_POUCH_SIZE;
-                SHIELD_POUCH_SIZE = Offsets_1_0_0.SHIELD_POUCH_SIZE;
+            LOOKOUTLANDING_TOWER_ACTIVE             = FindBytePatternOffset(Byte_Patterns.LOOKOUTLANDING_TOWER_ACTIVE);
+            GERUDOCANYON_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.GERUDOCANYON_TOWER_ACTIVE);
+            POPLAFOOTHILLS_TOWER_ACTIVE             = FindBytePatternOffset(Byte_Patterns.POPLAFOOTHILLS_TOWER_ACTIVE);
+            MOUNTLANAYRU_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.MOUNTLANAYRU_TOWER_ACTIVE);
+            UPLANDZORANA_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.UPLANDZORANA_TOWER_ACTIVE);
+            ULRIMOUNTAIN_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.ULRIMOUNTAIN_TOWER_ACTIVE);
+            ELDINCANYON_TOWER_ACTIVE                = FindBytePatternOffset(Byte_Patterns.ELDINCANYON_TOWER_ACTIVE);
+            THYPHLORUINS_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.THYPHLORUINS_TOWER_ACTIVE);
+            GERUDOHIGHLANDS_TOWER_ACTIVE            = FindBytePatternOffset(Byte_Patterns.GERUDOHIGHLANDS_TOWER_ACTIVE);
+            HYRULEFIELD_TOWER_ACTIVE                = FindBytePatternOffset(Byte_Patterns.HYRULEFIELD_TOWER_ACTIVE);
+            RABELLAWETLANDS_TOWER_ACTIVE            = FindBytePatternOffset(Byte_Patterns.RABELLAWETLANDS_TOWER_ACTIVE);
+            PIKIDASTONEGROVE_TOWER_ACTIVE           = FindBytePatternOffset(Byte_Patterns.PIKIDASTONEGROVE_TOWER_ACTIVE);
+            ROSPROPASS_TOWER_ACTIVE                 = FindBytePatternOffset(Byte_Patterns.ROSPROPASS_TOWER_ACTIVE);
+            LINDORSBROW_TOWER_ACTIVE                = FindBytePatternOffset(Byte_Patterns.LINDORSBROW_TOWER_ACTIVE);
+            SAHASRASLOPE_TOWER_ACTIVE               = FindBytePatternOffset(Byte_Patterns.SAHASRASLOPE_TOWER_ACTIVE);
 
-                ARROW_ADDRESS = Offsets_1_0_0.ARROW_ADDRESS;
-
-                return;
-            }
-
-            if (_Data.Length == Offsets_1_1_0.FILESIZE)
-            {
-                SWORD_ADDRESS = Offsets_1_1_0.SWORD_ADDRESS;
-                BOW_ADDRESS = Offsets_1_1_0.BOW_ADDRESS;
-                SHIELD_ADDRESS = Offsets_1_1_0.SHIELD_ADDRESS;
-                ARMOR_ADDRESS = Offsets_1_1_0.ARMOR_ADDRESS;
-
-                SWORD_DURABILITY = Offsets_1_1_0.SWORD_DURABILITY;
-                BOW_DURABILITY = Offsets_1_1_0.BOW_DURABILITY;
-                SHIELD_DURABILITY = Offsets_1_1_0.SHIELD_DURABILITY;
-
-                SWORD_MODIFIER = Offsets_1_1_0.SWORD_MODIFIER;
-                BOW_MODIFIER = Offsets_1_1_0.BOW_MODIFIER;
-                SHIELD_MODIFIER = Offsets_1_1_0.SHIELD_MODIFIER;
-
-                SWORD_POUCH_SIZE = Offsets_1_1_0.SWORD_POUCH_SIZE;
-                BOW_POUCH_SIZE = Offsets_1_1_0.BOW_POUCH_SIZE;
-                SHIELD_POUCH_SIZE = Offsets_1_1_0.SHIELD_POUCH_SIZE;
-
-                ARROW_ADDRESS = Offsets_1_1_0.ARROW_ADDRESS;
-
-                return;
-            }
+            LOOKOUTLANDING_TOWER_PIN                = FindBytePatternOffset(Byte_Patterns.LOOKOUTLANDING_TOWER_PIN);
+            GERUDOCANYON_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.GERUDOCANYON_TOWER_PIN);
+            POPLAFOOTHILLS_TOWER_PIN                = FindBytePatternOffset(Byte_Patterns.POPLAFOOTHILLS_TOWER_PIN);
+            MOUNTLANAYRU_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.MOUNTLANAYRU_TOWER_PIN);
+            UPLANDZORANA_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.UPLANDZORANA_TOWER_PIN);
+            ULRIMOUNTAIN_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.ULRIMOUNTAIN_TOWER_PIN);
+            ELDINCANYON_TOWER_PIN                   = FindBytePatternOffset(Byte_Patterns.ELDINCANYON_TOWER_PIN);
+            THYPHLORUINS_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.THYPHLORUINS_TOWER_PIN);
+            GERUDOHIGHLANDS_TOWER_PIN               = FindBytePatternOffset(Byte_Patterns.GERUDOHIGHLANDS_TOWER_PIN);
+            HYRULEFIELD_TOWER_PIN                   = FindBytePatternOffset(Byte_Patterns.HYRULEFIELD_TOWER_PIN);
+            RABELLAWETLANDS_TOWER_PIN               = FindBytePatternOffset(Byte_Patterns.RABELLAWETLANDS_TOWER_PIN);
+            PIKIDASTONEGROVE_TOWER_PIN              = FindBytePatternOffset(Byte_Patterns.PIKIDASTONEGROVE_TOWER_PIN);
+            ROSPROPASS_TOWER_PIN                    = FindBytePatternOffset(Byte_Patterns.ROSPROPASS_TOWER_PIN);
+            LINDORSBROW_TOWER_PIN                   = FindBytePatternOffset(Byte_Patterns.LINDORSBROW_TOWER_PIN);
+            SAHASRASLOPE_TOWER_PIN                  = FindBytePatternOffset(Byte_Patterns.SAHASRASLOPE_TOWER_PIN);
         }
 
         public void PatchSaveFile()

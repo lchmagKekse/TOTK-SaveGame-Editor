@@ -1,8 +1,10 @@
-﻿namespace TOTK_SaveGame_Editor.Data
+﻿using TOTK_SaveGame_Editor.Data;
+
+namespace TOTK_SaveGame_Editor.Items
 {
-    public class Sword : Item
+    public class Bow : Item
     {
-        public Sword(string id, int durability, uint modifier)
+        public Bow(string id, int durability, uint modifier)
         {
             Id = id;
             Durability = durability;
@@ -10,9 +12,9 @@
             Name = Id;
             Modifier = "None";
 
-            if (GameData.Swords.ContainsKey(Id))
+            if (GameData.Bows.ContainsKey(Id))
             {
-                Name = GameData.Swords[Id];
+                Name = GameData.Bows[Id];
             }
 
             if (GameData.Modifiers.ContainsKey(modifier))
