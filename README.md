@@ -9,11 +9,11 @@
 
 **Make sure to backup your save before using the savegame editor**
 
-If you get an error upon launching install [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48<>)
+If you get an error upon launching, install [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48).
 
-Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-botw)
+Item names are stolen from [marcrobledo](https://github.com/marcrobledo/savegame-editors/tree/master/zelda-botw).
 
-Check out his [TOTK SaveEditor](https://www.marcrobledo.com/savegame-editors/zelda-totk/) (its better than this one)
+Check out his [TOTK SaveEditor](https://www.marcrobledo.com/savegame-editors/zelda-totk/) (it's better than this one)
 
 ## Features:
 
